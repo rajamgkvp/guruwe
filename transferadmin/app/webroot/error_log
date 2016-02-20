@@ -1,0 +1,40 @@
+[14-Sep-2013 11:42:23] PHP Fatal error:  Call to a member function read() on a non-object in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/Controller/UsersController.php on line 59
+[14-Sep-2013 12:14:38] PHP Fatal error:  Call to a member function create() on a non-object in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/Controller/UsersController.php on line 157
+[14-Sep-2013 12:15:45] PHP Fatal error:  Call to a member function create() on a non-object in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/Controller/UsersController.php on line 157
+[14-Sep-2013 12:22:31] PHP Fatal error:  Call to a member function create() on a non-object in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/Controller/UsersController.php on line 157
+[14-Sep-2013 12:24:48] PHP Fatal error:  Cannot redeclare UsersController::admin_login() in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/Controller/UsersController.php on line 148
+[14-Sep-2013 12:26:21] PHP Fatal error:  Call to a member function read() on a non-object in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/Controller/UsersController.php on line 81
+[14-Sep-2013 12:26:55] PHP Fatal error:  Call to a member function create() on a non-object in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/Controller/UsersController.php on line 86
+[14-Sep-2013 12:28:32] PHP Fatal error:  Call to a member function create() on a non-object in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/Controller/UsersController.php on line 86
+[14-Sep-2013 12:30:33] PHP Fatal error:  Call to a member function create() on a non-object in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/Controller/UsersController.php on line 86
+[14-Sep-2013 12:37:04] PHP Fatal error:  Call to a member function create() on a non-object in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/Controller/UsersController.php on line 86
+[14-Sep-2013 12:52:38] PHP Fatal error:  Call to undefined method UsersController::layout() in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/Controller/UsersController.php on line 79
+[15-Sep-2013 09:36:54] PHP Fatal error:  Call to a member function write() on a non-object in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/Controller/UsersController.php on line 97
+[15-Sep-2013 09:41:32] PHP Fatal error:  Call to a member function read() on a non-object in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/Controller/UsersController.php on line 79
+[18-Oct-2013 22:53:23] PHP Fatal error:  Call to a member function youtube() on a non-object in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/Controller/MemberController.php on line 186
+[20-Oct-2013 11:47:32] PHP Parse error:  syntax error, unexpected '[' in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/View/Elements/header.ctp on line 28
+[20-Oct-2013 11:47:37] PHP Parse error:  syntax error, unexpected '[' in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/View/Elements/header.ctp on line 28
+[20-Oct-2013 12:31:03] PHP Fatal error:  Call to a member function codeBlock() on a non-object in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/View/Helper/SkitterHelper.php on line 90
+[20-Oct-2013 12:33:05] PHP Fatal error:  Call to a member function codeBlock() on a non-object in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/View/Helper/SkitterHelper.php on line 91
+[20-Oct-2013 12:34:26] PHP Fatal error:  Call to a member function image() on a non-object in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/View/Helper/SkitterHelper.php on line 103
+[20-Oct-2013 12:34:28] PHP Fatal error:  Call to a member function image() on a non-object in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/View/Helper/SkitterHelper.php on line 103
+[20-Oct-2013 12:48:53] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/View/Helper/SkitterHelper.php on line 103
+[20-Oct-2013 12:49:10] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/View/Helper/SkitterHelper.php on line 103
+[20-Oct-2013 12:50:07] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/View/Helper/SkitterHelper.php on line 103
+[20-Oct-2013 12:50:25] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/View/Helper/SkitterHelper.php on line 103
+[20-Oct-2013 12:50:28] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/View/Helper/SkitterHelper.php on line 103
+[20-Oct-2013 12:50:31] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/View/Helper/SkitterHelper.php on line 103
+[20-Oct-2013 12:50:58] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/View/Helper/SkitterHelper.php on line 103
+[20-Oct-2013 12:52:22] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/View/Helper/SkitterHelper.php on line 103
+[20-Oct-2013 12:52:51] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/View/Helper/SkitterHelper.php on line 103
+[20-Oct-2013 12:52:54] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/View/Helper/SkitterHelper.php on line 103
+[20-Oct-2013 12:53:54] PHP Fatal error:  Call to a member function link() on a non-object in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/View/Helper/SkitterHelper.php on line 108
+[20-Oct-2013 13:10:43] PHP Fatal error:  Call to a member function script() on a non-object in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/View/Helper/SkitterHelper.php on line 57
+[20-Oct-2013 15:17:11] PHP Fatal error:  Call to undefined method UsersController::update_status() in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/Controller/UsersController.php on line 152
+[20-Oct-2013 15:18:22] PHP Fatal error:  Call to undefined method UsersController::update_status() in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/Controller/UsersController.php on line 152
+[20-Oct-2013 15:43:00] PHP Fatal error:  Call to undefined method SlidersController::checkLogin() in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/Plugin/sliders/Controller/SlidersController.php on line 57
+[20-Oct-2013 19:24:40] PHP Fatal error:  Access to undeclared static property: Router::$key_array_to_be_encrypt in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/Controller/AppController.php on line 63
+[20-Oct-2013 19:27:43] PHP Fatal error:  Access to undeclared static property: Router::$key_array_to_be_encrypt in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/Controller/AppController.php on line 64
+[20-Oct-2013 19:37:37] PHP Fatal error:  Class 'Router' not found in /home/mystitms/public_html/atozwebguru.com/videocompetition/lib/Cake/Routing/Dispatcher.php on line 214
+[20-Oct-2013 20:01:28] PHP Fatal error:  Call to a member function findById() on a non-object in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/Controller/MemberController.php on line 275
+[20-Oct-2013 20:10:38] PHP Fatal error:  Call to undefined method MemberController::_update_profile_view() in /home/mystitms/public_html/atozwebguru.com/videocompetition/app/Controller/MemberController.php on line 279

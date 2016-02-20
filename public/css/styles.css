@@ -1,0 +1,497 @@
+@font-face {
+    font-family: "Gotham-Black";
+    font-style: normal;
+    font-weight: normal;
+    src: local("?"), url("../fonts/Gotham-Black.woff") format("woff"), url("../fonts/Gotham-Black.ttf") format("truetype"), url("../fonts/Gotham-Black.svg") format("svg");
+}
+@font-face {
+    font-family: "Gotham-Bold";
+    font-style: normal;
+    font-weight: normal;
+    src: local("?"), url("../fonts/Gotham-Bold.woff") format("woff"), url("../fonts/Gotham-Bold.ttf") format("truetype"), url("../fonts/Gotham-Bold.svg") format("svg");
+}
+@font-face {
+    font-family: "Gotham-Book";
+    font-style: normal;
+    font-weight: normal;
+    src: local("?"), url("../fonts/Gotham-Book.woff") format("woff"), url("../fonts/Gotham-Book.ttf") format("truetype"), url("../fonts/Gotham-Book.svg") format("svg");
+}
+@font-face {
+    font-family: "Gotham-Light";
+    font-style: normal;
+    font-weight: normal;
+    src: local("?"), url("../fonts/Gotham-Light.woff") format("woff"), url("../fonts/Gotham-Light.ttf") format("truetype"), url("../fonts/Gotham-Light.svg") format("svg");
+}
+@font-face {
+    font-family: "Gotham-Medium";
+    font-style: normal;
+    font-weight: normal;
+    src: local("?"), url("../fonts/Gotham-Medium.woff") format("woff"), url("../fonts/Gotham-Medium.ttf") format("truetype"), url("../fonts/Gotham-Medium.svg") format("svg");
+}
+@font-face {
+    font-family: "Gotham-Thin";
+    font-style: normal;
+    font-weight: normal;
+    src: local("?"), url("../fonts/Gotham-Thin.woff") format("woff"), url("../fonts/Gotham-Thin.ttf") format("truetype"), url("../fonts/Gotham-Thin.svg") format("svg");
+}
+@font-face {
+    font-family: "Gotham-Ultra";
+    font-style: normal;
+    font-weight: normal;
+    src: local("?"), url("../fonts/Gotham-Ultra.woff") format("woff"), url("../fonts/Gotham-Ultra.ttf") format("truetype"), url("../fonts/Gotham-Ultra.svg") format("svg");
+}
+
+body{
+	background: url('../img/background.png');
+	height: 100%;
+	width: 100%;
+}
+.gurutransfer{
+    position: absolute;
+    width: 157px;
+    left: 4%;
+    z-index: 999;
+}
+.navbar-fixed-top, .navbar-fixed-bottom{
+    z-index: 9;
+}
+.overlay {
+    background: #000 none repeat scroll 0 0;
+    height: 100%;
+    opacity: 0.75;
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+}
+.gurutransfer .header {
+    background: rgba(0, 0, 0, 0) url("../img/gurubackground.png") repeat scroll 0 0;
+    height: 220px;
+    width: 157px;
+}
+.gurutransfer .transferbody {
+    background: #f9ab30 none repeat scroll 0 0;
+    border-radius: 0 0 5px 5px;
+    padding: 0 5px;
+}
+.upload-panel {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 5px;
+    padding: 2px 8px;
+    width: 100%;
+}
+.gurutransfer h2 {
+    font: 15px gotham-bold;
+    margin: 9px 0;
+    text-align: center;
+}
+.button ul {
+    list-style: outside none none;
+    padding: 0;
+    margin: 0;
+}
+.add-files-block .button ul > li {
+    background: #f7aa3f none repeat scroll 0 0;
+    border-radius: 18px;
+    float: left;
+    font: 11px Gotham-Bold;
+}
+.add-files-block, .friend-email-block, .my-email-block {
+    border-bottom: 1px solid #d1d1d2;
+    padding: 8px 0;
+}
+.friend-email-block input, .my-email-block input{
+	border: medium none;
+	width: 100%;
+    padding: 0 7px;
+    outline: none;
+}
+.message textarea {
+    border: medium none;
+    height: 60px;
+    margin: 8px 0 0;
+    padding: 3px 0 0 8px;
+    width: 100%;
+    resize: none;
+    outline: none;
+}
+.share-and-transfer {
+    padding: 0 0 10px;
+}
+.share-and-transfer .share {
+    background: #fff url("../img/button-app-icon-share.png") repeat scroll 0 0;
+    border-radius: 50%;
+    height: 32px;
+    margin: 8px 0 0;
+    width: 32px;
+    float: left;
+    cursor: pointer;
+}
+.share-and-transfer .info {
+	background: #fff url("../img/button-app-icon-help.png") repeat scroll 0 0;
+    border-radius: 50%;
+    height: 32px;
+    margin: 8px 0 0;
+    width: 32px;	
+    float: left;
+    cursor: pointer;
+}
+.share-and-transfer .transfer {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 20px;
+    color: #646769;
+    float: left;
+    font-size: 11px;
+    line-height: 31px;
+    margin: 9px 5px 0;
+    text-align: center;
+    text-transform: uppercase;
+    width: 49%;
+    border:none;
+    float: left;
+    height: 32px;
+}
+.status {
+    background: #fff none repeat scroll 0 0;
+    position: absolute;
+    text-align: center;
+    top: 218px;
+    width: 157px;
+    z-index: 99;
+    border-radius: 0 0 5px 5px;
+    border: 3px solid #f9ab30;
+    min-height: 259px;
+}
+.status .c100 {
+    left: 14px;
+    margin-top: 36px;
+}
+.transfer-done .transfer {
+    font: 15px gotham-bold;
+}
+.transfer-done .small {
+    color: #acacac;
+    font: 11px gotham-book;
+    margin: 5px 0;
+}
+.checkmark {
+    display:inline-block;
+    width: 22px;
+    height:22px;
+    -ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+}
+
+.checkmark_stem {
+    background-color: #464850;
+    height: 36px;
+    left: 15px;
+    position: absolute;
+    top: -9px;
+    width: 7px;
+}
+
+.checkmark_kick {
+    background-color: #464850;
+    height: 7px;
+    left: -1px;
+    position: absolute;
+    top: 26px;
+    width: 23px;
+}
+.upload-wrap-btn-Change {
+    border-radius: 17px;
+    overflow: hidden;
+    padding: 8px 10px 4px;
+    position: relative;
+    cursor: pointer;
+}
+.upload-wrap-btn-Change > input {
+    cursor: pointer;
+    height: 27px;
+    margin: 0 0 0 -10px;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+}
+.c100 > span.loading{
+	display: block;
+}
+.c100 > span.tickmark{
+	display: none;
+}
+.button ul.files > li {
+    background: transparent none repeat scroll 0 0;
+    border-radius: 0;
+    font: 12px/21px gotham-book;
+    height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    position: relative;
+}
+#info_panel::after, #error_panel::after, #tip_panel::after {
+    background: transparent url("../img/info-panel-pointer.png") no-repeat scroll 0 0;
+    content: "";
+    display: block;
+    height: 19px;
+    left: -11px;
+    margin-top: -10px;
+    position: absolute;
+    top: 50%;
+    width: 11px;
+}
+#info_panel, #error_panel, #tip_panel {
+    background: #46494e none repeat scroll 0 0;
+    border-radius: 8px;
+    box-shadow: 0 10px 60px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-family: gotham-book;
+    left: 219px;
+    padding: 25px 15px 10px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 138px;
+    z-index: 2;
+}
+.bigImages ul {
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.bigImages img {
+    max-height: 100%;
+}
+.navbar-default{
+    background-color: transparent;
+    border-color: transparent;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{
+    background-color: #fff;
+    border: 1px solid #a1a1a1;
+    color: #000;
+}
+.navbar-nav > li > a {
+    border-radius: 33px;
+    padding-bottom: 10px;
+    padding-top: 9px;
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form{
+    margin-top: 20px;
+}
+.navbar-nav > li {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 33px;
+    margin: 0 0 0 15px;
+    opacity: 0.8;
+}
+.content.row {
+    background: #d3d3d3 none repeat scroll 0 0;
+    border-radius: 5px;
+    padding: 20px;
+}
+.bigImages li{
+    margin-top: -21px;
+}
+.slider {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+.files {
+    max-height: 61px;
+    position: relative;
+}
+.friend-email-block input:focus, .my-email-block input:focus, .message textarea:focus {
+    background: #ccc none repeat scroll 0 0;
+    border-radius: 10px;
+}
+.closeli {
+    position: absolute;
+    right: 0;
+    top: -6px;
+    cursor: pointer;
+}
+.add-files-block {
+    margin: 0;
+    padding: 0 0 8px;
+}
+.btn.btn-warning {
+    border: medium none;
+    border-radius: 16px;
+    color: #000;
+    font: 12px gotham;
+    padding: 5px;
+    margin: 5px 0 0;
+}
+.add_more_email > input {
+    margin: 2px 0;
+}
+.share-and-transfer .transfer:hover {
+    background: #646769 none repeat scroll 0 0;
+    color: #fff;
+}
+.plus-panel {
+    left: -62px;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    z-index: -9;
+}
+.plus-panel .panel2.panelp {
+    border: 1px solid #8d8f8f;
+    margin: -73px 0 0 -18px;
+    padding: 0 7px 0 21px;
+    border-bottom: none;
+}
+.plus-panel .panelp {
+    background: #e5e5e5 none repeat scroll 0 0;
+    border-radius: 11px 11px 0 0;
+    color: #8e8c8c;
+    float: left;
+    margin: 0;
+    padding: 0 10px;
+    transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+}
+.plus-panel .panel1.panelp {
+    background: #b3b3b3 none repeat scroll 0 0;
+    color: #fff;
+    margin: 35px 0 0;
+}
+span.button_area_new{
+    font: 11px Gotham-Bold;
+    text-transform: uppercase;
+}
+.btn.btn-warning {
+    font: 11px Gotham-Medium;
+}
+.overlay-data {
+    position: absolute;
+    z-index: 999;
+    left: -6px;
+}
+.share-option {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 23px;
+    margin: 8px 0 0 37px;
+    position: absolute;
+    width: 0px;
+    overflow: hidden;
+}
+.share-option > ul {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+    width: 110px;
+}
+.share-option li {
+    display: inline-block;
+    padding: 6px 5px;
+    text-align: center;
+    width: 53px;
+    cursor: pointer;
+}
+.share-option li.active {
+    background: #b3b3b3 none repeat scroll 0 0;
+    color: #fff;
+}
+.message-box {
+    height: 125px;
+}
+.link-block .files {
+    max-height: 150px;
+    overflow-y: scroll;
+}
+.message-box {
+    font: 12px Gotham-medium;
+    height: 125px;
+    padding: 10px 0;
+}
+
+.lightbox {
+    
+}
+.lightbox-content {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 5px;
+    padding: 10px;
+    left: 50%;
+    margin-left: -135px;
+    position: fixed;
+    top: 40%;
+    width: 272px;
+    z-index: 9999;
+}
+.lightbox .light-box-close {
+    text-align: right;
+    cursor: pointer;
+    margin: -9px -5px 12px 0px;
+}
+.lightbox .content img {
+    margin: 10px 0 0 0;
+    max-width: 100%;
+}
+
+.lightbox-overlay {
+    background: #000 none repeat scroll 0 0;
+    height: 100%;
+    opacity: 0.8;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1001;
+}
+#LoginButton {
+    cursor: pointer;
+}
+.sign-in-text {
+    font: 12px Gotham-Medium;
+}
+.small-login {
+    font: 11px Arial;
+}
+#results {
+    font: 11px gotham-medium;
+    margin: 0;
+}
+.small > input {
+    margin: 3px;
+    padding: 2px;
+    width: 96%;
+}
+.friend-email-scroll {
+    max-height: 72px;
+    overflow: hidden;
+    position: relative;
+}
+.no-padding{
+    padding:0;
+}
+.forms input {
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    height: 28px;
+    margin: 5px 0;
+    padding: 0 12px;
+}
+.forms textarea {
+    border: medium none;
+    border-radius: 11px;
+    height: 200px;
+    padding: 12px;
+    width: 100%;
+}
+.forms input[type="submit"] {
+    background: #fbb449 none repeat scroll 0 0;
+    color: #fff;
+    height: 34px;
+    padding: 5px 20px;
+}
