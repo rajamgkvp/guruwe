@@ -12,6 +12,8 @@ $(window).load(function()
             if($( this ).val() != ''){
                 var filename = $(this).val().replace(/C:\\fakepath\\/i, '');
                 $('.button .files').append('<li>' + filename + '<div class="closeli">x</div></li>');
+                $(".add-files-block .files").scrollTop( $( ".add-files-block .files" ).prop( "scrollHeight" ) );
+                $(".add-files-block .files").perfectScrollbar('update');
             }
         });
         var html = $('.upload-more-btn').html();
@@ -49,8 +51,12 @@ $(document).ready(function() {
     });
 
     $(document).on( "click", ".friend-email-block .btn-warning", function() {
-        if($('.add_more_email > input:last-child').val() != '' && $('.friend-email-block > input').val() != '')
+        if($('.add_more_email > input:last-child').val() != '' && $('.friend-email-block > input').val() != ''){
             $( ".friend-email-block .add_more_email").append('<input type="text" value="" name="friend_email[]" placeholder="Friend\'s Email">');
+            $(".friend-email-block .friend-email-scroll").scrollTop( $( ".friend-email-block .friend-email-scroll" ).prop( "scrollHeight" ) );
+            $(".friend-email-block .friend-email-scroll").perfectScrollbar('update');
+        }
+            
     });
 
     $('.info').click(function(){
@@ -111,13 +117,38 @@ $(document).ready(function() {
     });
 
     $('#feedback').submit(function(){
-        feedbackform(this);
+        var count = 0;
+        if($('#name').val()==''){
+            count =1;
+            alert('Please enter name');
+        }else if($('#email').val()==''){
+            count =1;
+            alert('Please enter an email');
+        }else if(isEmailAddress($('#email').val())==false){
+            count =1;
+            alert('Please enter valid email');
+        }else if($('#feedback').html()==''){
+            count =1;
+            alert('Please enter feedback');
+        }
+        if(count == 0){
+            feedbackform(this);    
+        }
         return false;
     });
 
     fbandtwitter();
     doSlideshow(length);
 });
+
+
+
+function isEmailAddress(str) {
+   var pattern =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+   return pattern.test(str);  // returns a boolean 
+}
+
+
 
 function resetforms(){
     $('.files').html('');
@@ -367,7 +398,11 @@ function feedbackform(elem){
         type:'POST',
         data: $(elem).serialize(),
         success:function(data) {
-            alert('submit');
+            var lightboxdata = '<div class="msg-box">Thanks for submitting your feedback, we will contact you over email if any clerification required.<div class="clearfix"></div><div class="facebook-box"><i class="fa fa-facebook"></i></div><div class="clearfix"></div>Why not share this news with your friends and let them know you care!</div>';
+            $('.feedback-confirm').html('');
+
+            var html = '<div class="lightbox"><div class="lightbox-content feedback-pro no-padding"><div class="pro-container"><div class="header">Guru Transfer pro<div class="light-box-close"><i class="fa fa-close"></i></div></div><div class="loadcontent">'+lightboxdata+'</div><div class="footer"></div></div></div><div class="lightbox-overlay"></div></div>';
+            $('body').append(html);
         }
     });
 }

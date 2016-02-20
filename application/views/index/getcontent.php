@@ -8,11 +8,11 @@
              		<form id="feedback" method="post" action="<?php echo BASE_PATH; ?>/index/feedback">
 	             		<div class="forms">
 	             			<div class="col-sm-3 col-md-3 no-padding">
-	             				<input type="text" value="" placeholder="name" name="name">
-	             				<input type="text" value="" placeholder="email" name="email">
+	             				<input type="text" value="" placeholder="name" name="name" id="name">
+	             				<input type="text" value="" placeholder="email" name="email" id="email">
 	             			</div>
 	             			<div class="col-sm-6 col-md-6">
-	             				<textarea placeholder="Your feedback/idea" name="feedback"></textarea>
+	             				<textarea placeholder="Your feedback/idea" name="feedback" id="feedback"></textarea>
 	             			</div>
 	             			<div class="col-sm-3 col-md-3">
 	             				<input type="submit" value="submit" name="submit">

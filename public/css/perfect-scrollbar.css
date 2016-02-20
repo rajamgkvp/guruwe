@@ -62,12 +62,12 @@
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
-    opacity: 0;
+    opacity: 1;
     -webkit-transition: background-color .2s linear, opacity .2s linear;
     -moz-transition: background-color .2s linear, opacity .2s linear;
     -o-transition: background-color .2s linear, opacity .2s linear;
     transition: background-color .2s linear, opacity .2s linear;
-    right: 3px;
+    right: 0px !important;
     /* there must be 'right' for ps-scrollbar-y-rail */
     width: 8px; }
     .ps-container > .ps-scrollbar-y-rail > .ps-scrollbar-y {

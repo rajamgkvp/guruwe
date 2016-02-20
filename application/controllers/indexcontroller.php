@@ -22,8 +22,8 @@ class IndexController extends Controller {
 	function upload(){
 		//echo "<pre>"; print_r($_POST); echo "</pre>";
 		//echo "<pre>"; print_r($_FILES); echo "</pre>";	
-//exit;	
-$this->render = 0;
+		//exit;	
+		$this->render = 0;
 		$return_array = array('error'=>true,'message'=>'There is some problem while uploading, please try again later');
 
 		$max_size = 1024*1024*1024*3;
@@ -36,8 +36,8 @@ $this->render = 0;
 		if ($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_FILES['files']))
 		{
 			//echo "<pre>"; print_r($_FILES['files']['tmp_name']); echo "</pre>";
-//exit;			
-// loop all files
+			//exit;			
+			// loop all files
 			foreach ( $_FILES['files']['name'] as $i => $name){
 			// if file not uploaded then skip it
 				if ( !is_uploaded_file($_FILES['files']['tmp_name'][$i]) ){
@@ -58,8 +58,8 @@ $this->render = 0;
             }
             
            //echo "<pre>"; print_r($files_arr); echo "</pre>";
-//exit;            
-//$uploads[] = $_FILES['files'];
+			//exit;            
+			//$uploads[] = $_FILES['files'];
             
             if($_POST['openedblock'] != 'link-block'){
             	$post['from'] = $_POST['from_email'];
@@ -77,7 +77,7 @@ $this->render = 0;
                     unlink($files_ar);
             }
             $result = (array)$result;
-	//echo "<pre>"; print_r($result); echo "</pre>";exit;
+			//echo "<pre>"; print_r($result); echo "</pre>";exit;
             echo json_encode($result);
         }
         //echo json_encode(array('count' => $count));
@@ -87,7 +87,8 @@ $this->render = 0;
 
 	function getcontent(){
 		$explode =  explode('/', $_SERVER['REQUEST_URI']);
-		$slug = $explode[1];
+		//echo "<pre>"; print_r($explode); echo "</pre>"; exit;
+		$slug = $explode[2];
 		$Content = new Content();
 		$content = $Content->getContent($slug);
 		$this->set('slug',$slug);
@@ -96,7 +97,14 @@ $this->render = 0;
 
 	function feedback(){
 		$this->render = 0;
-		echo "<pre>"; print_r($_POST); echo "</pre>"; exit;
+		$post['name'] = $_POST['name'];
+		$post['email'] = $_POST['email'];
+		$post['feedback'] = $_POST['feedback'];
+		$target_url = API_TARGET_URL.'feedback';
+		//echo "<pre>"; print_r($post); echo "</pre>";
+		$result = $this->curl($target_url, $post);
+		echo json_encode($result);
+		exit;
 	}
 
 	function facebooklogin(){

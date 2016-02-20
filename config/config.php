@@ -4,9 +4,16 @@
 
 define ('DEVELOPMENT_ENVIRONMENT',true);
 
-define ('BASE_PATH','http://'.$_SERVER['HTTP_HOST']);
-define ('ADMIN_PATH','http://'.$_SERVER['HTTP_HOST'].'/transferadmin/');
-define ('API_TARGET_URL','http://'.$_SERVER['HTTP_HOST'].'/api/');
+if($_SERVER['HTTP_HOST']=='localhost'){
+	define ('BASE_PATH','http://'.$_SERVER['HTTP_HOST'].'/gurutransfer');
+	define ('ADMIN_PATH','http://'.$_SERVER['HTTP_HOST'].'/gurutransfer/transferadmin/');
+	define ('API_TARGET_URL','http://'.$_SERVER['HTTP_HOST'].'/gurutransfer/api/');
+}else{
+	define ('BASE_PATH','http://'.$_SERVER['HTTP_HOST']);
+	define ('ADMIN_PATH','http://'.$_SERVER['HTTP_HOST'].'/transferadmin/');
+	define ('API_TARGET_URL','http://'.$_SERVER['HTTP_HOST'].'/api/');
+}
+
 define ('SITE_NAME','GuruTransfer');
 
 //define ('FACEBOOK_APP_ID','1535182570125606');

@@ -230,6 +230,7 @@ body{
     white-space: nowrap;
     width: 100%;
     position: relative;
+    padding: 0 18px 0 0;
 }
 #info_panel::after, #error_panel::after, #tip_panel::after {
     background: transparent url("../img/info-panel-pointer.png") no-repeat scroll 0 0;
@@ -314,7 +315,7 @@ body{
 }
 .closeli {
     position: absolute;
-    right: 0;
+    right: 8px;
     top: -6px;
     cursor: pointer;
 }
@@ -429,7 +430,45 @@ span.button_area_new{
     top: 40%;
     width: 272px;
     z-index: 9999;
+    overflow: hidden;
 }
+.lightbox-content.feedback-pro {
+    margin-left: -250px;
+    width: 500px;
+    top: 20%;
+}
+
+.feedback-pro .header {
+    background: #fab44a none repeat scroll 0 0;
+    color: #fff;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 21px 11px 5px;
+}
+.header .light-box-close {
+    position: absolute;
+    right: 11px;
+    top: 10px;
+}
+.footer {
+    background: #fab44a none repeat scroll 0 0;
+    padding: 19px;
+}
+.pro-container .msg-box {
+    color: #7e7e7e;
+    padding: 23px;
+}
+.facebook-box {
+    border: 1px solid #7e7e7e;
+    border-radius: 50%;
+    float: left;
+    left: 44%;
+    margin-top: 25px;
+    padding: 7px 14px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
 .lightbox .light-box-close {
     text-align: right;
     cursor: pointer;
