@@ -88,7 +88,7 @@ class IndexController extends Controller {
 	function getcontent(){
 		$explode =  explode('/', $_SERVER['REQUEST_URI']);
 		//echo "<pre>"; print_r($explode); echo "</pre>"; exit;
-		$slug = $explode[2];
+		$slug = $explode[1];
 		$Content = new Content();
 		$content = $Content->getContent($slug);
 		$this->set('slug',$slug);
