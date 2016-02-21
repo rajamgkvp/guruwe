@@ -61,7 +61,7 @@ function routeURL($url) {
 	global $routing;
 	foreach ( $routing as $pattern => $result ) {
 		if($url == $result[0] && $result[1] == 'redirect'){
-			if($pattern == 'index/getcontent0' || $pattern == 'index/getcontent1' || $pattern == 'index/getcontent2' || $pattern == 'index/getcontent3' || $pattern == 'index/getcontent4')
+			if($pattern == 'index/getcontent0' || $pattern == 'index/getcontent1' || $pattern == 'index/getcontent2' || $pattern == 'index/getcontent3' || $pattern == 'index/getcontent4' || $pattern == 'index/getcontent5' || $pattern == 'index/getcontent6' || $pattern == 'index/getcontent7' || $pattern == 'index/getcontent8')
 				$url = 'index/getcontent';
 			else
 				$url = $pattern;

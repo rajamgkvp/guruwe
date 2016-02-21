@@ -534,3 +534,36 @@ span.button_area_new{
     height: 34px;
     padding: 5px 20px;
 }
+#info_footer {
+    background: transparent none repeat scroll 0 0;
+    display: block;
+    margin: 30px auto 45px;
+    overflow: auto;
+    padding: 0 0 0 40px;
+    position: relative;
+}
+#info_footer ul {
+    float: left;
+    font-size: 12px;
+    line-height: 22px;
+    list-style: outside none none;
+    margin: 0 0 20px 40px;
+    padding: 0;
+}
+#info_footer h4 {
+    color: #565a5e;
+    cursor: default;
+    font-family: MuseoSansRounded-700,sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+#info_footer a:link, #info_footer a:visited, #info_footer a:active {
+    border-bottom: 1px solid transparent;
+    color: #919293;
+    padding: 0;
+    text-decoration: none;
+    transition: all 0.25s linear 0s;
+}

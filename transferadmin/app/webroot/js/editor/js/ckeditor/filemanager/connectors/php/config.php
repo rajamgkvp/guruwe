@@ -30,7 +30,13 @@ global $Config ;
 $Config['Enabled'] = true ;
 
 // Path to user files relative to the document root.
-$Config['UserFilesPath'] = 'http://'.$_SERVER['HTTP_HOST'].'/robertjaffe/js/editor/files/userfiles/';
+
+if($_SERVER['HTTP_HOST'] == 'localhost'){
+	$Config['UserFilesPath'] = 'http://'.$_SERVER['HTTP_HOST'].'/gurutransfer/transferadmin/js/editor/files/userfiles/';	
+}else{
+	$Config['UserFilesPath'] = 'http://'.$_SERVER['HTTP_HOST'].'/transferadmin/js/editor/files/userfiles/';
+}
+
 
 // Fill the following value it you prefer to specify the absolute path for the
 // user files directory. Useful if you are using a virtual directory, symbolic
