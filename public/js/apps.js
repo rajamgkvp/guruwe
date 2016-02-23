@@ -208,12 +208,13 @@ $(function() {
             var topo = ($('.button .more > li:last-child').offset().top)/2;
             $('.nofiles').fadeOut();
 
-            if(opened == 'link-block'){
+            if(opened == 'email-block'){
+                setval = 0;
                 if($('.files > li').length == 0){
                     setval = 1;
                     $('#error_panel').css('top', topo+'px').fadeIn();
                     removetips();
-                }else if($('.friend-email-block > input').val() == ''){
+                }else if($('.friend-email-block > .friend-email-scroll > input').val() == ''){
                     setval = 1;
                     $('#info_panel h3').html('Doh!');
                     $('#info_panel p').html('Looks like you forgot to enter any email addresses to send to.');
@@ -225,8 +226,27 @@ $(function() {
                     $('#info_panel p').html('Looks like you forgot to enter Your email addresses for.');
                     $('#info_panel').css('top', topo+'px').fadeIn();
                     removetips();
+                }else if(isEmailAddress($('.my-email-block > input').val())==false){
+                    setval = 1;
+                    $('#info_panel h3').html('Doh!');
+                    $('#info_panel p').html('Please enter valid email address.');
+                    $('#info_panel').css('top', topo+'px').fadeIn();
+                    removetips();
                 }else{
-                    setval = 0;
+                    setval = 0;   
+                }
+
+                if(setval == 0){
+                    $(".friend-email-block > .friend-email-scroll > input").each(function(){
+                        if(isEmailAddress($(this).val())==false){
+                            setval = 1;
+                            $('#info_panel h3').html('Doh!');
+                            $('#info_panel p').html('Please enter valid email address to send to.');
+                            $('#info_panel').css('top', topo+'px').fadeIn();
+                            removetips();    
+                            return false;
+                        }
+                    });    
                 }
             }else{
                 if($('.files > li').length == 0){
@@ -270,7 +290,7 @@ $(function() {
                 $('.transfer-done .transfer').html('uplaoding...');
                 percentComplete = Math.round((percentComplete - 25)*1.33);
                 
-                var pVel = percentComplete + '%';
+                var pVel = (percentComplete - 1) + '%';
                 bar.removeClass('p'+percentComplete-1);
                 bar.addClass('p'+percentComplete);
                 percent.html(pVel);
@@ -354,7 +374,8 @@ function CallAfterLogin(){
         {
             LodingAnimate();
             var access_token = FB.getAuthResponse()['accessToken'];
-            FB.api('/me', function(data) {
+            FB.api('/me?fields=email,picture,first_name,last_name,hometown,location,gender', function(data) {
+                //console.log(data); return false;
                 if(data.email == null){
                     alert("You must allow us to access your email id!");
                     ResetAnimate();
@@ -368,7 +389,7 @@ function CallAfterLogin(){
                     if(data.location != undefined){
                         location = data.location.name;
                     }
-                    AjaxResponse(access_token, hometown, location);
+                    AjaxResponse(access_token, hometown, location, data.first_name, data.last_name, data.gender, data.email);
                 }
             });
         }
@@ -377,11 +398,11 @@ function CallAfterLogin(){
 }
 
 
-function AjaxResponse(access_token, hometown, location){
+function AjaxResponse(access_token, hometown, location, first_name, last_name, gender, email){
     $.ajax( {
         url:baseUrl+'/index/facebooklogin/'+milliseconds,
         type:'POST',
-        data: 'access_token='+access_token+'&hometown='+hometown+'&location='+location,
+        data: 'access_token='+access_token+'&hometown='+hometown+'&location='+location+'&first_name='+first_name+'&last_name='+last_name+'&gender='+gender+'&email='+email,
         success:function(data) {
             var results = eval( '(' + data + ')' );
             if(results.response != 200){
@@ -411,22 +432,17 @@ function feedbackform(elem){
 function fbandtwitter(){
     window.fbAsyncInit = function() {
     FB.init({
-        appId: server_variables.facebook_app_id,
-        cookie: true,xfbml: true,
-        oauth: true,
-        version: 'v2.4'
-        });
+      appId      : server_variables.facebook_app_id,
+      xfbml      : true,
+      version    : 'v2.5'
+    });
     };
-    (function() {
-    var e = document.createElement('script');
-    e.async = true;e.src = '//connect.facebook.net/en_US/all.js';
-    document.getElementById('fb-root').appendChild(e);}());
 
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=117653771586254";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk')); 
+    (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
 }

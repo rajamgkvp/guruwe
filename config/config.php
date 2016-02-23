@@ -18,7 +18,7 @@ define ('SITE_NAME','GuruTransfer');
 
 //define ('FACEBOOK_APP_ID','1535182570125606');
 define ('FACEBOOK_APP_ID','1535182570125606');
-define ('FBPERMISSIONS','public_profile,email,user_location,user_hometown');
+define ('FBPERMISSIONS','public_profile,email');
 define ('FACEBOOK_SECRET','b1c41c4619d1dc9a7f94e7dd2c69896e');
 
 if($_SERVER['HTTP_HOST']=='localhost'){

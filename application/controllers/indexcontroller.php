@@ -113,33 +113,38 @@ class IndexController extends Controller {
 
 	function facebooklogin(){
 		$this->render = 0;
-		$access_token = $_POST['access_token'];
-    	$hometown = $_POST['hometown'];
-    	$location = $_POST['location'];
+		$facebook_response['access_token'] = $_POST['access_token'];
+    	$facebook_response['hometown'] = $_POST['hometown'];
+    	$facebook_response['location'] = $_POST['location'];
+    	$facebook_response['email'] = $_POST['email'];
+    	$facebook_response['gender'] = $_POST['gender'];
+    	$facebook_response['first_name'] = $_POST['first_name'];
+    	$facebook_response['last_name'] = $_POST['last_name'];
 
-    	$return_url = BASE_PATH.'/facebook/';
-		$facebook = new Facebook(array(
-			'appId' => FACEBOOK_APP_ID,
-			'secret' => FACEBOOK_SECRET,
-		));
+  		// $return_url = BASE_PATH.'/facebook/';
+		// $facebook = new Facebook(array(
+		// 	'appId' => FACEBOOK_APP_ID,
+		// 	'secret' => FACEBOOK_SECRET,
+		// ));
 		
-		$fbuser = $facebook->getUser();
+		// $fbuser = $facebook->getUser();
 		
-		if ($fbuser) {
-			try {
-				$facebook_response = $facebook->api('/me');
-				$uid = $facebook->getUser();
-			}catch (FacebookApiException $e) 
-			{
-				$fbuser = null;
-			}
-		}
+		// if ($fbuser) {
+		// 	try {
+		// 		$facebook_response = $facebook->api('/me');
+		// 		$uid = $facebook->getUser();
+		// 	}catch (FacebookApiException $e) 
+		// 	{
+		// 		$fbuser = null;
+		// 	}
+		// }
+		//  echo "<pre>"; print_r($fbuser); echo "</pre>"; exit;
 		
 		// redirect user to facebook login page if empty data or fresh login requires
-		if (!$fbuser){
-			$loginUrl = $facebook->getLoginUrl(array('redirect_uri'=>$return_url, false));
-			header('Location: '.$loginUrl);
-		}
+		// if (!$fbuser){
+		// 	$loginUrl = $facebook->getLoginUrl(array('redirect_uri'=>$return_url, false));
+		// 	header('Location: '.$loginUrl);
+		// }
 
 		$post = array();
 		$post['email'] = $facebook_response['email'];
@@ -151,6 +156,7 @@ class IndexController extends Controller {
 
 		$target_url = API_TARGET_URL.'getuser';
 		$result = $this->curl($target_url, array('email'=>$facebook_response['email']));
+		//echo "<pre>"; print_r($result); echo "</pre>"; exit;
 		if($result->response == 400){
 			$target_url = API_TARGET_URL.'adduser';
 			$result = $this->curl($target_url, $post);
