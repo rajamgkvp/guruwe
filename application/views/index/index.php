@@ -20,8 +20,10 @@
 </div>
 <?php if(isset($_SESSION['Member']) && !empty($_SESSION['Member'])){
     $total = '3GB';
+    $totalupload = '3G';
 }else{
     $total = '2GB';
+    $totalupload = '2G';
 } ?>
 <div class="gurutransfer">
     <div class="plus-panel">
@@ -31,71 +33,54 @@
     </div>
     <div class="header"></div>
     <div class="transferbody">
-        <form id="uploadform" method="post" enctype="multipart/form-data" action="<?php echo BASE_PATH; ?>/index/upload">
+        <form id="uploadform" method="post" enctype="multipart/form-data" action="<?php echo BASE_PATH; ?>">
             <input type="hidden" value="email-block" id="openedblock" name="openedblock">
             <?php if(isset($_SESSION['Member']) && !empty($_SESSION['Member'])){ ?>
                 <input type="hidden" value="<?php echo $_SESSION['Member']['id']; ?>" name="useremail">
             <?php }else{ ?>
                 <input type="hidden" value="0" name="useremail">
             <?php } ?>
-            <div class="upload-panel email-block">
+            <input type="hidden" value="<?php echo $totalupload; ?>" name="total_upload" id="total_upload">
+            <div class="upload-panel">
                 <h2>Send Up To <?php echo $total ?></h2><div class="clearfix"></div>
                 <div class="add-files-block">
                     <div class="button">
-                        <ul class="files">
-
-                        </ul>
                         <ul class="more">
                             <li>
-                                <div class="upload-wrap-btn-Change">
+                                <div id="uploader_div"></div>
+                                <!--<div class="upload-wrap-btn-Change">
                                     <span class="button_area_new">+ ADD FILES</span>
                                     <input type="file" name="files[]" id="files" value="" class="files">
-                                </div>
+                                </div>-->
                             </li>
                         </ul>
                     </div>
                     <div class="clearfix"></div>
                 </div>
-                <div class="friend-email-block">
-                    <div class="friend-email-scroll">
-                        <input type="text" value="" name="friend_email[]" placeholder="Friend's Email">
-                        <div class="add_more_email">
+
+                <div class="email-block">
+                    <div class="friend-email-block">
+                        <div class="friend-email-scroll">
+                            <input type="text" value="" name="friend_email[]" placeholder="Friend's Email">
+                            <div class="add_more_email"></div>
                         </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="my-email-block">
+                        <input type="text" value="" name="from_email" placeholder="Your Email">
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="message">
+                        <textarea placeholder="Message" name="message"></textarea>
                     </div>
                     <div class="clearfix"></div>
                 </div>
-                <div class="my-email-block">
-                    <input type="text" value="" name="from_email" placeholder="Your Email">
-                    <div class="clearfix"></div>
-                </div>
-                <div class="message">
-                    <textarea placeholder="Message" name="message"></textarea>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            
-            <div class="upload-panel link-block" style="display:none">
-                <h2>Send Up To <?php echo $total ?></h2>
-                <div class="add-files-block">
-                    <div class="button">
-                        <ul class="files">
 
-                        </ul>
-                        <ul class="more">
-                            <li>
-                                <div class="upload-wrap-btn-Change">
-                                    <span class="button_area_new">+ ADD FILES</span>
-                                    <input type="file" name="files[]" id="files" value="" class="files">
-                                </div>
-                            </li>
-                        </ul>
+                <div class="link-block" style="display:none;">
+                    <div class="message-box">
+                        We will give you a download link once your transfer is complete. The file(s) will be kept for 7 days.
                     </div>
-                    <div class="clearfix"></div>
                 </div>
-                <div class="message-box">
-                    We will give you a download link once your transfer is complete. The file(s) will be kept for 7 days.
-                </div>
-                <div class="clearfix"></div>
             </div>
 
             <div class="share-and-transfer">
@@ -157,3 +142,9 @@
   </div>
   <div class="overlay"></div>
 </div>
+
+<style type="text/css">
+    .addthis-smartlayers{
+        display: none !important;
+    }
+</style>

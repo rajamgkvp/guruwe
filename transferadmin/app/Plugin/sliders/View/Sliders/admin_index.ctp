@@ -107,7 +107,7 @@ if (($this->Session->check('Message.flash'))) {
 						
 						<th class="ui-state-default" rowspan="1" colspan="1">
 							<div class="DataTables_sort_wrapper">
-								<?php echo $this->Paginator->sort('image_link', 'Image Link'); ?>
+								<?php echo $this->Paginator->sort('order', 'Order'); ?>
 								<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span>
 							</div>
 						</th>
@@ -146,7 +146,7 @@ if (($this->Session->check('Message.flash'))) {
 							echo $this->Html->link($sliders[$rowcount]['Slider']['saved_image_name'], '/admin/sliders/sliders/edit/'.$sliders[$rowcount]['Slider']['id'].'/', array('title'=>'Click here to edit sliders details'));
 					?></td>
 					<td align="left">
-						<a href="<?php echo $sliders[$rowcount]['Slider']['image_link']; ?>" target="_blank"><?php echo $sliders[$rowcount]['Slider']['image_link']; ?></a>
+						<?php echo $sliders[$rowcount]['Slider']['order']; ?>
 					</td>
 					<td align="center"><?php echo date(DATE_FORMAT, strtotime($sliders[$rowcount]['Slider']['created'])); ?></td>
 					<td align="center">

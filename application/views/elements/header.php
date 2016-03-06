@@ -22,7 +22,7 @@
     
     <meta property="og:description" content="GuruTransfer is a free service to send big or small files from A to B">
     <meta property="og:title" content="GuruTransfer">
-    <meta property="og:image" content="https://www.gurutransfer.com/wt-facebook.png">
+    <meta property="og:image" content="https://www.gurutransfer.com/gt-facebook.png">
     <meta property="og:type" content="website" />
     <meta property="fb:app_id" content="1535182570125606" />
     
@@ -44,6 +44,7 @@
     	echo $html->includeCss('inc/bootstrap/css/bootstrap.min');
         echo $html->includeCss('inc/font-awesome/css/font-awesome.min');
     	echo $html->includeCss('css/styles');
+        echo $html->includeCss('css/classicTheme/style');
         echo $html->includeCss('css/style-responsive');
         echo $html->includeCss('css/perfect-scrollbar');
         echo $html->includeCss('css/circle');

@@ -49,7 +49,7 @@ class IndexController extends Controller {
 	                    continue;
 	            }
             	// now we can move uploaded files
-                    
+                //echo $_FILES["files"]["tmp_name"][$i]; echo $dir.$name;
                 if( move_uploaded_file($_FILES["files"]["tmp_name"][$i], $dir . $name) ){
                    $files_arr["uploads"][$i] = $dir.$name;
                    $post["uploads[$i]"] = '@'.$dir.$name;
@@ -71,10 +71,11 @@ class IndexController extends Controller {
             //echo "<pre>"; print_r($post);                 
             //$query = http_build_query($post, '', '&');
             
-            $result = $this->curl($target_url, $post);
+            $result = array();
+            //$result = $this->curl($target_url, $post);
 
             foreach($files_arr['uploads'] as $files_ar){
-                    unlink($files_ar);
+                    //unlink($files_ar);
             }
             $result = (array)$result;
 			//echo "<pre>"; print_r($result); echo "</pre>";exit;
@@ -84,6 +85,47 @@ class IndexController extends Controller {
         exit;
     }
 
+    function upload_files(){
+    	$this->render = 0;
+    	$target_url = API_TARGET_URL.'filemuploade';
+    	$dir = UPLOADS_PATH.'/';
+    	$post = array();
+
+    	if(isset($_POST['files'])) {
+			$json = $_POST['files'];
+			$files = json_decode($json, true);
+			//echo "<pre>"; print_r($files); echo "</pre>";
+
+			$formdata = $_POST['formdata'];
+			$query_data = json_decode($formdata, true);
+			parse_str($query_data, $data);
+			//echo "<pre>"; print_r($data); echo "</pre>";
+
+			foreach ($files as $key => $files_name) {
+				$files_arr["uploads"][$key] = $dir.$files_name;
+            	$post["uploads[$key]"] = '@'.$dir.$files_name;
+			}
+
+			if($data['openedblock'] != 'link-block'){
+            	$post['from'] = $data['from_email'];
+	            $post['to'] = implode(',',$data['friend_email']);
+	            $post['message'] = $data['message'];
+            }
+            
+            $post['userId'] = $data['useremail'];
+			$result = array();
+			//$result = $this->curl($target_url, $post);
+
+            foreach($files_arr['uploads'] as $files_ar){
+                //unlink($files_ar);
+            }
+
+            $result = (array)$result;
+			//echo "<pre>"; print_r($result); echo "</pre>";exit;
+            echo json_encode($result);
+		}
+		exit;
+    }
 
 	function getcontent(){
 		$explode =  explode('/', $_SERVER['REQUEST_URI']);

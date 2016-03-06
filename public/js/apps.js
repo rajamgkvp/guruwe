@@ -1,9 +1,12 @@
 var milliseconds = new Date().getTime();
+var setinterval;
+
 $(window).load(function()
 {
     centerContent();
-    $('.files').perfectScrollbar();
+    //$('.files').perfectScrollbar();
     $('.friend-email-scroll').perfectScrollbar();
+    //$(".ax-file-list").perfectScrollbar();
 
     $( ".add-files-block" ).on( "change", ".files", function() {
         $('.button .files').html('');
@@ -22,6 +25,141 @@ $(window).load(function()
     });
 
     $('.status').height($('.transferbody').height()-10);
+
+    
+    var status = $('.status');
+    var percent = $('.loading');
+    var bar = $('.c100');
+    var html ='';
+    var setval = 0;
+    var opened = $('#openedblock').val();
+    var total = 0;
+
+    $('#uploader_div').ajaxupload({
+        url:baseUrl+'/upload.php',
+        remotePath:'uploaded/',
+        maxFileSize:$('#total_upload').val(),
+        form:'#uploadform',
+        beforeUploadAll: function(result) {
+            opened = $('#openedblock').val();
+            var topo = ($('.button .more > li:last-child').offset().top)/2;
+            $('.nofiles').fadeOut();
+            if(opened == 'email-block'){
+                setval = 0;
+                if($('.friend-email-block > .friend-email-scroll > input').val() == ''){
+                    setval = 1;
+                    $('#info_panel h3').html('Doh!');
+                    $('#info_panel p').html('Looks like you forgot to enter any email addresses to send to.');
+                    $('#info_panel').css('top', topo+'px').fadeIn();
+                    removetips();
+                }else if($('.my-email-block > input').val() == ''){
+                    setval = 1;
+                    $('#info_panel h3').html('Doh!');
+                    $('#info_panel p').html('Looks like you forgot to enter Your email addresses for.');
+                    $('#info_panel').css('top', topo+'px').fadeIn();
+                    removetips();
+                }else if(isEmailAddress($('.my-email-block > input').val())==false){
+                    setval = 1;
+                    $('#info_panel h3').html('Doh!');
+                    $('#info_panel p').html('Please enter valid email address.');
+                    $('#info_panel').css('top', topo+'px').fadeIn();
+                    removetips();
+                }else{
+                    setval = 0;   
+                }
+
+                if(setval == 0){
+                    $(".friend-email-block > .friend-email-scroll > input").each(function(){
+                        if(isEmailAddress($(this).val())==false){
+                            setval = 1;
+                            $('#info_panel h3').html('Doh!');
+                            $('#info_panel p').html('Please enter valid email address to send to.');
+                            $('#info_panel').css('top', topo+'px').fadeIn();
+                            removetips();    
+                            return false;
+                        }
+                    });    
+                }
+            }else{
+                if($('.ax-file-list > li').length == 0){
+                    setval = 1;
+                    $('#error_panel').css('top', topo+'px').fadeIn();
+                    removetips();
+                }else{
+                    setval = 0;   
+                }
+            }
+            if(setval == 1){
+                return false;    
+            }else{
+                $('.status').height($('.transferbody').height()-10);
+                status.fadeIn();
+                bar.addClass('p0');
+                percent.html('0%');
+                $(".ax-file-size").each(function( index ) {
+                    str = $( this ).text().replace ( /[^\d.]/g, '' );
+                    total = total + parseInt(str, 10);
+                });
+                setinterval && clearInterval(setinterval);
+                setinterval = setInterval(function(){ progressbar(total) }, 1000);
+            }
+        },
+        finish:function(files, filesObj){
+            $.ajax({
+                type: 'POST',
+                url: baseUrl+'/index/upload_files',
+                dataType: 'json',
+                data: {'files': JSON.stringify(files), 'formdata': JSON.stringify($("#uploadform").serialize())},
+                success: function(results) {
+                    clearInterval(setinterval);
+                    uploadfinish(results);
+                }
+            });
+        },
+        success:function(file){
+            console.log('File ' + file + ' uploaded correctly');
+        }
+    });
+
+
+    $('#uploadform').submit(function(){
+        var topo = ($('.button .more > li:last-child').offset().top)/2;
+        if($('.ax-file-list > li').length == 0){
+            $('#error_panel').css('top', topo+'px').fadeIn();
+            removetips();
+        }
+        return false;
+    });
+
+    // $('#uploader_div').ajaxupload({
+    //     url:baseUrl+'/upload.php',
+    //     //editFilename:true,
+    //     form:'#uploadform',
+    //     remotePath:'uploaded/',
+    //     maxFileSize:'3G',
+    //     finish:function(files, filesObj){
+    //         alert('All files has been uploaded:' + filesObj);
+    //     },
+    //     success:function(file){
+    //         console.log('File ' + file + ' uploaded correctly');
+    //     },
+    //     beforeUploadAll: function(result) {
+    //         console.log(result);
+    //     },
+    //     beforeUpload: function(filename, fileobj){
+    //         if(filename.length>20){
+    //             return false; //file will not be uploaded
+    //         }else{
+    //             return true; //file will be uploaded
+    //         }
+    //     },
+    //     error:function(txt, obj){
+    //         alert('An error occour '+ txt);
+    //     }
+    // });
+
+    setTimeout(function(){$('.ax-file-list').perfectScrollbar();}, 3000);
+
 });
 
 $(window).resize(function(){
@@ -33,14 +171,13 @@ $(document).ready(function() {
     var length = $('.bigImages li').length;
     
 
-    $( ".friend-email-block input" )
-    .focus(function(){
+    $( ".friend-email-scroll > input" ).focus(function(){
         if($(".friend-email-block .btn-warning").length == 0){
             $(".friend-email-block").append('<div class="btn btn-warning">+ Add more friends</div>');
         }
     }).focusout(function() {
-        if($(this).val() ==''){
-            $(".friend-email-block").remove('.btn-warning');
+        if($( ".friend-email-scroll > input" ).val() ==''){
+            $(".friend-email-block").remove('.btn.btn-warning');
         }
     });
 
@@ -51,7 +188,7 @@ $(document).ready(function() {
     });
 
     $(document).on( "click", ".friend-email-block .btn-warning", function() {
-        if($('.add_more_email > input:last-child').val() != '' && $('.friend-email-block > input').val() != ''){
+        if($('.add_more_email > input:last-child').val() != '' && $('.friend-email-scroll > input').val() != ''){
             $( ".friend-email-block .add_more_email").append('<input type="text" value="" name="friend_email[]" placeholder="Friend\'s Email">');
             $(".friend-email-block .friend-email-scroll").scrollTop( $( ".friend-email-block .friend-email-scroll" ).prop( "scrollHeight" ) );
             $(".friend-email-block .friend-email-scroll").perfectScrollbar('update');
@@ -141,7 +278,70 @@ $(document).ready(function() {
     doSlideshow(length);
 });
 
+function uploadfinish(results){
+    var bar = $('.c100');
+    bar[0].className = bar[0].className.replace(/\bp.*?\b/g, '');
+    bar.addClass('p100');
+    $('.button .files').html('');
+    $('#uploadform')[0].reset();
+    $('.status').height($('.transferbody').height()-10);
+    $('.c100 > span.loading').hide();
+    $('.c100 > span.tickmark').show();
+    $('.transfer-done .transfer').html('Transfer Complete');
+    if($('#openedblock').val() == 'link-block'){
+        $('.transfer-done .small').html('<div class="small-text">Copy your Download Link</div>');
+        for(var i in results.data.file){
+            $('.transfer-done .small').append('<input type="text" value="'+results.data.file[i]+'">');
+        }
+        $('.status').height($('.transfer-done').height()+10);
+    }else{
+        $('.transfer-done .small').html('You did it! Expect a confirmation email in your inbox shortly.');
+    }
+}
 
+
+function progressbar(total){
+    var bar = $('.c100');
+    var percent = $('.loading');
+    var percentComplete = 0;
+    var i = 0;
+    $(".ax-progress-info").each(function( index ) {
+        var str = $( this ).text().replace ( /[^\d.]/g, '' );
+        percentComplete = percentComplete + parseInt(str, 10);
+        i++;
+    });
+    percentComplete = percentComplete/i;
+
+    //console.log("percentage complete: "+percentComplete);
+    //return false;
+
+    //uploadProgress: function(event, position, total, percentComplete) {
+    $('.button .files').html('');
+    $('.status').height($('.transferbody').height()-10);
+    
+
+    if(percentComplete <= 25){
+        var pVel = percentComplete*4 + '%';
+        bar[0].className = bar[0].className.replace(/\bp.*?\b/g, '');
+        bar.addClass('p'+(percentComplete*4));
+        percent.html(pVel);
+        complete = 0;
+    }else{
+        bar[0].className = bar[0].className.replace(/\bp.*?\b/g, '');
+        bar.addClass('p0');
+        bar.removeClass('p100');
+        $('.transfer-done .transfer').html('uplaoding...');
+        percentComplete = Math.round((percentComplete - 25)*1.33);
+        
+        var pVel = (percentComplete - 1) + '%';
+        bar.removeClass('p'+percentComplete-1);
+        bar.addClass('p'+percentComplete);
+        percent.html(pVel);
+        complete = (total*percentComplete)/100;
+    }
+    html = formatSizeUnits(complete)+' of '+formatSizeUnits(total);
+    $('.transfer-done .small').html(html);
+}
 
 function isEmailAddress(str) {
    var pattern =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -189,14 +389,9 @@ function centerContent()
 
 $(function() {
     /* variables */
-    var status = $('.status');
-    var percent = $('.loading');
-    var bar = $('.c100');
-    var html ='';
-    var setval = 0;
-    var opened = $('#openedblock').val();
+    
     /* submit form with ajax request using jQuery.form plugin */
-    $('#uploadform').ajaxForm({
+    $('#uploadform1').ajaxForm({
 
         /* set data type json */
         dataType:'posts',
@@ -205,9 +400,9 @@ $(function() {
 
         /* reset before submitting */
         beforeSubmit: function () {
+            opened = $('#openedblock').val();
             var topo = ($('.button .more > li:last-child').offset().top)/2;
             $('.nofiles').fadeOut();
-
             if(opened == 'email-block'){
                 setval = 0;
                 if($('.files > li').length == 0){
@@ -419,10 +614,10 @@ function feedbackform(elem){
         type:'POST',
         data: $(elem).serialize(),
         success:function(data) {
-            var lightboxdata = '<div class="msg-box">Thanks for submitting your feedback, we will contact you over email if any clerification required.<div class="clearfix"></div><div class="facebook-box"><i class="fa fa-facebook"></i></div><div class="clearfix"></div>Why not share this news with your friends and let them know you care!</div>';
+            var lightboxdata = '<div class="msg-box">Thanks!! We are happy to hear from you.We will contact you over email in case of questions, if any. You can also share this news with your friends and tell them you care. Happy transferring!!<div class="clearfix"></div><div class="facebook-box"><a href="http://www.facebook.com/sharer/sharer.php?u=http//www.gurutransfer.com"><i class="fa fa-facebook"></i></a></div><div class="clearfix"></div>Why not share this news with your friends and let them know you care!</div>';
             $('.feedback-confirm').html('');
 
-            var html = '<div class="lightbox"><div class="lightbox-content feedback-pro no-padding"><div class="pro-container"><div class="header">Guru Transfer pro<div class="light-box-close"><i class="fa fa-close"></i></div></div><div class="loadcontent">'+lightboxdata+'</div><div class="footer"></div></div></div><div class="lightbox-overlay"></div></div>';
+            var html = '<div class="lightbox"><div class="lightbox-content feedback-pro no-padding"><div class="pro-container"><div class="header">Guru Transfer pro</div><div class="loadcontent">'+lightboxdata+'</div><div class="footer"></div></div></div><div class="lightbox-feedback"></div></div>';
             $('body').append(html);
         }
     });

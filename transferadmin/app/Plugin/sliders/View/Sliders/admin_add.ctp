@@ -31,6 +31,11 @@
 				<?php echo $this->Form->text('Slider.image_link', array('class'=>'validate[required]')); ?>
 				<?php echo $this->Form->error('Slider.image_link', null, array('class' => 'error')); ?>
 			</div><div class="fix"></div></div>
+
+			<div class="rowElem noborder"><label style="width:auto;">Order:</label><div class="formRight" style="width:590px;">
+				<?php echo $this->Form->text('Slider.order', array('class'=>'validate[required]')); ?>
+				<?php echo $this->Form->error('Slider.order', null, array('class' => 'error')); ?>
+			</div><div class="fix"></div></div>
 			
 			<div class="rowElem noborder"><label style="width:auto;">Image:</label><div class="formRight" style="width:590px;">
 				<?php echo $this->Form->file('Slider.image_name', array('maxlength'=>128,'class'=>'validate[required]')); ?>

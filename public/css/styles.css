@@ -90,8 +90,6 @@ body{
     margin: 0;
 }
 .add-files-block .button ul > li {
-    background: #f7aa3f none repeat scroll 0 0;
-    border-radius: 18px;
     float: left;
     font: 11px Gotham-Bold;
 }
@@ -479,7 +477,7 @@ span.button_area_new{
     max-width: 100%;
 }
 
-.lightbox-overlay {
+.lightbox-overlay, .lightbox-feedback {
     background: #000 none repeat scroll 0 0;
     height: 100%;
     opacity: 0.8;
@@ -566,4 +564,14 @@ span.button_area_new{
     padding: 0;
     text-decoration: none;
     transition: all 0.25s linear 0s;
+}
+.facebook-box > a{
+    color: #7e7e7e;
+}
+.facebook-box:hover {
+    background: #3b5998 none repeat scroll 0 0;
+    border: 1px solid #3b5998;
+}
+.facebook-box:hover > a{
+    color: #fff;
 }

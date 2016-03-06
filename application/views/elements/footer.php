@@ -49,6 +49,7 @@
 		echo $html->includeJs('js/bootstrap.min');
 		echo $html->includeJs('js/jquery.form.min');
 		echo $html->includeJs('js/perfect-scrollbar.jquery');
+		echo $html->includeJs('js/ajaxupload-min');
 		echo $html->includeJs('js/apps');
 		echo $html->includeJs('js/advertising');
 	?>
