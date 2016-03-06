@@ -114,10 +114,10 @@ class IndexController extends Controller {
             
             $post['userId'] = $data['useremail'];
 			$result = array();
-			//$result = $this->curl($target_url, $post);
+			$result = $this->curl($target_url, $post);
 
             foreach($files_arr['uploads'] as $files_ar){
-                //unlink($files_ar);
+                unlink($files_ar);
             }
 
             $result = (array)$result;
