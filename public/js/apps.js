@@ -290,9 +290,7 @@ function uploadfinish(results){
     $('.transfer-done .transfer').html('Transfer Complete');
     if($('#openedblock').val() == 'link-block'){
         $('.transfer-done .small').html('<div class="small-text">Copy your Download Link</div>');
-        for(var i in results.data.file){
-            $('.transfer-done .small').append('<input type="text" value="'+results.data.file[i]+'">');
-        }
+        $('.transfer-done .small').append('<input type="text" value="'+results.data.file+'">');
         $('.status').height($('.transfer-done').height()+10);
     }else{
         $('.transfer-done .small').html('You did it! Expect a confirmation email in your inbox shortly.');
