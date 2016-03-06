@@ -7,6 +7,7 @@ class Slider extends Model {
 
 	function getSliders(){
 		$this->where('status', 1);
+		$this->orderBy('order','ASC');
 		$sliders = $this->search();
 		return $sliders;
 	}
