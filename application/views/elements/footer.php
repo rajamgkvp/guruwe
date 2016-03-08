@@ -9,7 +9,7 @@
 					<h4>&copy; 2016 GuruTransfer.All rights reserved.</h4>
 					<li><a href="<?php echo BASE_PATH;?>/policy">Policies</a></li>
 					<li><a href="<?php echo BASE_PATH;?>/terms">Terms</a></li>
-					
+					<li><img src="<?php echo BASE_PATH;?>/img/comodo_secure_white.png"></li>
 				</li>
 			</ul>
 		</div>
