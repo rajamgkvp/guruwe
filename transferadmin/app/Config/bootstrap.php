@@ -125,14 +125,14 @@ if($_SERVER['HTTP_HOST'] == "localhost"){
 define('ADMIN_SITE_URL', SITE_URL.'admin/');
 
 define('LOCALONLY', 1);
-define('WEBSITE_NAME', 'Education Admin');
+define('WEBSITE_NAME', 'GuruTransfer');
 
 define('WEBSITE_DOMAIN', 'transferadmin.com');
 define("COPYRIGHT_TEXT", 'Copyright &copy; '.date('Y').' '.WEBSITE_NAME.'. All rights reserved.');
 
 define("INFO_EMAIL", 'rishabh.trivedi08@gmail.com');
 define("FROM_EMAIL_ADDRESS", 'rishabh.trivedi08@gmail.com');
-define("FROM_EMAIL_NAME", 'Education Comptition site');
+define("FROM_EMAIL_NAME", 'GuruTransfer Admin');
 
 define('FILES_FOLDER', WWW_ROOT.'files'.DS);
 define('FILES_URL', SITE_URL.'files/');
