@@ -220,7 +220,7 @@ class IndexController extends Controller {
         curl_setopt($ch,CURLOPT_TIMEOUT,1000);
         @curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
-        $digest =  "test:123456";
+        $digest =  "gTSeventeenCube:GtSeventeen3123app01";
         curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_DIGEST);
         curl_setopt($ch, CURLOPT_USERPWD, $digest );
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
