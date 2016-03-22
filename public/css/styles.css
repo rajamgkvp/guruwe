@@ -277,7 +277,6 @@ body{
     color: #000;
 }
 .navbar-nav > li > a {
-    border-radius: 33px;
     padding-bottom: 10px;
     padding-top: 9px;
 }
@@ -286,8 +285,6 @@ body{
 }
 .navbar-nav > li {
     background: #fff none repeat scroll 0 0;
-    border-radius: 33px;
-    margin: 0 0 0 15px;
     opacity: 0.8;
 }
 .content.row {
@@ -574,4 +571,48 @@ span.button_area_new{
 }
 .facebook-box:hover > a{
     color: #fff;
+}
+
+
+.navbar-header {
+  float: none;
+}
+.navbar-toggle {
+  display: block;
+}
+.navbar-collapse {
+  border-top: 1px solid transparent;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+}
+.navbar-collapse.collapse {
+  display: none!important;
+}
+.navbar-nav {
+  float: none!important;
+  margin: 7.5px -15px;
+}
+.navbar-nav>li {
+  float: none;
+}
+.navbar-nav>li>a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.navbar-collapse.collapse.in, .navbar-collapse.collapsing {
+    display: block !important;
+    float: right;
+    right: 0;
+    width: 300px;
+    padding: 0;
+}
+.collapse.in .nav.navbar-nav.navbar-right {
+    margin: 0;
+}
+.collapse.in .nav.navbar-nav.navbar-right > li {
+    border-radius: 0;
+    margin: 0;
+}
+.collapsing .nav.navbar-nav.navbar-right {
+    margin: 0;
 }

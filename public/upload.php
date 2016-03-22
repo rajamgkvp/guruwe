@@ -23,8 +23,7 @@ $EMAIL_TO 	= null;
 $EMAIL_FROM = null;
 
 #deny extension by default for security reason
-$DENY_EXT = array('php','php3', 'php4', 'php5', 'phtml', 'exe', 'pl', 'cgi', 'html', 'htm', 'js', 'asp', 'aspx', 'bat', 'sh', 'cmd');
-
+$DENY_EXT = array('php','php3', 'php4', 'php5', 'phtml', 'pl', 'cgi', 'html', 'htm', 'js', 'asp', 'aspx', 'bat', 'sh', 'cmd');
 
 /*
  * function that runs on the end, customize here insert to db, or other action todo on the end of upload

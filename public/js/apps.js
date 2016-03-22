@@ -41,68 +41,68 @@ $(window).load(function()
         maxFileSize:$('#total_upload').val(),
         form:'#uploadform',
         beforeUploadAll: function(result) {
-            opened = $('#openedblock').val();
-            var topo = ($('.button .more > li:last-child').offset().top)/2;
-            $('.nofiles').fadeOut();
-            if(opened == 'email-block'){
-                setval = 0;
-                if($('.friend-email-block > .friend-email-scroll > input').val() == ''){
-                    setval = 1;
-                    $('#info_panel h3').html('Doh!');
-                    $('#info_panel p').html('Looks like you forgot to enter any email addresses to send to.');
-                    $('#info_panel').css('top', topo+'px').fadeIn();
-                    removetips();
-                }else if($('.my-email-block > input').val() == ''){
-                    setval = 1;
-                    $('#info_panel h3').html('Doh!');
-                    $('#info_panel p').html('Looks like you forgot to enter Your email addresses for.');
-                    $('#info_panel').css('top', topo+'px').fadeIn();
-                    removetips();
-                }else if(isEmailAddress($('.my-email-block > input').val())==false){
-                    setval = 1;
-                    $('#info_panel h3').html('Doh!');
-                    $('#info_panel p').html('Please enter valid email address.');
-                    $('#info_panel').css('top', topo+'px').fadeIn();
-                    removetips();
-                }else{
-                    setval = 0;   
-                }
+                opened = $('#openedblock').val();
+                var topo = ($('.button .more > li:last-child').offset().top)/2;
+                $('.nofiles').fadeOut();
+                if(opened == 'email-block'){
+                    setval = 0;
+                    if($('.friend-email-block > .friend-email-scroll > input').val() == ''){
+                        setval = 1;
+                        $('#info_panel h3').html('Doh!');
+                        $('#info_panel p').html('Looks like you forgot to enter any email addresses to send to.');
+                        $('#info_panel').css('top', topo+'px').fadeIn();
+                        removetips();
+                    }else if($('.my-email-block > input').val() == ''){
+                        setval = 1;
+                        $('#info_panel h3').html('Doh!');
+                        $('#info_panel p').html('Looks like you forgot to enter Your email addresses for.');
+                        $('#info_panel').css('top', topo+'px').fadeIn();
+                        removetips();
+                    }else if(isEmailAddress($('.my-email-block > input').val())==false){
+                        setval = 1;
+                        $('#info_panel h3').html('Doh!');
+                        $('#info_panel p').html('Please enter valid email address.');
+                        $('#info_panel').css('top', topo+'px').fadeIn();
+                        removetips();
+                    }else{
+                        setval = 0;   
+                    }
 
-                if(setval == 0){
-                    $(".friend-email-block > .friend-email-scroll > input").each(function(){
-                        if(isEmailAddress($(this).val())==false){
-                            setval = 1;
-                            $('#info_panel h3').html('Doh!');
-                            $('#info_panel p').html('Please enter valid email address to send to.');
-                            $('#info_panel').css('top', topo+'px').fadeIn();
-                            removetips();    
-                            return false;
-                        }
-                    });    
-                }
-            }else{
-                if($('.ax-file-list > li').length == 0){
-                    setval = 1;
-                    $('#error_panel').css('top', topo+'px').fadeIn();
-                    removetips();
+                    if(setval == 0){
+                        $(".friend-email-block > .friend-email-scroll > input").each(function(){
+                            if(isEmailAddress($(this).val())==false){
+                                setval = 1;
+                                $('#info_panel h3').html('Doh!');
+                                $('#info_panel p').html('Please enter valid email address to send to.');
+                                $('#info_panel').css('top', topo+'px').fadeIn();
+                                removetips();    
+                                return false;
+                            }
+                        });    
+                    }
                 }else{
-                    setval = 0;   
+                    if($('.ax-file-list > li').length == 0){
+                        setval = 1;
+                        $('#error_panel').css('top', topo+'px').fadeIn();
+                        removetips();
+                    }else{
+                        setval = 0;   
+                    }
                 }
-            }
-            if(setval == 1){
-                return false;    
-            }else{
-                $('.status').height($('.transferbody').height()-10);
-                status.fadeIn();
-                bar.addClass('p0');
-                percent.html('0%');
-                $(".ax-file-size").each(function( index ) {
-                    str = $( this ).text().replace ( /[^\d.]/g, '' );
-                    total = total + parseInt(str, 10);
-                });
-                setinterval && clearInterval(setinterval);
-                setinterval = setInterval(function(){ progressbar(total) }, 1000);
-            }
+                if(setval == 1){
+                    return false;    
+                }else{
+                    $('.status').height($('.transferbody').height()-10);
+                    status.fadeIn();
+                    bar.addClass('p0');
+                    percent.html('0%');
+                    $(".ax-file-size").each(function( index ) {
+                        str = $( this ).text().replace ( /[^\d.]/g, '' );
+                        total = total + parseInt(str, 10);
+                    });
+                    setinterval && clearInterval(setinterval);
+                    setinterval = setInterval(function(){ progressbar(total) }, 1000);
+                }
         },
         finish:function(files, filesObj){
             $.ajax({
@@ -303,12 +303,25 @@ function progressbar(total){
     var percent = $('.loading');
     var percentComplete = 0;
     var i = 0;
+    var htmlstr = '';
     $(".ax-progress-info").each(function( index ) {
         var str = $( this ).text().replace ( /[^\d.]/g, '' );
+        if(str == ''){
+            htmlstr = $( this ).text();
+        }
         percentComplete = percentComplete + parseInt(str, 10);
         i++;
     });
-    percentComplete = percentComplete/i;
+
+    if(isNaN(percentComplete)){
+        percentComplete = 0;
+        $('.transfer-done .transfer').html('Error');
+        $('.transfer-done .small').html(htmlstr+', Please <a href="'+baseUrl+'">click here</a> to try again');
+        return false;
+    }else{
+        percentComplete = percentComplete/i;
+    }
+    
 
     //console.log("percentage complete: "+percentComplete);
     //return false;
