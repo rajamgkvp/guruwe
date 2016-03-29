@@ -68,6 +68,8 @@ class IndexController extends Controller {
             }
             
             $post['userId'] = $_POST['useremail'];
+            $post['source'] = 'web';
+
             //echo "<pre>"; print_r($post);                 
             //$query = http_build_query($post, '', '&');
             
@@ -113,6 +115,8 @@ class IndexController extends Controller {
             }
             
             $post['userId'] = $data['useremail'];
+            $post['source'] = 'web';
+
 			$result = array();
 			$result = $this->curl($target_url, $post);
 
@@ -192,7 +196,7 @@ class IndexController extends Controller {
 		$post['email'] = $facebook_response['email'];
 		$post['name'] = $facebook_response['first_name'] . ' ' . $facebook_response['last_name'];
 		$post['gender'] = $facebook_response['gender'];
-		$post['dob'] = '1982-08-15';
+		$post['dob'] = '';
 		$post['data'] = serialize($facebook_response);
 		
 
