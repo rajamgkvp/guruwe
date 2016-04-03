@@ -111,6 +111,7 @@
             </div>
         </div>
         <div class="transfer-done"><div class="transfer">Encrypting...</div><div class="small"></div></div>
+        <div class="transfer-again hide"><a class="btn transfer-again" href="<?php echo BASE_PATH; ?>">Transfer again</a></div>
     </div>
 </div>
 

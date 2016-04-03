@@ -168,6 +168,7 @@ $(window).resize(function(){
 
 var imgNum = 1;
 $(document).ready(function() {
+    setTimeout(function(){ $.smartbanner(); }, 500);
     var length = $('.bigImages li').length;
     
 
@@ -288,6 +289,8 @@ function uploadfinish(results){
     $('.c100 > span.loading').hide();
     $('.c100 > span.tickmark').show();
     $('.transfer-done .transfer').html('Transfer Complete');
+    $('.status').height($('.transferbody').height()+4);
+    $('.transfer-again').removeClass('hide');
     if($('#openedblock').val() == 'link-block'){
         $('.transfer-done .small').html('<div class="small-text">Copy your Download Link</div>');
         $('.transfer-done .small').append('<input type="text" value="'+results.data.file+'">');
@@ -398,143 +401,6 @@ function centerContent()
     $('.overlay-data').css("top", ($(window).height()-content.height())/2 - 42);
 }
 
-$(function() {
-    /* variables */
-    
-    /* submit form with ajax request using jQuery.form plugin */
-    $('#uploadform1').ajaxForm({
-
-        /* set data type json */
-        dataType:'posts',
-        processData: false,
-        contentType: false, 
-
-        /* reset before submitting */
-        beforeSubmit: function () {
-            opened = $('#openedblock').val();
-            var topo = ($('.button .more > li:last-child').offset().top)/2;
-            $('.nofiles').fadeOut();
-            if(opened == 'email-block'){
-                setval = 0;
-                if($('.files > li').length == 0){
-                    setval = 1;
-                    $('#error_panel').css('top', topo+'px').fadeIn();
-                    removetips();
-                }else if($('.friend-email-block > .friend-email-scroll > input').val() == ''){
-                    setval = 1;
-                    $('#info_panel h3').html('Doh!');
-                    $('#info_panel p').html('Looks like you forgot to enter any email addresses to send to.');
-                    $('#info_panel').css('top', topo+'px').fadeIn();
-                    removetips();
-                }else if($('.my-email-block > input').val() == ''){
-                    setval = 1;
-                    $('#info_panel h3').html('Doh!');
-                    $('#info_panel p').html('Looks like you forgot to enter Your email addresses for.');
-                    $('#info_panel').css('top', topo+'px').fadeIn();
-                    removetips();
-                }else if(isEmailAddress($('.my-email-block > input').val())==false){
-                    setval = 1;
-                    $('#info_panel h3').html('Doh!');
-                    $('#info_panel p').html('Please enter valid email address.');
-                    $('#info_panel').css('top', topo+'px').fadeIn();
-                    removetips();
-                }else{
-                    setval = 0;   
-                }
-
-                if(setval == 0){
-                    $(".friend-email-block > .friend-email-scroll > input").each(function(){
-                        if(isEmailAddress($(this).val())==false){
-                            setval = 1;
-                            $('#info_panel h3').html('Doh!');
-                            $('#info_panel p').html('Please enter valid email address to send to.');
-                            $('#info_panel').css('top', topo+'px').fadeIn();
-                            removetips();    
-                            return false;
-                        }
-                    });    
-                }
-            }else{
-                if($('.files > li').length == 0){
-                    setval = 1;
-                    $('#error_panel').css('top', topo+'px').fadeIn();
-                    removetips();
-                }else{
-                    setval = 0;   
-                }
-            }
-            if(setval == 1){
-                return false;    
-            }else{
-                return true;
-            }
-            
-        },
-        beforeSend: function() {
-            $('.status').height($('.transferbody').height()-10);
-            status.fadeIn();
-            bar.addClass('p0');
-            percent.html('0%');
-        },
-
-        /* progress bar call back*/
-        uploadProgress: function(event, position, total, percentComplete) {
-            $('.button .files').html('');
-            $('.status').height($('.transferbody').height()-10);
-            
-
-            if(percentComplete <= 25){
-                var pVel = percentComplete*4 + '%';
-                bar[0].className = bar[0].className.replace(/\bp.*?\b/g, '');
-                bar.addClass('p'+(percentComplete*4));
-                percent.html(pVel);
-                complete = 0;
-            }else{
-                bar[0].className = bar[0].className.replace(/\bp.*?\b/g, '');
-                bar.addClass('p0');
-                bar.removeClass('p100');
-                $('.transfer-done .transfer').html('uplaoding...');
-                percentComplete = Math.round((percentComplete - 25)*1.33);
-                
-                var pVel = (percentComplete - 1) + '%';
-                bar.removeClass('p'+percentComplete-1);
-                bar.addClass('p'+percentComplete);
-                percent.html(pVel);
-                complete = (total*percentComplete)/100;
-            }
-            html = formatSizeUnits(complete)+' of '+formatSizeUnits(total);
-            $('.transfer-done .small').html(html);
-        },
-
-        /* complete call back */
-        complete: function(data) {
-            var results = eval( '(' + data.responseText + ')' );
-            $('.button .files').html('');
-            $('#uploadform')[0].reset();
-            $('.status').height($('.transferbody').height()-10);
-            $('.c100 > span.loading').hide();
-            $('.c100 > span.tickmark').show();
-            $('.transfer-done .transfer').html('Transfer Complete');
-            if($('#openedblock').val() == 'link-block'){
-                $('.transfer-done .small').html('<div class="small-text">Copy your Download Link</div>');
-                for(var i in results.data.file){
-                    $('.transfer-done .small').append('<input type="text" value="'+results.data.file[i]+'">');
-                }
-
-                $('.status').height($('.transfer-done').height()+10);
-            }else{
-                $('.transfer-done .small').html('You did it! Expect a confirmation email in your inbox shortly.');
-            }
-            //status.html(data.responseJSON.count + ' Files uploaded!').fadeIn();
-        },
-        failure: function(result){
-            console.log("FAILED");
-            console.log(result);
-        }
-
-      });
-});
-
 
 
 function formatSizeUnits($bytes){
@@ -629,7 +495,7 @@ function feedbackform(elem){
             $('.feedback-confirm').html('');
 
             var html = '<div class="lightbox"><div class="lightbox-content feedback-pro no-padding"><div class="pro-container"><div class="header">Guru Transfer pro</div><div class="loadcontent">'+lightboxdata+'</div><div class="footer"></div></div></div><div class="lightbox-feedback"></div></div>';
-            $('body').append(html);
+            $('.section .container .content.row').html(lightboxdata);
         }
     });
 }

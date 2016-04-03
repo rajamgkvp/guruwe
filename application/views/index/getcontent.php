@@ -11,7 +11,7 @@
 	             				<input type="text" value="" placeholder="name" name="name" id="name">
 	             				<input type="text" value="" placeholder="email" name="email" id="email">
 	             			</div>
-	             			<div class="col-sm-6 col-md-6">
+	             			<div class="col-sm-6 col-md-6 no-padding">
 	             				<textarea placeholder="Your feedback/idea" name="feedback" id="feedback"></textarea>
 	             			</div>
 	             			<div class="col-sm-3 col-md-3">

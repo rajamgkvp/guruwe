@@ -76,7 +76,9 @@ TABLET < 767px
 @media (max-width: 767px) {
 	.navbar-default .navbar-collapse, .navbar-default .navbar-form {
 	    background: #fff none repeat scroll 0 0;
-	    margin-top: 0px;
+	    margin: 0px;
+	    position: absolute;
+    	width: 92%;
 	}
 	.navbar-fixed-top, .navbar-fixed-bottom{
 		z-index: 1000;
