@@ -17,7 +17,7 @@
     
     <meta property="og:description" content="GuruTransfer is a free service to send big or small files from A to B">
     <meta property="og:title" content="GuruTransfer">
-    <meta property="og:image" content="https://www.gurutransfer.com/favicon.png">
+    <meta property="og:image" content="https://www.gurutransfer.com/img/fb-image.png">
     <meta property="og:type" content="website" />
     <meta property="fb:app_id" content="1535182570125606" />
     
