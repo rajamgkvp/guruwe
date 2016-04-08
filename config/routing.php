@@ -16,6 +16,8 @@ $routing['index/getcontent5'] = array('about-us', 'redirect');
 $routing['index/getcontent6'] = array('advertise', 'redirect');
 $routing['index/getcontent7'] = array('how-it-works', 'redirect');
 
+$routing['index/logout'] = array('logout', 'redirect');
+
 //$routing['index/getcontent'] = array('blog', 'redirect');
 
 $routing['products/view'] = array('product', 'redirect');
