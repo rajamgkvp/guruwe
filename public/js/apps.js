@@ -494,7 +494,7 @@ function feedbackform(elem){
         type:'POST',
         data: $(elem).serialize(),
         success:function(data) {
-            var lightboxdata = '<div class="msg-box">Thanks!! We are happy to hear from you.We will contact you over email in case of questions, if any. You can also share this news with your friends and tell them you care. Happy transferring!!<div class="clearfix"></div><a href="http://www.facebook.com/sharer/sharer.php?u=https://www.gurutransfer.com"><div class="facebook-box"><i class="fa fa-facebook"></i> Share on Facebook</div></a><div class="clearfix"></div><div class="center">Why not share this news with your friends and let them know you care!</div></div>';
+            var lightboxdata = '<div class="msg-box">Thanks!! We are happy to hear from you.We will contact you over email in case of questions, if any. You can also share this news with your friends and tell them you care. Happy transferring!!<div class="clearfix"></div><a href="javascript: void(0)" onClick="window.open(\'http://www.facebook.com/sharer/sharer.php?u=https://www.gurutransfer.com\',\'sharer\',\'toolbar=0,status=0,width=580,height=325\');"><div class="facebook-box"><i class="fa fa-facebook"></i> Share on Facebook</div></a><div class="clearfix"></div><div class="center">Why not share this news with your friends and let them know you care!</div></div>';
             $('.feedback-confirm').html('');
 
             var html = '<div class="lightbox"><div class="lightbox-content feedback-pro no-padding"><div class="pro-container"><div class="header">Guru Transfer pro</div><div class="loadcontent">'+lightboxdata+'</div><div class="footer"></div></div></div><div class="lightbox-feedback"></div></div>';
