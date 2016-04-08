@@ -27,9 +27,13 @@
 						<a href="<?php echo BASE_PATH;?>/blog" class="dropdown-toggle">Blog</a>
 					</li>
 
-					<?php if(isset($_SESSION['Member']) && !empty($_SESSION['Member'])){ ?>
+					<?php if(isset($_SESSION['Member']) && !empty($_SESSION['Member'])){
+							$parts = explode(" ", $_SESSION['Member']['user_name']);
+							$lastname = array_pop($parts);
+							$firstname = implode(" ", $parts);
+					?>
 						<li class="dropdown">
-				          <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome <?php echo $_SESSION['Member']['first_name'] ?> <span class="caret"></span></a>
+				          <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome <?php echo $firstname; ?> <span class="caret"></span></a>
 				          <ul class="dropdown-menu">
 				            <li><a href="<?php echo BASE_PATH;?>/logout">LogOut</a></li>
 				          </ul>
