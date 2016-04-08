@@ -26,9 +26,9 @@
 		<div class="header-wrap clearfix">
 			<div class="site-branding">
             <?php if ( is_front_page() || is_home() ) : ?>
-   				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo150X150.png" style="width: 58px;"></a></h1>
+   				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '../' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo150X150.png" style="width: 58px;"></a></h1>
             <?php else : ?>
-               <h3 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo150X150.png" style="width: 58px;"></a></h3>
+               <h3 class="site-title"><a href="<?php echo esc_url( home_url( '../' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo150X150.png" style="width: 58px;"></a></h3>
             <?php endif; ?>
             <?php
             $description = get_bloginfo( 'description', 'display' );

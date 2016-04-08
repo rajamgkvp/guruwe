@@ -83,6 +83,12 @@ TABLET < 767px
 	.navbar-fixed-top, .navbar-fixed-bottom{
 		z-index: 1000;
 	}
+	.msg-box {
+	    padding: 0;
+	}
+	.facebook-box {
+		left: 20%;
+	}
 }
 
 

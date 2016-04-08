@@ -234,4 +234,11 @@ class IndexController extends Controller {
         curl_close ($ch);
         return json_decode($result);
 	}
+
+	function logout(){
+		$this->render = 0;
+		session_start();
+		unset($_SESSION['Member']);
+		header('Location: /');
+	}
 }

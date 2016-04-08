@@ -456,15 +456,26 @@ span.button_area_new{
     color: #7e7e7e;
     padding: 23px;
 }
+.msg-box {
+    line-height: 39px;
+    padding: 0 286px;
+    text-align: center;
+}
 .facebook-box {
     border: 1px solid #7e7e7e;
-    border-radius: 50%;
+    border-radius: 5px;
+    color: #333333;
     float: left;
-    left: 44%;
+    left: 35%;
+    margin-bottom: 10px;
     margin-top: 25px;
     padding: 7px 14px;
     position: relative;
-    margin-bottom: 10px;
+}
+
+
+.facebook-box:hover {
+    color: #fff;
 }
 
 .lightbox .light-box-close {
@@ -635,3 +646,23 @@ span.button_area_new{
 #smartbanner.android .sb-button:active span, #smartbanner.android .sb-button:hover span { background:#2AC7E1; }
 
 #smartbanner.windows .sb-icon { border-radius: 0px; }
+
+.coockie-accept {
+    background: #ca800a none repeat scroll 0 0;
+    bottom: 0;
+    padding: 7px;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    color: #fff;
+}
+.make-left {
+    float: left;
+}
+.make-right {
+    float: right;
+    cursor: pointer;
+}
+.center {
+    text-align: center;
+}

@@ -28,9 +28,12 @@
 					</li>
 
 					<?php if(isset($_SESSION['Member']) && !empty($_SESSION['Member'])){ ?>
-						<li>
-							<a href="javascript:void(0)" class="dropdown-toggle">Welcome <?php echo $_SESSION['Member']['user_name'] ?></a>
-						</li>
+						<li class="dropdown">
+				          <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome <?php echo $_SESSION['Member']['first_name'] ?> <span class="caret"></span></a>
+				          <ul class="dropdown-menu">
+				            <li><a href="<?php echo BASE_PATH;?>/logout">LogOut</a></li>
+				          </ul>
+				        </li>
 					<?php }else{ ?>
 						<li>
 							<a href="javascript:void(0)" class="dropdown-toggle connect-with-facebook">Connect with <i class="fa fa-facebook"></i></a>

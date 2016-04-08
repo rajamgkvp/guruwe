@@ -1,3 +1,6 @@
+<?php if(!isset($_COOKIE['seen_banner'])) { ?>
+    <div class="coockie-accept"><div class="make-left">We use cookie files to improve site functionality and personalisation. By continuing to use GuruTransfer, you accept our cookie and privacy policy.</div><div class="make-right"><i class="fa fa-times"></i></div></div>
+<?php } ?>
 <div id="fb-root"></div>
 
 <?php if($slug != '/'){ ?>
@@ -52,14 +55,14 @@
 	<!-- Scripts -->
 	<!-- jQuery -->
 	<?php
-		echo $html->includeJs('js/output.min');
+		//echo $html->includeJs('js/output.min');
 
-		//echo $html->includeJs('js/jquery-1.10.2.min');
-		//echo $html->includeJs('js/bootstrap.min');
-		//echo $html->includeJs('js/perfect-scrollbar.jquery');
-		//echo $html->includeJs('js/ajaxupload-min');
-		//echo $html->includeJs('js/jquery.smartbanner');
-		//echo $html->includeJs('js/apps');
+		echo $html->includeJs('js/jquery-1.10.2.min');
+		echo $html->includeJs('js/bootstrap.min');
+		echo $html->includeJs('js/perfect-scrollbar.jquery');
+		echo $html->includeJs('js/ajaxupload-min');
+		echo $html->includeJs('js/jquery.smartbanner');
+		echo $html->includeJs('js/apps');
 	?>
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
 	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56b380b1dd5c3ad2" async="async"></script>

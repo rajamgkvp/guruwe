@@ -24,8 +24,8 @@
     <meta name="description" content="GuruTransfer is a free service to send big or small files from A to B">
     <meta name="author" content="GuruTransfer">
     
-    <link rel="icon" href="favicon.png" type="image/x-icon">
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link rel="icon" href="<?php echo BASE_PATH;?>/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="<?php echo BASE_PATH;?>/favicon.ico" type="image/x-icon">
     <link rel="image_src" href="wt-facebook.png">
     <meta name="application-name" content="GuruTransfer" />
     <meta name="google-play-app" content="app-id=com.seventeencube.webstr.webstrapp">
@@ -74,8 +74,16 @@
         };
     </script>
 
+    <script type="text/javascript">
+        window.smartlook||(function(d) {
+        var o=smartlook=function(){ o.api.push(arguments)},s=d.getElementsByTagName('script')[0];
+        var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
+        c.charset='utf-8';c.src='//rec.getsmartlook.com/bundle.js';s.parentNode.insertBefore(c,s);
+        })(document);
+        smartlook('init', '67b02109c0d630e8108c821bd052fba26c06e4bd');
+    </script>
+
 </head>
 <body>
-	
 <div id="site">
 <?php include('nav.php');?>
