@@ -225,8 +225,8 @@
 .c100 {
   position: relative;
   font-size: 120px;
-  width: 1em;
-  height: 1em;
+  width: 118px;
+  height: 118px;
   border-radius: 50%;
   float: left;
   margin: 0 0.1em 0.1em 0;
@@ -277,14 +277,14 @@
 }
 .c100:after {
   position: absolute;
-  top: 0.08em;
-  left: 0.08em;
+  top: 8px;
+  left: 8px;
   display: block;
   content: " ";
   border-radius: 50%;
   background-color: #fff;
-  width: 0.84em;
-  height: 0.84em;
+  width: 103px;
+  height: 103px;
   -webkit-transition-property: all;
   -moz-transition-property: all;
   -o-transition-property: all;

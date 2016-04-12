@@ -95,7 +95,9 @@ $(window).load(function()
                     $('.status').height($('.transferbody').height()-10);
                     status.fadeIn();
                     bar.addClass('p0');
-                    percent.html('0%');
+                    //percent.html('0%');
+                    var str = '';
+                    var total = 0;
                     $(".ax-file-size").each(function( index ) {
                         str = $( this ).text().replace ( /[^\d.]/g, '' );
                         total = total + parseInt(str, 10);
@@ -326,7 +328,7 @@ function progressbar(total){
         $('.transfer-done .small').html(htmlstr+', Please <a href="'+baseUrl+'">click here</a> to try again');
         return false;
     }else{
-        percentComplete = percentComplete/i;
+        percentComplete = percentComplete/$(".ax-progress-info").length;
     }
     
 
