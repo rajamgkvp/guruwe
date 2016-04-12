@@ -292,6 +292,7 @@ function uploadfinish(results){
     $('.c100 > span.loading').hide();
     $('.c100 > span.tickmark').show();
     $('.transfer-done .transfer').html('Transfer Complete');
+    $('.ax-file-list li').remove();
     $('.status').height($('.transferbody').height()+4);
     $('.transfer-again').removeClass('hide');
     if($('#openedblock').val() == 'link-block'){
@@ -311,7 +312,7 @@ function progressbar(total){
     var i = 0;
     var htmlstr = '';
     $(".ax-progress-info").each(function( index ) {
-        var str = $( this ).text().replace ( /[^\d.]/g, '' );
+        var str = $( this ).text();
         if(str == ''){
             htmlstr = $( this ).text();
         }
@@ -338,7 +339,7 @@ function progressbar(total){
     
 
     if(percentComplete <= 25){
-        var pVel = percentComplete*4 + '%';
+        var pVel = parseInt(percentComplete*4) + '%';
         bar[0].className = bar[0].className.replace(/\bp.*?\b/g, '');
         bar.addClass('p'+(percentComplete*4));
         percent.html(pVel);
@@ -350,7 +351,7 @@ function progressbar(total){
         $('.transfer-done .transfer').html('uplaoding...');
         percentComplete = Math.round((percentComplete - 25)*1.33);
         
-        var pVel = (percentComplete - 1) + '%';
+        var pVel = parseInt(percentComplete - 1) + '%';
         bar.removeClass('p'+percentComplete-1);
         bar.addClass('p'+percentComplete);
         percent.html(pVel);
@@ -400,7 +401,7 @@ function centerContent()
     $('.slider').height($(window).height()+22);
     var content = $('.gurutransfer');
     //content.css("left", (container.width()-content.width())/2);
-    content.css("top", ($(window).height()-content.height())/2);
+    //content.css("top", ($(window).height()-content.height())/2);
     $('.overlay-data').css("top", ($(window).height()-content.height())/2 - 42);
 }
 

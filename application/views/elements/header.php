@@ -75,12 +75,12 @@
     </script>
 
     <script type="text/javascript">
-        window.smartlook||(function(d) {
+        /*window.smartlook||(function(d) {
         var o=smartlook=function(){ o.api.push(arguments)},s=d.getElementsByTagName('script')[0];
         var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
         c.charset='utf-8';c.src='//rec.getsmartlook.com/bundle.js';s.parentNode.insertBefore(c,s);
         })(document);
-        smartlook('init', '67b02109c0d630e8108c821bd052fba26c06e4bd');
+        smartlook('init', '67b02109c0d630e8108c821bd052fba26c06e4bd'); */
     </script>
 
 </head>

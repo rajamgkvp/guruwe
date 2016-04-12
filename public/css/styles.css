@@ -51,6 +51,7 @@ body{
     width: 157px;
     left: 4%;
     z-index: 999;
+    top:25px;
 }
 .navbar-fixed-top, .navbar-fixed-bottom{
     z-index: 9;
@@ -665,4 +666,7 @@ span.button_area_new{
 }
 .center {
     text-align: center;
+}
+.add-files-block {
+    min-height: 46px;
 }

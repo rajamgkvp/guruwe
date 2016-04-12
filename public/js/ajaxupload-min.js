@@ -106,7 +106,7 @@
                 this.nameContainer = c('<div class="ax-file-name">' + this.name + "</div>").appendTo(this.details);
                 this.sizeContainer = c('<div class="ax-file-size">' + b + "</div>").appendTo(this.details);
                 this.progressBar = c('<div class="ax-progress-bar" />').appendTo(this.progressInfo);
-                this.progressPer = c('<div class="ax-progress-info">0%</div>').appendTo(this.progressInfo);
+                this.progressPer = c('<div class="ax-progress-info">0</div>').appendTo(this.progressInfo);
                 this.uploadButton = c('<a title="' + f("Start upload") +
                     '" class="ax-upload ax-button" />').appendTo(this.buttons).append('<span class="ax-upload-icon ax-icon"></span>');
                 this.removeButton = c('<a title="Remove file" class="ax-remove ax-button" />').appendTo(this.buttons).append('<span class="ax-clear-icon ax-icon fa fa-times"></span>');
@@ -206,7 +206,7 @@
                 var a = this.settings.beforeUpload.call(this, this.name, this.file);
                 a ? (this.status = 3, this.checkFileExists(function() {
                     this.progressBar.css("width", "0%");
-                    this.progressPer.html("0%");
+                    this.progressPer.html("0");
                     this.uploadButton.addClass("ax-abort");
                     this.status = 2;
                     this.AU.hasAjaxUpload ? this.uploadAjax() : this.AU.hasFlash ? this.AU.uploading || (this.AU.uploading = !0, this.AU.flashObj.uploadFile(this.pos)) : this.uploadStandard()
@@ -265,7 +265,7 @@
             uploadStandard: function() {
                 this.progressBar.css("width",
                     "50%");
-                this.progressPer.html("50%");
+                this.progressPer.html("50");
                 c("#ax-main-frame").unbind("load").bind("load", this, function(a) {
                     var b = null;
                     this.contentDocument ? b = this.contentDocument : this.contentWindow && (b = this.contentWindow.document);
@@ -321,7 +321,7 @@
                 this.onProgress(100);
                 this.uploadButton.removeClass("ax-abort");
                 this.progressBar.width(0);
-                this.progressPer.html(f("100%"));
+                this.progressPer.html(f("100"));
                 this.settings.success.call(this, a);
                 a = !0;
                 for (b = 0; b < this.AU.files.length; b++) 1 != this.AU.files[b].status && -1 != this.AU.files[b].status && (a = !1);
@@ -331,7 +331,7 @@
             },
             onProgress: function(a) {
                 this.progressBar.css("width", a + "%");
-                this.progressPer.html(a + "%")
+                this.progressPer.html(a)
             }
         }),
         t = function(a, b) {
