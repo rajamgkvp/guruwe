@@ -350,7 +350,7 @@ function progressbar(total){
         bar[0].className = bar[0].className.replace(/\bp.*?\b/g, '');
         bar.addClass('p0');
         bar.removeClass('p100');
-        $('.transfer-done .transfer').html('uplaoding...');
+        $('.transfer-done .transfer').html('uploading...');
         percentComplete = Math.round((percentComplete - 25)*1.33);
         
         var pVel = parseInt(percentComplete - 1) + '%';
