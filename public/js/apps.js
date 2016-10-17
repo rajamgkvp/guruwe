@@ -298,9 +298,9 @@ function uploadfinish(results){
     $('.status').height($('.transferbody').height()+4);
     $('.transfer-again').removeClass('hide');
     if($('#openedblock').val() == 'link-block'){
-        $('.transfer-done .small').html('<div class="small-text">Copy your Download Link</div>');
-        $('.transfer-done .small').append('<input type="text" value="'+results.data.file+'">');
-        $('.status').height($('.transfer-done').height()+10);
+        $('.transfer-done .small').html('<div class="small-text">Copy your Download Link</div><input type="text" value="'+results.data.file+'">');
+        //$('.transfer-done .small').append('<input type="text" value="'+results.data.file+'">');
+       	$('.status').height($('.transfer-done').height()+50);
     }else{
         $('.transfer-done .small').html('You did it! Expect a confirmation email in your inbox shortly.');
     }
