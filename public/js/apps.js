@@ -26,7 +26,7 @@ $(window).load(function()
 
     $('.status').height($('.transferbody').height()-10);
 
-    
+
     var status = $('.status');
     var percent = $('.loading');
     var bar = $('.c100');
@@ -65,7 +65,7 @@ $(window).load(function()
                         $('#info_panel').css('top', topo+'px').fadeIn();
                         removetips();
                     }else{
-                        setval = 0;   
+                        setval = 0;
                     }
 
                     if(setval == 0){
@@ -75,10 +75,10 @@ $(window).load(function()
                                 $('#info_panel h3').html('Doh!');
                                 $('#info_panel p').html('Please enter valid email address to send to.');
                                 $('#info_panel').css('top', topo+'px').fadeIn();
-                                removetips();    
+                                removetips();
                                 return false;
                             }
-                        });    
+                        });
                     }
                 }else{
                     if($('.ax-file-list > li').length == 0){
@@ -86,11 +86,11 @@ $(window).load(function()
                         $('#error_panel').css('top', topo+'px').fadeIn();
                         removetips();
                     }else{
-                        setval = 0;   
+                        setval = 0;
                     }
                 }
                 if(setval == 1){
-                    return false;    
+                    return false;
                 }else{
                     $('.status').height($('.transferbody').height()-10);
                     status.fadeIn();
@@ -173,7 +173,7 @@ $(document).ready(function() {
     setTimeout(function(){ $.smartbanner(); }, 500);
     var length = $('.bigImages li').length;
 
-    document.cookie="seen_banner=true"; 
+    document.cookie="seen_banner=true";
 
     $('.make-right > i').click(function(){$('.coockie-accept').remove();});
 
@@ -199,7 +199,7 @@ $(document).ready(function() {
             $(".friend-email-block .friend-email-scroll").scrollTop( $( ".friend-email-block .friend-email-scroll" ).prop( "scrollHeight" ) );
             $(".friend-email-block .friend-email-scroll").perfectScrollbar('update');
         }
-            
+
     });
 
     $('.info').click(function(){
@@ -222,12 +222,12 @@ $(document).ready(function() {
 
     $('.share').click(function(){
         if($('.share-option').width() == 110){
-            $('.share-option').animate({ width: 0 }, 'fast');    
+            $('.share-option').animate({ width: 0 }, 'fast');
         }else{
             $('.share-option').animate({ width: 110 }, 'fast');
         }
     });
-    
+
     $('#openedblock').val('email-block');
     $('.share-option li').click(function(){
         var clickpanel = $(this).attr('data-for');
@@ -236,13 +236,13 @@ $(document).ready(function() {
             resetforms();
             $('.share-option li').removeClass('active');
             $(this).addClass('active');
-                
+
             $('.'+opened).fadeOut('fast', function() {
                 $('.'+clickpanel).fadeIn('fast', function() {
                     $('#openedblock').val(clickpanel);
                     $('.share-option').width(0);
                 });
-            });    
+            });
         }
     });
 
@@ -275,7 +275,7 @@ $(document).ready(function() {
             alert('Please enter feedback');
         }
         if(count == 0){
-            feedbackform(this);    
+            feedbackform(this);
         }
         return false;
     });
@@ -298,9 +298,8 @@ function uploadfinish(results){
     $('.status').height($('.transferbody').height()+4);
     $('.transfer-again').removeClass('hide');
     if($('#openedblock').val() == 'link-block'){
-        $('.transfer-done .small').html('<div class="small-text">Copy your Download Link</div>');
-        $('.transfer-done .small').append('<input type="text" value="'+results.data.file+'">');
-        $('.status').height($('.transfer-done').height()+10);
+        $('.transfer-done .small').html('<div class="small-text">Copy your Download Link</div><input type="text" value="'+results.data.file+'">');
+        $('.status').height($('.transfer-done').height()+50);
     }else{
         $('.transfer-done .small').html('You did it! Expect a confirmation email in your inbox shortly.');
     }
@@ -330,7 +329,7 @@ function progressbar(total){
     }else{
         percentComplete = percentComplete/$(".ax-progress-info").length;
     }
-    
+
 
     //console.log("percentage complete: "+percentComplete);
     //return false;
@@ -338,34 +337,25 @@ function progressbar(total){
     //uploadProgress: function(event, position, total, percentComplete) {
     $('.button .files').html('');
     $('.status').height($('.transferbody').height()-10);
-    
 
-    if(percentComplete <= 25){
-        var pVel = parseInt(percentComplete*4) + '%';
-        bar[0].className = bar[0].className.replace(/\bp.*?\b/g, '');
-        bar.addClass('p'+(percentComplete*4));
-        percent.html(pVel);
-        complete = 0;
-    }else{
-        bar[0].className = bar[0].className.replace(/\bp.*?\b/g, '');
-        bar.addClass('p0');
-        bar.removeClass('p100');
-        $('.transfer-done .transfer').html('uplaoding...');
-        percentComplete = Math.round((percentComplete - 25)*1.33);
-        
-        var pVel = parseInt(percentComplete - 1) + '%';
-        bar.removeClass('p'+percentComplete-1);
-        bar.addClass('p'+percentComplete);
-        percent.html(pVel);
-        complete = (total*percentComplete)/100;
-    }
+    bar[0].className = bar[0].className.replace(/\bp.*?\b/g, '');
+    bar.addClass('p0');
+    bar.removeClass('p100');
+    //percentComplete = Math.round((percentComplete - 25)*1.33);
+
+    var pVel = parseInt(percentComplete - 1) + '%';
+    bar.removeClass('p'+percentComplete-1);
+    bar.addClass('p'+percentComplete);
+    percent.html(pVel);
+    complete = (total*percentComplete)/100;
+
     html = formatSizeUnits(complete)+' of '+formatSizeUnits(total);
     $('.transfer-done .small').html(html);
 }
 
 function isEmailAddress(str) {
    var pattern =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-   return pattern.test(str);  // returns a boolean 
+   return pattern.test(str);  // returns a boolean
 }
 
 
@@ -447,7 +437,7 @@ function ResetAnimate(){
 }
 
 function CallAfterLogin(){
-    FB.login(function(response) {      
+    FB.login(function(response) {
         if (response.status === "connected")
         {
             LodingAnimate();
@@ -484,7 +474,7 @@ function AjaxResponse(access_token, hometown, location, first_name, last_name, g
         success:function(data) {
             var results = eval( '(' + data + ')' );
             if(results.response != 200){
-                alert('There is some error in login. Please Try again.');  
+                alert('There is some error in login. Please Try again.');
             }
             ResetAnimate();
         }

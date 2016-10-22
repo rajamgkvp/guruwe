@@ -9,21 +9,22 @@
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8" />
     <meta charset="utf-8">
-    
+
     <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
        Remove this if you use the .htaccess -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>GuruTransfer</title>
-    
-    <meta property="og:description" content="GuruTransfer is a free service to send big or small files from A to B">
-    <meta property="og:title" content="GuruTransfer">
+    <title><?php echo $title; ?></title>
+
+    <meta property="og:description" content="<?php echo $metadesc; ?>">
+    <meta property="og:title" content="<?php echo $title; ?>">
     <meta property="og:image" content="https://www.gurutransfer.com/img/fb-image.png">
     <meta property="og:type" content="website" />
     <meta property="fb:app_id" content="1535182570125606" />
-    
-    <meta name="description" content="GuruTransfer is a free service to send big or small files from A to B">
+
+    <meta name="description" content="<?php echo $metadesc; ?>">
+    <meta name="keywords" content="<?php echo $metakeywords; ?>" />
     <meta name="author" content="GuruTransfer">
-    
+
     <link rel="icon" href="<?php echo BASE_PATH;?>/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="<?php echo BASE_PATH;?>/favicon.ico" type="image/x-icon">
     <link rel="image_src" href="wt-facebook.png">
@@ -48,7 +49,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="<?php echo BASE_PATH;?>/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    
+
     <!-- Mobile viewport optimized: j.mp/bplateviewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 

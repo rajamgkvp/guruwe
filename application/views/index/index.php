@@ -11,11 +11,11 @@
                 <?php }else{ ?>
                     <div class="slider" style="background: transparent url('<?php echo ADMIN_PATH ?>/files/slides/<?php echo $slider['Slider']['image_name'] ?>') repeat scroll 0% 0% / cover ;"></div>
                 <?php } ?>
-                
 
-            </li>    
+
+            </li>
         <?php } ?>
-    </ul>                  
+    </ul>
     </div>
 </div>
 <?php if(isset($_SESSION['Member']) && !empty($_SESSION['Member'])){
@@ -110,7 +110,7 @@
                 <div class="fill"></div>
             </div>
         </div>
-        <div class="transfer-done"><div class="transfer">Encrypting...</div><div class="small"></div></div>
+        <div class="transfer-done"><div class="transfer">Uploading...</div><div class="small"></div></div>
         <div class="transfer-again hide"><a class="btn transfer-again" href="<?php echo BASE_PATH; ?>">Transfer again</a></div>
     </div>
 </div>

@@ -2,7 +2,7 @@
 require_once(ROOT . DS .'public/inc/facebooksdk/facebook.php' );
 
 class IndexController extends Controller {
-	
+
 	function beforeAction () {
 
 	}
@@ -11,18 +11,28 @@ class IndexController extends Controller {
 		$this->set('slug','/');
 		$Slider = new Slider();
 		$sliders = $Slider->getSliders();
-		$this->set('sliders',$sliders);		
+		$this->set('sliders',$sliders);
+
+		$this->title = 'GuruTransfer';
+		$this->set('title',$this->title);
+
+		$this->metadesc = 'GuruTransfer is a free service to send big or small files from A to B';
+		$this->set('metadesc',$this->metadesc);
+
+		$this->metakeywords = 'GuruTransfer, filetransfer, file transfer, file, transfer, transfer files';
+		$this->set('metakeywords',$this->metakeywords);
+
 	}
 
 
 	function afterAction() {
 
 	}
-	
+
 	function upload(){
 		//echo "<pre>"; print_r($_POST); echo "</pre>";
-		//echo "<pre>"; print_r($_FILES); echo "</pre>";	
-		//exit;	
+		//echo "<pre>"; print_r($_FILES); echo "</pre>";
+		//exit;
 		$this->render = 0;
 		$return_array = array('error'=>true,'message'=>'There is some problem while uploading, please try again later');
 
@@ -36,7 +46,7 @@ class IndexController extends Controller {
 		if ($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_FILES['files']))
 		{
 			//echo "<pre>"; print_r($_FILES['files']['tmp_name']); echo "</pre>";
-			//exit;			
+			//exit;
 			// loop all files
 			foreach ( $_FILES['files']['name'] as $i => $name){
 			// if file not uploaded then skip it
@@ -53,31 +63,31 @@ class IndexController extends Controller {
                 if( move_uploaded_file($_FILES["files"]["tmp_name"][$i], $dir . $name) ){
                    $files_arr["uploads"][$i] = $dir.$name;
                    $post["uploads[$i]"] = '@'.$dir.$name;
-                    $count++;   
+                    $count++;
                 }
             }
-            
+
            //echo "<pre>"; print_r($files_arr); echo "</pre>";
-			//exit;            
+			//exit;
 			//$uploads[] = $_FILES['files'];
-            
+
             if($_POST['openedblock'] != 'link-block'){
             	$post['from'] = $_POST['from_email'];
 	            $post['to'] = implode(',',$_POST['friend_email']);
 	            $post['message'] = $_POST['message'];
             }
-            
+
             $post['userId'] = $_POST['useremail'];
             $post['source'] = 'web';
 
-            //echo "<pre>"; print_r($post);                 
+            //echo "<pre>"; print_r($post);
             //$query = http_build_query($post, '', '&');
-            
+
             $result = array();
-            //$result = $this->curl($target_url, $post);
+            $result = $this->curl($target_url, $post);
 
             foreach($files_arr['uploads'] as $files_ar){
-                    //unlink($files_ar);
+                    unlink($files_ar);
             }
             $result = (array)$result;
 			//echo "<pre>"; print_r($result); echo "</pre>";exit;
@@ -113,7 +123,7 @@ class IndexController extends Controller {
 	            $post['to'] = implode(',',$data['friend_email']);
 	            $post['message'] = $data['message'];
             }
-            
+
             $post['userId'] = $data['useremail'];
             $post['source'] = 'web';
 
@@ -143,6 +153,13 @@ class IndexController extends Controller {
 		$content = $Content->getContent($slug);
 		$this->set('slug',$slug);
 		$this->set('content',$content);
+
+		$this->title = $content[0]['Content']['page_title'];
+		$this->set('title',$this->title);
+		$this->metadesc = $content[0]['Content']['short_description'];
+		$this->set('metadesc',$this->metadesc);
+		$this->metakeywords = 'GuruTransfer, filetransfer, file transfer, file, transfer, transfer files';
+		$this->set('metakeywords',$this->metakeywords);
 	}
 
 	function feedback(){
@@ -172,20 +189,20 @@ class IndexController extends Controller {
 		// 	'appId' => FACEBOOK_APP_ID,
 		// 	'secret' => FACEBOOK_SECRET,
 		// ));
-		
+
 		// $fbuser = $facebook->getUser();
-		
+
 		// if ($fbuser) {
 		// 	try {
 		// 		$facebook_response = $facebook->api('/me');
 		// 		$uid = $facebook->getUser();
-		// 	}catch (FacebookApiException $e) 
+		// 	}catch (FacebookApiException $e)
 		// 	{
 		// 		$fbuser = null;
 		// 	}
 		// }
 		//  echo "<pre>"; print_r($fbuser); echo "</pre>"; exit;
-		
+
 		// redirect user to facebook login page if empty data or fresh login requires
 		// if (!$fbuser){
 		// 	$loginUrl = $facebook->getLoginUrl(array('redirect_uri'=>$return_url, false));
@@ -198,7 +215,7 @@ class IndexController extends Controller {
 		$post['gender'] = $facebook_response['gender'];
 		$post['dob'] = '';
 		$post['data'] = serialize($facebook_response);
-		
+
 
 		$target_url = API_TARGET_URL.'getuser';
 		$result = $this->curl($target_url, array('email'=>$facebook_response['email']));
@@ -240,5 +257,24 @@ class IndexController extends Controller {
 		session_start();
 		unset($_SESSION['Member']);
 		header('Location: /');
+	}
+
+	function download(){
+		$this->set('slug','/');
+		$Slider = new Slider();
+		$sliders = $Slider->getSliders();
+		$this->set('sliders',$sliders);
+
+		$this->title = 'GuruTransfer';
+		$this->set('title',$this->title);
+
+		$this->metadesc = 'GuruTransfer is a free service to send big or small files from A to B';
+		$this->set('metadesc',$this->metadesc);
+
+		$this->metakeywords = 'GuruTransfer, filetransfer, file transfer, file, transfer, transfer files';
+		$this->set('metakeywords',$this->metakeywords);
+
+		$download_link = $this->getrequesturi('url');
+		$this->set('download_link',$download_link);
 	}
 }

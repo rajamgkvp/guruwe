@@ -65,7 +65,7 @@
 		echo $html->includeJs('js/apps');
 	?>
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
-	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56b380b1dd5c3ad2" async="async"></script>
+	<!--<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56b380b1dd5c3ad2" async="async"></script>-->
 
 	<script type="text/javascript" defer>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -77,6 +77,6 @@
 	  ga('send', 'pageview');
 
 	</script>
-	
+
 </body>
 </html>
