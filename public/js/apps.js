@@ -337,6 +337,7 @@ function progressbar(total){
     //uploadProgress: function(event, position, total, percentComplete) {
     $('.button .files').html('');
     $('.status').height($('.transferbody').height()-10);
+<<<<<<< HEAD
 
     bar[0].className = bar[0].className.replace(/\bp.*?\b/g, '');
     bar.addClass('p0');
@@ -349,6 +350,29 @@ function progressbar(total){
     percent.html(pVel);
     complete = (total*percentComplete)/100;
 
+=======
+
+
+    if(percentComplete <= 25){
+        var pVel = parseInt(percentComplete*4) + '%';
+        bar[0].className = bar[0].className.replace(/\bp.*?\b/g, '');
+        bar.addClass('p'+(percentComplete*4));
+        percent.html(pVel);
+        complete = 0;
+    }else{
+        bar[0].className = bar[0].className.replace(/\bp.*?\b/g, '');
+        bar.addClass('p0');
+        bar.removeClass('p100');
+        $('.transfer-done .transfer').html('uploading...');
+        percentComplete = Math.round((percentComplete - 25)*1.33);
+
+        var pVel = parseInt(percentComplete - 1) + '%';
+        bar.removeClass('p'+percentComplete-1);
+        bar.addClass('p'+percentComplete);
+        percent.html(pVel);
+        complete = (total*percentComplete)/100;
+    }
+>>>>>>> 84431417d46e79c4a843e74f82be7e8ae9c51102
     html = formatSizeUnits(complete)+' of '+formatSizeUnits(total);
     $('.transfer-done .small').html(html);
 }
