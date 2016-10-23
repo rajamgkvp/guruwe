@@ -343,8 +343,8 @@ function progressbar(total){
     bar.removeClass('p100');
     //percentComplete = Math.round((percentComplete - 25)*1.33);
 
-    var pVel = parseInt(percentComplete - 1) + '%';
-    bar.removeClass('p'+percentComplete-1);
+    var pVel = parseInt(percentComplete) + '%';
+    bar.removeClass('p'+percentComplete);
     bar.addClass('p'+percentComplete);
     percent.html(pVel);
     complete = (total*percentComplete)/100;

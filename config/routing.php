@@ -17,7 +17,7 @@ $routing['index/getcontent6'] = array('advertise', 'redirect');
 $routing['index/getcontent7'] = array('how-it-works', 'redirect');
 
 $routing['index/logout'] = array('logout', 'redirect');
-$routing['index/download'] = array('download', 'redirect');
+$routing['index/download'] = array('downloads', 'redirect');
 
 //$routing['index/getcontent'] = array('blog', 'redirect');
 
