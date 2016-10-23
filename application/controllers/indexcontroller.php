@@ -274,7 +274,13 @@ class IndexController extends Controller {
 		$this->metakeywords = 'GuruTransfer, filetransfer, file transfer, file, transfer, transfer files';
 		$this->set('metakeywords',$this->metakeywords);
 
-		$download_link = $this->getrequesturi('url');
+		$download_link = '';
+		if($_SERVER['HTTP_HOST'] =='video.whatshot.in'){
+			$download_link = 'https://gurutransfer.com/download/down.php?f=';
+		}else{
+			$download_link = 'http://139.162.20.253/download/down.php?f=';
+		}
+		$download_link = $download_link.$this->getrequesturi('url');
 		$this->set('download_link',$download_link);
 	}
 }
