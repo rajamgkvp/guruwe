@@ -275,7 +275,9 @@ class IndexController extends Controller {
 		$this->set('metakeywords',$this->metakeywords);
 
 		$download_link = '';
-		if($_SERVER['HTTP_HOST'] =='www.gurutransfer.com'){
+
+		$env = $download_link.$this->getrequesturi('e');
+		if($env =='l'){
 			$download_link = 'https://www.gurutransfer.com/download/down.php?f=';
 		}else{
 			$download_link = 'http://139.162.20.253/download/down.php?f=';
