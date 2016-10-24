@@ -275,8 +275,8 @@ class IndexController extends Controller {
 		$this->set('metakeywords',$this->metakeywords);
 
 		$download_link = '';
-		if($_SERVER['HTTP_HOST'] =='video.whatshot.in'){
-			$download_link = 'https://gurutransfer.com/download/down.php?f=';
+		if($_SERVER['HTTP_HOST'] =='www.gurutransfer.com'){
+			$download_link = 'https://www.gurutransfer.com/download/down.php?f=';
 		}else{
 			$download_link = 'http://139.162.20.253/download/down.php?f=';
 		}
