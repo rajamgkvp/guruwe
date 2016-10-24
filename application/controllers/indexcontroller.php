@@ -16,7 +16,7 @@ class IndexController extends Controller {
 		$this->title = 'GuruTransfer';
 		$this->set('title',$this->title);
 
-		$this->metadesc = 'GuruTransfer is a free service to send big or small files from A to B';
+		$this->metadesc = 'GuruTransfer is a Secure File Transfer and Cloud Storage Service. Keep your data with you all the time, on the go!';
 		$this->set('metadesc',$this->metadesc);
 
 		$this->metakeywords = 'GuruTransfer, filetransfer, file transfer, file, transfer, transfer files';
