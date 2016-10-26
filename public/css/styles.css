@@ -134,6 +134,18 @@ body{
     float: left;
     cursor: pointer;
 }
+.share-and-transfer .addpassword {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 50%;
+    color: #646769;
+    cursor: pointer;
+    float: left;
+    font-size: 20px;
+    height: 32px;
+    margin: 8px 0 0;
+    padding: 2px 0 0 9px;
+    width: 32px;
+}
 .share-and-transfer .transfer {
     background: #fff none repeat scroll 0 0;
     border-radius: 20px;
@@ -381,10 +393,11 @@ span.button_area_new{
 .share-option {
     background: #fff none repeat scroll 0 0;
     border-radius: 23px;
-    margin: 8px 0 0 37px;
+    margin: 9px 0 0 37px;
     position: absolute;
     width: 0px;
     overflow: hidden;
+    z-index: 9;
 }
 .share-option > ul {
     list-style: outside none none;
@@ -415,7 +428,20 @@ span.button_area_new{
     height: 125px;
     padding: 10px 0;
 }
-
+.password-block {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #f9ab30;
+    bottom: 51px;
+    height: 0;
+    left: 5px;
+    overflow: hidden;
+    padding: 0 10px;
+    position: absolute;
+    width: 94%;
+}
+.share-and-transfer .addpassword.active {
+    color: #f9ab30;
+}
 .lightbox {
     
 }
@@ -669,4 +695,15 @@ span.button_area_new{
 }
 .add-files-block {
     min-height: 46px;
+}
+.arrow-down {
+    font-size: 48px;
+    margin: 0 5px 0 0;
+}
+.transfer-done .info{
+    font-size: 12px;
+    margin: -9px 0 0;
+}
+.status.download {
+    height: 310px !important;
 }

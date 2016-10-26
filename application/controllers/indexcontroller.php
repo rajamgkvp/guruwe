@@ -16,7 +16,25 @@ class IndexController extends Controller {
 		$this->title = 'GuruTransfer';
 		$this->set('title',$this->title);
 
-		$this->metadesc = 'GuruTransfer is a Secure File Transfer and Cloud Storage Service. Keep your data with you all the time, on the go!';
+		$this->metadesc = 'GuruTransfer is a Secure File Transfer and Cloud Storage Service. Keep your data with you at all time, on the go!';
+		$this->set('metadesc',$this->metadesc);
+
+		$this->metakeywords = 'GuruTransfer, filetransfer, file transfer, file, transfer, transfer files';
+		$this->set('metakeywords',$this->metakeywords);
+
+	}
+
+
+	function passwordupload($id = null) {
+		$this->set('slug','/');
+		$Slider = new Slider();
+		$sliders = $Slider->getSliders();
+		$this->set('sliders',$sliders);
+
+		$this->title = 'GuruTransfer';
+		$this->set('title',$this->title);
+
+		$this->metadesc = 'GuruTransfer is a Secure File Transfer and Cloud Storage Service. Keep your data with you at all time, on the go!';
 		$this->set('metadesc',$this->metadesc);
 
 		$this->metakeywords = 'GuruTransfer, filetransfer, file transfer, file, transfer, transfer files';
@@ -268,10 +286,37 @@ class IndexController extends Controller {
 		$this->title = 'GuruTransfer';
 		$this->set('title',$this->title);
 
-		$this->metadesc = 'GuruTransfer is a free service to send big or small files from A to B';
+		$this->metadesc = 'GuruTransfer is a Secure File Transfer and Cloud Storage Service. Keep your data with you at all time, on the go!';
 		$this->set('metadesc',$this->metadesc);
 
-		$this->metakeywords = 'GuruTransfer, filetransfer, file transfer, file, transfer, transfer files';
+		$this->metakeywords = 'GuruTransfer, filetransfer, file transfer, file, transfer, transfer files, Download files';
+		$this->set('metakeywords',$this->metakeywords);
+
+		$download_link = '';
+
+		$env = $download_link.$this->getrequesturi('e');
+		if($env =='l'){
+			$download_link = 'https://www.gurutransfer.com/download/down.php?f=';
+		}else{
+			$download_link = 'http://139.162.20.253/download/down.php?f=';
+		}
+		$download_link = $download_link.$this->getrequesturi('url');
+		$this->set('download_link',$download_link);
+	}
+
+	function download2(){
+		$this->set('slug','/');
+		$Slider = new Slider();
+		$sliders = $Slider->getSliders();
+		$this->set('sliders',$sliders);
+
+		$this->title = 'GuruTransfer';
+		$this->set('title',$this->title);
+
+		$this->metadesc = 'GuruTransfer is a Secure File Transfer and Cloud Storage Service. Keep your data with you at all time, on the go!';
+		$this->set('metadesc',$this->metadesc);
+
+		$this->metakeywords = 'GuruTransfer, filetransfer, file transfer, file, transfer, transfer files, Download files';
 		$this->set('metakeywords',$this->metakeywords);
 
 		$download_link = '';

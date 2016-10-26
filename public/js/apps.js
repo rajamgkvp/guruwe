@@ -228,6 +228,25 @@ $(document).ready(function() {
         }
     });
 
+    $('.addpassword').click(function(){
+        $('.addpassword').toggleClass('active');
+        if($(".password-block").height() > 1){
+            $(".password-block").css('box-shadow', '0 0 0 0 #333');
+            $(".password-block").animate({
+                height: "0"
+            }, 500, function() {
+                // Animation complete.
+            });
+        }else{
+            $(".password-block").css('box-shadow', '0 0 3px 0 #333');
+            $(".password-block").animate({
+                height: "15%"
+            }, 500, function() {
+                // Animation complete.
+            });
+        }
+    });
+
     $('#openedblock').val('email-block');
     $('.share-option li').click(function(){
         var clickpanel = $(this).attr('data-for');
@@ -251,6 +270,16 @@ $(document).ready(function() {
         $('.connect-facebook').html('');
         generatelightbox('connect-facebook', lightboxdata);
         return false;
+    });
+
+    $('.download-btn').click(function(){
+        var t = 0;
+        var idmy = setInterval(function () {
+            $(".download .c100").addClass("p"+t);
+            t = t + 1;
+        },10);
+
+        setTimeout(download(), 1100);
     });
 
     $(document).on( "click", ".light-box-close, .lightbox-overlay", function() {
@@ -283,6 +312,14 @@ $(document).ready(function() {
     fbandtwitter();
     doSlideshow(length);
 });
+
+
+function download(){
+    clearInterval(idmy);
+    $('.tickmark.show').html('<div class="checkmark"><div class="checkmark_stem"></div><div class="checkmark_kick"></div></div>');
+    $('.transfer-done h3').html('Downloading...');
+    $('.transfer-done .info').remove();
+}
 
 function uploadfinish(results){
     var bar = $('.c100');

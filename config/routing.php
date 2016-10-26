@@ -18,8 +18,9 @@ $routing['index/getcontent7'] = array('how-it-works', 'redirect');
 
 $routing['index/logout'] = array('logout', 'redirect');
 $routing['index/download'] = array('downloads', 'redirect');
+$routing['index/download2'] = array('downloads2', 'redirect');
 
-//$routing['index/getcontent'] = array('blog', 'redirect');
+$routing['index/passwordupload'] = array('password-upload', 'redirect');
 
 $routing['products/view'] = array('product', 'redirect');
 $routing['products/1234'] = array('product/(.*?)', 'regax');
