@@ -24,7 +24,7 @@
 						<a href="<?php echo BASE_PATH;?>/mobile" class="dropdown-toggle">Mobile</a>
 					</li>
 					<li>
-						<a href="<?php echo BASE_PATH;?>/blog" class="dropdown-toggle">Blog</a>
+						<a href="<?php echo BASE_PATH;?>/blog/" class="dropdown-toggle">Blog</a>
 					</li>
 
 					<?php if(isset($_SESSION['Member']) && !empty($_SESSION['Member'])){

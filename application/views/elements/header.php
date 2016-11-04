@@ -15,6 +15,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title><?php echo $title; ?></title>
 
+    <meta property="og:url" content="https://www.gurutransfer.com<?php echo $_SERVER['REQUEST_URI']; ?>">
     <meta property="og:description" content="<?php echo $metadesc; ?>">
     <meta property="og:title" content="<?php echo $title; ?>">
     <meta property="og:image" content="https://www.gurutransfer.com/img/fb-image.png">
