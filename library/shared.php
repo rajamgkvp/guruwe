@@ -114,10 +114,23 @@ function callHook() {
 			/* Error Generation Code Here */
 		}
 	}else{
-		echo "404";
+		sendto404page();
 	}
 }
 
+function sendto404page() {
+	$controller = 'errors';
+	$controllerName = ucfirst($controller).'Controller';
+	$action = 'error404';
+	$queryString = array();
+	$dispatch = new $controllerName($controller,$action);
+	if ((int)method_exists($controllerName, $action)) {
+		call_user_func_array(array($dispatch,"beforeAction"),$queryString);
+		call_user_func_array(array($dispatch,$action),$queryString);
+		call_user_func_array(array($dispatch,"afterAction"),$queryString);
+	}
+	exit;
+}
 
 /** Autoload any classes that are required **/
 

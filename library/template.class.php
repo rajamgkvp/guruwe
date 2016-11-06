@@ -18,12 +18,10 @@ class Template {
 
 	/** Display Template **/
 	
-    function render($doNotRenderHeader = 0) {
-		
+	function render($doNotRenderHeader = 0, $path='') {
 		$html = new HTML;
 		extract($this->variables);
 		if ($doNotRenderHeader == 0) {
-			
 			if (file_exists(ROOT . DS . 'application' . DS . 'views' . DS . $this->_controller . DS . 'header.php')) {
 				include (ROOT . DS . 'application' . DS . 'views' . DS . $this->_controller . DS . 'header.php');
 			} else {
@@ -31,9 +29,16 @@ class Template {
 			}
 		}
 
-		if (file_exists(ROOT . DS . 'application' . DS . 'views' . DS . $this->_controller . DS . $this->_action . '.php')) {
-			include (ROOT . DS . 'application' . DS . 'views' . DS . $this->_controller . DS . $this->_action . '.php');		 
+		if($path == ''){
+			if (file_exists(ROOT . DS . 'application' . DS . 'views' . DS . $this->_controller . DS . $this->_action . '.php')) {
+				include (ROOT . DS . 'application' . DS . 'views' . DS . $this->_controller . DS . $this->_action . '.php');		 
+			}
+		}else{
+			if (file_exists(ROOT . DS . 'application' . DS . 'views' . DS . $path . '.php')) {
+				include (ROOT . DS . 'application' . DS . 'views' . DS . $path . '.php');
+			}
 		}
+		
 			
 		if ($doNotRenderHeader == 0) {
 			if (file_exists(ROOT . DS . 'application' . DS . 'views' . DS . $this->_controller . DS . 'footer.php')) {
