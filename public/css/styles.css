@@ -707,3 +707,12 @@ span.button_area_new{
 .status.download {
     height: 310px !important;
 }
+.img-background{
+    background: rgba(0, 0, 0, 0) url("../img/gurutransfer-error-page.jpg") no-repeat scroll 0 0 / cover ;
+}
+.background {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
