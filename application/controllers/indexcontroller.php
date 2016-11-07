@@ -13,10 +13,10 @@ class IndexController extends Controller {
 		$sliders = $Slider->getSliders();
 		$this->set('sliders',$sliders);
 
-		$this->title = 'GuruTransfer';
+		$this->title = 'Guru  Transfer | Send Big Files Online | Upload Large File Free';
 		$this->set('title',$this->title);
 
-		$this->metadesc = 'GuruTransfer is a Secure File Transfer and Cloud Storage Service. Keep your data with you at all time, on the go!';
+		$this->metadesc = 'GuruTransfer: Send Big Files Online, Upload Large File Free, Transfer and Cloud Storage Service. Keep your data with your email at all time, on the go!';
 		$this->set('metadesc',$this->metadesc);
 
 		$this->metakeywords = 'GuruTransfer, filetransfer, file transfer, file, transfer, transfer files';
@@ -31,10 +31,10 @@ class IndexController extends Controller {
 		$sliders = $Slider->getSliders();
 		$this->set('sliders',$sliders);
 
-		$this->title = 'GuruTransfer';
+		$this->title = 'Guru  Transfer | Send Big Files Online | Upload Large File Free';
 		$this->set('title',$this->title);
 
-		$this->metadesc = 'GuruTransfer is a Secure File Transfer and Cloud Storage Service. Keep your data with you at all time, on the go!';
+		$this->metadesc = 'GuruTransfer: Send Big Files Online, Upload Large File Free, Transfer and Cloud Storage Service. Keep your data with your email at all time, on the go!';
 		$this->set('metadesc',$this->metadesc);
 
 		$this->metakeywords = 'GuruTransfer, filetransfer, file transfer, file, transfer, transfer files';
