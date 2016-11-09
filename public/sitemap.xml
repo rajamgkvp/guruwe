@@ -1,48 +1,379 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset
-xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.smallseotools.com -->
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
 <url>
-  <loc>https://www.gurutransfer.com</loc>
-  <priority>1</priority>
+  <loc>https://www.gurutransfer.com/</loc>
+  <changefreq>weekly</changefreq>
+  <priority>1.00</priority>
 </url>
 <url>
   <loc>https://www.gurutransfer.com/questions</loc>
-  <priority>0.9</priority>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.gurutransfer.com/guru-transfer-pro</loc>
-  <priority>0.9</priority>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.gurutransfer.com/mobile</loc>
-  <priority>0.9</priority>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.gurutransfer.com/blog</loc>
-  <priority>0.9</priority>
+  <loc>https://www.gurutransfer.com/blog/</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.gurutransfer.com/policy</loc>
-  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>https://www.gurutransfer.com/terms</loc>
-  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>https://www.gurutransfer.com/about-us</loc>
-  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>https://www.gurutransfer.com/advertise</loc>
-  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>https://www.gurutransfer.com/how-it-works</loc>
-  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/lets-look-at-indias-first-app-base-service-being-offered-globally</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/the-most-modern-day-file-transfer-system</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/strategy-for-quicker-and-easier-use-of-video-and-display-sharing</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/concerned-about-security-of-cloud-computing</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/do-you-have-control-when-you-send-files</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/are-you-safe-from-obstacles-with-a-file-sharing-site</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/sharing-info-with-cloud-networking-and-technology</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/the-master-of-file-transfer</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/make-sharing-your-files-personal-and-easy</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/how-are-you-sharing-your-video-clips</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/sending-files-online-now-easier-than-ever-before</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/2016/10</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/whats-already-the-next-generation-file-transfer</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/category/technology</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/cloud-services</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/display-sharing</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/various-kinds-of-cloud-computer-alternatives</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/category/as-we-see-it</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/cloud-risks</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/cloud-security</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/security-of-cloud-computing</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/advantage-of-document-and-file-sharing-systems</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/best-file-sharing-site</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/file-sharing-service</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/file-transfer</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/large-file-sharing</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/send-files</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/cloud-service-providers</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/internet-privacy-definition</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/privacy-definition</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/cloud-based-services</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/cloud-networking</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/cloud-technology</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/mobile-trading-apps</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/category/as-users-see-it</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/brand-strategy</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/data-sharing</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/emailing-large-files</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/mobile-share</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/online-file-transfer</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/send-big-file</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/share-file</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/web-storage</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/online-photo-album</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/photo-sharing</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/picture-sharing</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/sync-share-point-folder-to-desktop</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/online-video-sharing</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/uploading-video</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/video-sharing</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/video-sharing-sites</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/large-file-transfer</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/profile-app</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/secure-transfer</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/send-files-online</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/transfer-files</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/upload-files</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/ide-to-sata</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/internet-storage</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/online-document-storage</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/tag/share-files-online</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/if-you-are-an-apple-product-lover-then-this-is-for-you</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/type/aside</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.gurutransfer.com/blog/author/admin</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.51</priority>
 </url>
 </urlset>
