@@ -40,6 +40,12 @@ class IndexController extends Controller {
 		$this->metakeywords = 'GuruTransfer, filetransfer, file transfer, file, transfer, transfer files';
 		$this->set('metakeywords',$this->metakeywords);
 
+
+		$target_url = API_TARGET_URL.'expiretime';
+		$result = array();
+        $data = $this->curl($target_url, array());
+        $expire_time = (array)$data->data;
+        $this->set('expire_time',$expire_time);
 	}
 
 
@@ -117,7 +123,12 @@ class IndexController extends Controller {
 
     function upload_files(){
     	$this->render = 0;
-    	$target_url = API_TARGET_URL.'filemuploade';
+
+    	if($data['password'] != ''){
+    		$target_url = API_TARGET_URL.'filemuploadeadvance';
+    	}else{
+    		$target_url = API_TARGET_URL.'filemuploade';
+    	}
     	$dir = UPLOADS_PATH.'/';
     	$post = array();
 
@@ -141,6 +152,11 @@ class IndexController extends Controller {
 	            $post['to'] = implode(',',$data['friend_email']);
 	            $post['message'] = $data['message'];
             }
+
+            if($data['password'] != ''){
+            	$post['expire'] = $data['expire_time'];
+            	$post['password'] = $data['password'];
+        	}
 
             $post['userId'] = $data['useremail'];
             $post['source'] = 'web';
@@ -252,21 +268,21 @@ class IndexController extends Controller {
 	}
 
 	function curl($target_url, $post){
-	//echo $target_url; exit;
 		$ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL,$target_url);
-        curl_setopt($ch, CURLOPT_POST,true);
-        curl_setopt($ch,CURLOPT_TIMEOUT,1000);
-        @curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
-        $digest =  "gTSeventeenCube:GtSeventeen3123app01";
-        curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_DIGEST);
-        curl_setopt($ch, CURLOPT_USERPWD, $digest );
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+		curl_setopt($ch, CURLOPT_URL,$target_url);
+		curl_setopt($ch, CURLOPT_POST,1);
+		curl_setopt($ch,CURLOPT_TIMEOUT,1000);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
 
-        $result=curl_exec ($ch);
-        //echo 'Curl error: ' . curl_error($ch);
-        curl_close ($ch);
+		$digest =  DIGEST;
+		//$digest =  "gTSeventeenCube:GtSeventeen3123app01";
+		curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_DIGEST);
+		curl_setopt($ch, CURLOPT_USERPWD, $digest );
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		//curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+
+		$result=curl_exec ($ch);
+		curl_close ($ch);
         return json_decode($result);
 	}
 
@@ -296,7 +312,7 @@ class IndexController extends Controller {
 
 		$env = $download_link.$this->getrequesturi('e');
 		if($env =='l'){
-			$download_link = 'https://www.gurutransfer.com/download/down.php?f=';
+			$download_link = BASE_PATH.'/download/down.php?f=';
 		}else{
 			$download_link = 'http://139.162.20.253/download/down.php?f=';
 		}
@@ -323,11 +339,22 @@ class IndexController extends Controller {
 
 		$env = $download_link.$this->getrequesturi('e');
 		if($env =='l'){
-			$download_link = 'https://www.gurutransfer.com/download/down.php?f=';
+			$download_link = BASE_PATH.'/download/down.php?f=';
 		}else{
 			$download_link = 'http://139.162.20.253/download/down.php?f=';
 		}
 		$download_link = $download_link.$this->getrequesturi('url');
 		$this->set('download_link',$download_link);
+
+		//&d=MTQy
+		if($this->getrequesturi('d') != ''){
+			$post = array();
+			$target_url = API_TARGET_URL.'getdlink';
+			$post['did'] = base64_decode($this->getrequesturi('d'));
+			$result = array();
+	        $passworddata = $this->curl($target_url, $post);
+	        $passworddata = (array)$passworddata;
+	        $this->set('passworddata',$passworddata);
+		}
 	}
 }

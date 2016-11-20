@@ -48,10 +48,6 @@
                         <ul class="more">
                             <li>
                                 <div id="uploader_div"></div>
-                                <!--<div class="upload-wrap-btn-Change">
-                                    <span class="button_area_new">+ ADD FILES</span>
-                                    <input type="file" name="files[]" id="files" value="" class="files">
-                                </div>-->
                             </li>
                         </ul>
                     </div>
@@ -70,28 +66,33 @@
                         <input type="text" value="" name="from_email" placeholder="Your Email">
                         <div class="clearfix"></div>
                     </div>
+                    <div class="friend-password-block">
+                        <input type="password" value="" name="password" placeholder="Password">
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <?php $expire_time = array("1 Hour"=>"3600","2 Hour"=>"7200","1 Day"=>"86400"); ?>
+                    <div class="my-expire-block">
+                        <select name="expire_time">
+                            <?php foreach($expire_time as $key=>$time){ ?>
+                                <option value="<?php echo $time; ?>"><?php echo $key; ?></option>
+                            <?php } ?>
+                        </select>
+                        <div class="clearfix"></div>
+                    </div>
                     <div class="message">
                         <textarea placeholder="Message" name="message"></textarea>
                     </div>
                     <div class="clearfix"></div>
                 </div>
+                
 
                 <div class="link-block" style="display:none;">
                     <div class="message-box">
                         We will give you a download link once your transfer is complete.
                     </div>
                 </div>
-
-                <div class="password-block">
-                    <div class="friend-email-block">
-                        <input type="password" value="" name="password" placeholder="Password">
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="my-email-block">
-                        <input type="text" value="" name="from_email" placeholder="Set an Expiry date">
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
+            
             </div>
 
             <div class="share-and-transfer">
@@ -103,7 +104,7 @@
                     </ul>
                 </div>
                 <button class="transfer">transfer</button>
-                <div class="addpassword"><i class="fa fa-unlock-alt"></i></div>
+                <div class="info"></div>
                 <div class="clearfix"></div>
             </div>
         </form>
@@ -158,5 +159,12 @@
 <style type="text/css">
     .addthis-smartlayers{
         display: none !important;
+    }
+    .gurutransfer .header{
+        background: transparent;
+        height: 60px;
+    }
+    .gurutransfer .transferbody{
+        padding: 5px 5px 0;
     }
 </style>
