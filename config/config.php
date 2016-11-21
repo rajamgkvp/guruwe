@@ -12,11 +12,13 @@ if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
 if($_SERVER['HTTP_HOST']=='localhost'){
 	define ('BASE_PATH','http://'.$_SERVER['HTTP_HOST'].'/gurutransfer');
 	define ('ADMIN_PATH','http://'.$_SERVER['HTTP_HOST'].'/gurutransfer/transferadmin/');
-	define ('API_TARGET_URL','http://'.$_SERVER['HTTP_HOST'].'/gurutransfer/api/');
+	define ('API_TARGET_URL','http://139.162.20.253/soc/');
+	define ('DIGEST','test:123456');
 }else{
 	define ('BASE_PATH','http'.$s.'://'.$_SERVER['HTTP_HOST']);
 	define ('ADMIN_PATH','http'.$s.'://'.$_SERVER['HTTP_HOST'].'/transferadmin/');
 	define ('API_TARGET_URL','http'.$s.'://'.$_SERVER['HTTP_HOST'].'/api/');
+	define ('DIGEST','gTSeventeenCube:GtSeventeen3123app01');
 }
 
 define ('SITE_NAME','GuruTransfer');

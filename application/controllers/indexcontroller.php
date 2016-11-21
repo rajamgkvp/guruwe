@@ -177,7 +177,6 @@ class IndexController extends Controller {
 
 	function getcontent(){
 		$explode =  explode('/', $_SERVER['REQUEST_URI']);
-		//echo "<pre>"; print_r($explode); echo "</pre>"; exit;
 		if($_SERVER['HTTP_HOST']=='localhost'){
 			$slug = $explode[2];
 		}else{
@@ -293,7 +292,7 @@ class IndexController extends Controller {
 		header('Location: /');
 	}
 
-	function download(){
+	/*function download(){
 		$this->set('slug','/');
 		$Slider = new Slider();
 		$sliders = $Slider->getSliders();
@@ -318,9 +317,9 @@ class IndexController extends Controller {
 		}
 		$download_link = $download_link.$this->getrequesturi('url');
 		$this->set('download_link',$download_link);
-	}
+	}*/
 
-	function download2(){
+	function download(){
 		$this->set('slug','/');
 		$Slider = new Slider();
 		$sliders = $Slider->getSliders();
@@ -347,6 +346,7 @@ class IndexController extends Controller {
 		$this->set('download_link',$download_link);
 
 		//&d=MTQy
+		$passworddata = array();
 		if($this->getrequesturi('d') != ''){
 			$post = array();
 			$target_url = API_TARGET_URL.'getdlink';
@@ -354,7 +354,7 @@ class IndexController extends Controller {
 			$result = array();
 	        $passworddata = $this->curl($target_url, $post);
 	        $passworddata = (array)$passworddata;
-	        $this->set('passworddata',$passworddata);
 		}
+		$this->set('passworddata',$passworddata);
 	}
 }

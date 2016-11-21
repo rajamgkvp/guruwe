@@ -304,9 +304,8 @@ body{
     opacity: 0.8;
 }
 .content.row {
-    background: #d3d3d3 none repeat scroll 0 0;
-    border-radius: 5px;
-    padding: 20px;
+    background: #fff none repeat scroll 0 0;
+    margin-top: 50px;
 }
 .bigImages li{
     margin-top: -21px;
@@ -569,11 +568,13 @@ span.button_area_new{
     height: 28px;
     margin: 5px 0;
     padding: 0 12px;
+    background: #f0eeee none repeat scroll 0 0;
 }
 .forms textarea {
-    border: medium none;
-    border-radius: 11px;
-    height: 200px;
+    background: #f0eeee none repeat scroll 0 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 150px;
     padding: 12px;
     width: 100%;
 }
@@ -748,14 +749,14 @@ span.button_area_new{
   width: 16px;
 }
 
-.bars {
+.nav .bars {
     position: absolute;
     right: 0;
     z-index: 1000;
     top:10px;
     right:10px;
 }
-.bar {
+.nav .bar {
   background: #fff none repeat scroll 0 0;
   bottom: 0;
   margin: auto;
@@ -766,12 +767,12 @@ span.button_area_new{
   width: 20px;
 }
 
-.bar:after, .bar:before {
+.nav .bar:after, .bar:before {
   height: 3px;
   width: 20px;
 }
 
-.bar:before {
+.nav .bar:before {
   background: #fff none repeat scroll 0 0;
   bottom: 7px;
   content: "";
@@ -780,7 +781,7 @@ span.button_area_new{
   transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1) 300ms, transform 300ms cubic-bezier(0.23, 1, 0.32, 1) 0s;
 }
 
-.bar:after {
+.nav .bar:after {
   background: #fff none repeat scroll 0 0;
   content: "";
   left: 0;
@@ -789,17 +790,17 @@ span.button_area_new{
   transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1) 300ms, transform 300ms cubic-bezier(0.23, 1, 0.32, 1) 0s;
 }
 
-.bar.animate {
+.nav .bar.animate {
   background: rgba(255, 255, 255, 0) none repeat scroll 0 0;
 }
 
-.bar.animate:after {
+.nav .bar.animate:after {
   top: 0;
   transform: rotate(45deg);
   transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1) 0s, transform 300ms cubic-bezier(0.23, 1, 0.32, 1) 300ms;
 }
 
-.bar.animate:before {
+.nav .bar.animate:before {
   bottom: 0;
   transform: rotate(-45deg);
   transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1) 0s, transform 300ms cubic-bezier(0.23, 1, 0.32, 1) 300ms;
@@ -835,7 +836,7 @@ span.button_area_new{
    margin: 0;
 }
 
-ul, ul:last-of-type, ul:last-of-type:hover, li a {
+.nav ul, .nav ul:last-of-type, .nav ul:last-of-type:hover, .nav li a {
   border-top: 1px solid #efefef;
 }
 
@@ -847,3 +848,29 @@ li a {
 }
 
 /*  Nav bar design */
+
+.banner {
+    padding: 30px 0 10px;
+    position: relative;
+}
+.title {
+    color: #fff;
+    font: bold 30px arial;
+}
+.small-desc {
+    color: #fff;
+    margin-top: 20px;
+}
+.store-logo {
+    bottom: 0;
+    left: 15px;
+    position: absolute;
+}
+.store-logo > ul {
+    list-style: outside none none;
+    padding: 0;
+}
+.store-logo li {
+    display: inline-block;
+    position: relative;
+}
