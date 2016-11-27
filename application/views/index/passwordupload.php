@@ -161,10 +161,13 @@
         display: none !important;
     }
     .gurutransfer .header{
-        background: transparent;
-        height: 60px;
+        /*background: transparent;*/
+        height: 156px;
     }
     .gurutransfer .transferbody{
         padding: 5px 5px 0;
     }
+	.status{
+	top:158px;
+}
 </style>

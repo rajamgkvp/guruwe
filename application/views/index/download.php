@@ -39,8 +39,18 @@
         </div><div class="clearfix"></div>
 
         <?php if($passworddata){ ?>
-            <?php if($passworddata['flag'] != 5){ ?>
-                <div class="transfer-done">
+            <?php if(isset($passworddata['flag']) && $passworddata['flag'] == 5){ ?>
+		<div class="transfer-done">
+                    <h3>Oops...</h3>
+                    <div class="info">
+                        <span class="filename"><span style="display: inline-block">The link for the file has been expired.</span></span>
+                        <br>
+                    </div>
+                </div>
+                <div class="transfer-again"><a class="btn transfer-again" href="<?php echo BASE_PATH; ?>">Try Again</a></div>
+        	
+	    <?php }else{ ?>
+		<div class="transfer-done">
                     <h3>We're ready...</h3>
                     <div class="info">
                         <span class="filename"><span style="display: inline-block"><?php echo basename($passworddata['file']); ?></span></span>
@@ -60,16 +70,7 @@
                     <div class="transfer-again download-btn"><a class="btn transfer-again" href="<?php echo $download_link; ?>">Download</a></div>
                 <?php }else{ ?>
                     <div class="transfer-again download-btn-password"><a class="btn transfer-again" href="javascript:void(0)" data-href="<?php echo $download_link; ?>">Download</a></div>
-                <?php } ?>
-            <?php }else{ ?>
-                <div class="transfer-done">
-                    <h3>Oops...</h3>
-                    <div class="info">
-                        <span class="filename"><span style="display: inline-block">The link for the file has been expired.</span></span>
-                        <br>
-                    </div>
-                </div>
-                <div class="transfer-again"><a class="btn transfer-again" href="<?php echo BASE_PATH; ?>">Try Again</a></div>
+                <?php } ?>        
             <?php } ?>
         <?php }else{ ?>
             <div class="transfer-done">

@@ -14,6 +14,11 @@ if($_SERVER['HTTP_HOST']=='localhost'){
 	define ('ADMIN_PATH','http://'.$_SERVER['HTTP_HOST'].'/gurutransfer/transferadmin/');
 	define ('API_TARGET_URL','http://139.162.20.253/soc/');
 	define ('DIGEST','test:123456');
+}elseif($_SERVER['HTTP_HOST']=='139.162.20.253'){
+        define ('BASE_PATH','http://'.$_SERVER['HTTP_HOST'].'/gurutransfer');
+        define ('ADMIN_PATH','http://'.$_SERVER['HTTP_HOST'].'/gurutransfer/transferadmin/');
+        define ('API_TARGET_URL','http://139.162.20.253/soc/');
+        define ('DIGEST','test:123456');
 }else{
 	define ('BASE_PATH','http'.$s.'://'.$_SERVER['HTTP_HOST']);
 	define ('ADMIN_PATH','http'.$s.'://'.$_SERVER['HTTP_HOST'].'/transferadmin/');

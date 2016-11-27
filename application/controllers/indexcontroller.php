@@ -123,6 +123,10 @@ class IndexController extends Controller {
 
     function upload_files(){
     	$this->render = 0;
+	
+	$formdata = $_POST['formdata'];
+        $query_data = json_decode($formdata, true);
+        parse_str($query_data, $data);
 
     	if($data['password'] != ''){
     		$target_url = API_TARGET_URL.'filemuploadeadvance';
@@ -137,9 +141,9 @@ class IndexController extends Controller {
 			$files = json_decode($json, true);
 			//echo "<pre>"; print_r($files); echo "</pre>";
 
-			$formdata = $_POST['formdata'];
-			$query_data = json_decode($formdata, true);
-			parse_str($query_data, $data);
+			//$formdata = $_POST['formdata'];
+			//$query_data = json_decode($formdata, true);
+			//parse_str($query_data, $data);
 			//echo "<pre>"; print_r($data); echo "</pre>";
 
 			foreach ($files as $key => $files_name) {
@@ -352,8 +356,8 @@ class IndexController extends Controller {
 			$target_url = API_TARGET_URL.'getdlink';
 			$post['did'] = base64_decode($this->getrequesturi('d'));
 			$result = array();
-	        $passworddata = $this->curl($target_url, $post);
-	        $passworddata = (array)$passworddata;
+	        	$passworddata = $this->curl($target_url, $post);
+	        	$passworddata = (array)$passworddata;
 		}
 		$this->set('passworddata',$passworddata);
 	}
