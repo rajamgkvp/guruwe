@@ -874,3 +874,248 @@ li a {
     display: inline-block;
     position: relative;
 }
+/* Profile container */
+.profile {
+  margin: 20px 0;
+}
+
+/* Profile sidebar */
+.profile-sidebar {
+  padding: 20px 0 10px 0;
+  background: #fff;
+}
+
+.profile-userpic{
+    text-align: center;
+}
+
+.profile-userpic img {
+  float: none;
+  margin: 0 auto;
+  width: 50%;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+}
+
+.profile-usertitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-usertitle-name {
+  color: #5a7391;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.profile-usertitle-job {
+  text-transform: uppercase;
+  color: #5b9bd1;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.profile-userbuttons {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.profile-userbuttons .btn {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 15px;
+  margin-right: 5px;
+}
+
+.profile-userbuttons .btn:last-child {
+  margin-right: 0px;
+}
+    
+.profile-usermenu {
+  margin-top: 30px;
+}
+
+.profile-usermenu ul li {
+  border-bottom: 1px solid #f0f4f7;
+}
+
+.profile-usermenu ul li:last-child {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li a {
+  color: #93a3b5;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.profile-usermenu ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.profile-usermenu ul li a:hover {
+  background-color: #fafcfd;
+  color: #5b9bd1;
+}
+
+.profile-usermenu ul li.active {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li.active a {
+  color: #5b9bd1;
+  background-color: #f6f9fb;
+  border-left: 2px solid #5b9bd1;
+  margin-left: -2px;
+}
+
+/* Profile Content */
+.profile-content {
+  background: #fff;
+  min-height: 460px;
+}
+
+.mail-box {
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+.mail-box aside {
+    display: table-cell;
+    float: none;
+    height: 100%;
+    padding: 0;
+    vertical-align: top;
+}
+.inbox-head {
+    background: none repeat scroll 0 0 #41cac0;
+    border-radius: 0 4px 0 0;
+    color: #fff;
+    min-height: 80px;
+    padding: 20px;
+}
+.inbox-head h3 {
+    display: inline-block;
+    font-weight: 300;
+    margin: 0;
+    padding-top: 6px;
+}
+.inbox-head .sr-input {
+    border: medium none;
+    border-radius: 4px 0 0 4px;
+    box-shadow: none;
+    color: #8a8a8a;
+    float: left;
+    height: 40px;
+    padding: 0 10px;
+}
+.inbox-head .sr-btn {
+    background: none repeat scroll 0 0 #00a6b2;
+    border: medium none;
+    border-radius: 0 4px 4px 0;
+    color: #fff;
+    height: 40px;
+    padding: 0 20px;
+}
+.table-inbox {
+    border: 1px solid #d3d3d3;
+    margin-bottom: 0;
+}
+.table-inbox tr td {
+    padding: 12px !important;
+}
+.table-inbox tr td:hover {
+    cursor: pointer;
+}
+.table-inbox tr td .fa-star.inbox-started, .table-inbox tr td .fa-star:hover {
+    color: #f78a09;
+}
+.table-inbox tr td .fa-star {
+    color: #d5d5d5;
+}
+.table-inbox tr.unread td {
+    background: none repeat scroll 0 0 #f7f7f7;
+    font-weight: 600;
+}
+.text-center{
+    text-align: center;
+}
+.text-right{
+    text-align: right;
+}
+.downloadbox .lightbox-content {
+    left: 25%;
+    position: absolute;
+    top: 10px;
+    width: 75%;
+    margin-left: 0;
+    padding: 0;
+}
+.downloadbox.lightbox .light-box-close {
+    margin: 5px 8px 12px 0;
+}
+.download-btn-panel {
+    background: #41cac0 none repeat scroll 0 0;
+    color: #fff;
+    padding: 10px;
+    text-align: right;
+    margin-top: 40px;
+}
+.btn-download {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 5px;
+    float: right;
+    padding: 5px 10px;
+}
+.btn-download a{
+    color: #000;
+    text-transform:uppercase;
+}
+.view-message a{
+    color: #000;
+}
+.downloadbox .lightbox-overlay{
+    opacity: 0.7;
+}
+.downloadbox .loader {
+    padding-bottom: 40px;
+}
+.download-panel > .download-panel {
+    max-height: 272px;
+    overflow: scroll;
+}
+
+.downloadpage .lightbox-content {
+    left: 30% !important;
+    position: absolute;
+    top: 10px;
+    width: 50%;
+    margin-left: 0;
+    padding: 0;
+    border: 1px solid #f9ab30;
+    z-index: 9;
+}
+.downloadpage.lightbox .light-box-close {
+    margin: 5px 8px 12px 0;
+}
+.downloadpage .lightbox-overlay{
+    display: none;
+}
+.downloadpage .loader {
+    padding-bottom: 40px;
+}
+.downloadpage .download-btn-panel{
+    background: #f9ab30 none repeat scroll 0 0;    
+}
+
+.downloadpage .light-box-close{
+    opacity: 0;
+    visibility: hidden;
+}
