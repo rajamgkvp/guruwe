@@ -101,7 +101,12 @@ class IndexController extends Controller {
 	            $post['message'] = $_POST['message'];
             }
 
-            $post['userId'] = $_POST['useremail'];
+            if(isset($_SESSION['Member']['id'])){
+        		$post['userId'] = $_SESSION['Member']['id'];
+        	}else{
+        		$post['userId'] = 0;
+        	}
+
             $post['source'] = 'web';
 
             //echo "<pre>"; print_r($post);
@@ -158,7 +163,12 @@ class IndexController extends Controller {
             	$post['password'] = $data['password'];
         	}
 
-            $post['userId'] = $data['useremail'];
+        	if(isset($_SESSION['Member']['id'])){
+        		$post['userId'] = $_SESSION['Member']['id'];
+        	}else{
+        		$post['userId'] = 0;
+        	}
+            
             $post['source'] = 'web';
 
 			$result = array();
@@ -216,6 +226,7 @@ class IndexController extends Controller {
     	$facebook_response['gender'] = $_POST['gender'];
     	$facebook_response['first_name'] = $_POST['first_name'];
     	$facebook_response['last_name'] = $_POST['last_name'];
+    	$facebook_response['facebook_id'] = $_POST['facebook_id'];
 
   		// $return_url = BASE_PATH.'/facebook/';
 		// $facebook = new Facebook(array(
@@ -259,19 +270,23 @@ class IndexController extends Controller {
 		}
 
 		if($result->response == 200){
-			$_SESSION['Member'] = (array)$result;
+			$result = (array)$result;
+			$result['facebook_id'] = $facebook_response['facebook_id'];
+			$_SESSION['Member'] = $result;
 		}
 		$result = (array)$result;
 		echo json_encode($result);
 		exit;
 	}
 
-	function curl($target_url, $post){
+	function curl($target_url, $post, $ispost = true){
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL,$target_url);
-		curl_setopt($ch, CURLOPT_POST,1);
-		curl_setopt($ch,CURLOPT_TIMEOUT,1000);
-		curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+		if($ispost){
+			curl_setopt($ch, CURLOPT_POST,1);
+			curl_setopt($ch,CURLOPT_TIMEOUT,1000);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+		}
 
 		$digest =  DIGEST;
 		//$digest =  "gTSeventeenCube:GtSeventeen3123app01";
@@ -356,5 +371,98 @@ class IndexController extends Controller {
 	        $passworddata = (array)$passworddata;
 		}
 		$this->set('passworddata',$passworddata);
+	}
+
+	function profile(){
+		if(isset($_SESSION['Member']) && !empty($_SESSION['Member'])){
+			$this->set('slug','/');
+			
+			$this->title = 'Profile | GuruTransfer';
+			$this->set('title',$this->title);
+
+			$this->metadesc = 'GuruTransfer is a Secure File Transfer and Cloud Storage Service. Keep your data with you at all time, on the go!';
+			$this->set('metadesc',$this->metadesc);
+
+			$this->metakeywords = 'GuruTransfer, filetransfer, file transfer, file, transfer, transfer files, Download files';
+			$this->set('metakeywords',$this->metakeywords);
+
+			$target_url = API_TARGET_URL.'gettransferfbid?fbid='.$_SESSION['Member']['id'];
+	        $transfer_list = $this->curl($target_url, array(), false);
+	        $this->set('transfer_list', (array)$transfer_list->data);
+			$this->set('member', $_SESSION['Member']);			
+		}else{
+			header('Location: /');
+		}
+	}
+
+
+	function getiddetail(){
+		$this->render = 0;
+		$post = $_POST;
+		//$post['hisid'] = 390;
+		$target_url = API_TARGET_URL.'gettranshistoryid?hisid='.$post['hisid'];
+		$result = array();
+        $passworddata = $this->curl($target_url, array(), false);
+        $passworddata = (array)$passworddata;
+        //echo "<pre>"; print_r($passworddata); exit;
+        $download_link = $post['downloadalllink'];
+		
+        $html = '
+        <div class="download-panel">
+        	<div class="download-panel">
+        		<table class="table table-inbox table-hover">
+	                <tbody>';
+	                	foreach($passworddata['data'] as $filelist){
+	                		$download_link_s = base64_encode('uploads/'.$filelist->filename);
+	                		if($_SERVER['HTTP_HOST']=='localhost'){
+	                			$download_link_s = 'http://139.162.20.253/download/down.php?f='.$download_link_s;
+							}else{
+								$download_link_s = BASE_PATH.'/download/down.php?f='.$download_link_s;
+							}
+
+		                  	$html .= '<tr class="">
+								<td class="view-message  dont-show">'.$filelist->filename.'</td>
+								<td class="view-message  dont-show">'.$this->formatSizeUnits($filelist->filesize).'</td>
+								<td class="view-message  inbox-small-cells text-center"><a href="'.$download_link_s.'"><i class="fa fa-download"></i></a></td>
+		                  	</tr>';
+	                  	}
+	    $html .= '</tbody>
+	            </table>
+        	</div>
+        	<div class="download-btn-panel">
+        		<div class="btn-download"><a href="'.$download_link.'">Download All</a></div>
+        		<div class="clearfix"></div>
+        	</div>
+        </div>';
+        echo $html; exit;
+	}
+
+	function formatSizeUnits($bytes){
+        if ($bytes >= 1073741824)
+        {
+            $bytes = number_format($bytes / 1073741824, 2) . ' GB';
+        }
+        elseif ($bytes >= 1048576)
+        {
+            $bytes = number_format($bytes / 1048576, 2) . ' MB';
+        }
+        elseif ($bytes >= 1024)
+        {
+            $bytes = number_format($bytes / 1024, 2) . ' kB';
+        }
+        elseif ($bytes > 1)
+        {
+            $bytes = $bytes . ' bytes';
+        }
+        elseif ($bytes == 1)
+        {
+            $bytes = $bytes . ' byte';
+        }
+        else
+        {
+            $bytes = '0 bytes';
+        }
+
+        return $bytes;
 	}
 }

@@ -17,6 +17,7 @@ $routing['index/getcontent6'] = array('advertise', 'redirect');
 $routing['index/getcontent7'] = array('how-it-works', 'redirect');
 
 $routing['index/logout'] = array('logout', 'redirect');
+$routing['index/profile'] = array('profile', 'redirect');
 $routing['index/download'] = array('downloads', 'redirect');
 $routing['index/download2'] = array('downloads2', 'redirect');
 
@@ -26,4 +27,10 @@ $routing['products/view'] = array('product', 'redirect');
 $routing['products/1234'] = array('product/(.*?)', 'regax');
 
 $default['controller'] = 'index';
-$default['action'] = 'index';
+
+if(isset($_SESSION['Member']['id'])){
+	$default['action'] = 'passwordupload';	
+}else{
+	$default['action'] = 'index';
+}
+

@@ -296,7 +296,11 @@ $(document).ready(function() {
                 $(".download2 .c100").addClass("p"+t);
                 t = t + 1;
             },7);
-            setTimeout(function(){ download(); window.open($('.download-btn-password > a').attr('data-href'),'_self'); return false; }, 1100);
+           
+            var downloadalllink = $('.download-btn-password > a').attr('data-href');
+            var id = $('.download-btn-password > a').attr('data-hisid');
+            // setTimeout(function(){ download(); window.open($('.download-btn-password > a').attr('data-href'),'_self'); return false; }, 1100);
+            setTimeout(function(){ download(); loaddownlaoddata(id, downloadalllink, 'downloadpage'); return false; }, 1100);
         }
     });
 
@@ -363,10 +367,11 @@ $(document).ready(function() {
 function download(){
     $(".download2 .c100").addClass("p100");
     $('.tickmark.show').html('<div class="checkmark"><div class="checkmark_stem"></div><div class="checkmark_kick"></div></div>');
-    $('.transfer-done h3').html('Downloading...');
+    $('.transfer-done h3').html('Download');
     $('.transfer-done .info').remove();
     $('.friend-password-block').remove();
     $('.status.download2').height($('.c100').height() + $('.transfer-done').height() + $('.friend-password-block').height()+130);
+    $('.download-btn-password > a').attr('disabled','disabled');
     clearInterval(idmy);
 }
 
@@ -508,7 +513,7 @@ function removetips(){
 }
 
 function generatelightbox(dataclass, content){
-    var html = '<div class="lightbox" data-for="'+dataclass+'"><div class="lightbox-content"><div class="light-box-close"><i class="fa fa-close"></i></div><div class="loadcontent">'+content+'</div></div><div class="lightbox-overlay"></div></div>';
+    var html = '<div class="lightbox '+dataclass+'" data-for="'+dataclass+'"><div class="lightbox-content"><div class="light-box-close"><i class="fa fa-close"></i></div><div class="loadcontent">'+content+'</div></div><div class="lightbox-overlay"></div></div>';
     $('body').append(html);
 }
 
@@ -544,7 +549,7 @@ function CallAfterLogin(){
                     if(data.location != undefined){
                         location = data.location.name;
                     }
-                    AjaxResponse(access_token, hometown, location, data.first_name, data.last_name, data.gender, data.email);
+                    AjaxResponse(access_token, hometown, location, data.first_name, data.last_name, data.gender, data.email, data);
                 }
             });
         }
@@ -553,11 +558,11 @@ function CallAfterLogin(){
 }
 
 
-function AjaxResponse(access_token, hometown, location, first_name, last_name, gender, email){
+function AjaxResponse(access_token, hometown, location, first_name, last_name, gender, email, data){
     $.ajax( {
         url:baseUrl+'/index/facebooklogin/'+milliseconds,
         type:'POST',
-        data: 'access_token='+access_token+'&hometown='+hometown+'&location='+location+'&first_name='+first_name+'&last_name='+last_name+'&gender='+gender+'&email='+email,
+        data: 'access_token='+access_token+'&hometown='+hometown+'&location='+location+'&first_name='+first_name+'&last_name='+last_name+'&gender='+gender+'&email='+email+'&facebook_id='+data.id,
         success:function(data) {
             var results = eval( '(' + data + ')' );
             if(results.response != 200){
@@ -600,4 +605,33 @@ function fbandtwitter(){
      js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
+}
+
+
+function loaddownlaoddata(id, downloadalllink, dclass){
+    var lightboxdata = '<div class="loader text-center"><i class="fa fa-spinner fa-4x fa-spin"></i></div>';
+    generatelightbox(dclass, lightboxdata);
+    centerIt($('.'+dclass+' .lightbox-content'));
+    $.ajax({
+        type: 'POST',
+        url: baseUrl+'/index/getiddetail',
+        data: 'hisid='+id+'&downloadalllink='+downloadalllink,
+        success: function(results) {
+            $('.loadcontent').html(results);
+            centerIt($('.'+dclass+' .lightbox-content'));
+        }
+    });    
+}
+
+
+function centerIt(el) {
+    if (el.length > 0) {
+        var moveIt = function () {
+            var winWidth = $(window).width();
+            var winHeight = $(window).height();
+            el.css("position","absolute").css("left", ((winWidth / 2) - (el.width() / 2)) + "px").css("top", ((winHeight / 2) - (el.height() / 2) + $(window).scrollTop()) + "px");
+        }; 
+        $(window).resize(moveIt);
+        moveIt();
+    }
 }
