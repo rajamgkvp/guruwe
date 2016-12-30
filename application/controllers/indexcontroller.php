@@ -388,7 +388,12 @@ class IndexController extends Controller {
 
 			$target_url = API_TARGET_URL.'gettransferfbid?fbid='.$_SESSION['Member']['id'];
 	        $transfer_list = $this->curl($target_url, array(), false);
-	        $this->set('transfer_list', (array)$transfer_list->data);
+	        if(isset($transfer_list->data)){
+	        	$this->set('transfer_list', (array)$transfer_list->data);	
+	        }else{
+	        	$this->set('transfer_list', array());
+	        }
+	        
 			$this->set('member', $_SESSION['Member']);			
 		}else{
 			header('Location: /');
