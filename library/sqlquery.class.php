@@ -22,9 +22,10 @@ class SQLQuery {
     /** Connects to database **/
 	
     function connect($address, $account, $pwd, $name) {
-        $this->_dbHandle = @mysql_connect($address, $account, $pwd);
-        if ($this->_dbHandle != 0) {
-            if (mysql_select_db($name, $this->_dbHandle)) {
+        $this->_dbHandle = @mysqli_connect($address, $account, $pwd);
+
+        if ($this->_dbHandle) {
+            if (mysqli_select_db($this->_dbHandle, $name)) {
                 return 1;
             }
             else {
@@ -39,7 +40,7 @@ class SQLQuery {
     /** Disconnects from database **/
 
     function disconnect() {
-        if (@mysql_close($this->_dbHandle) != 0) {
+        if (@mysqli_close($this->_dbHandle) != 0) {
             return 1;
         }  else {
             return 0;
@@ -57,13 +58,13 @@ class SQLQuery {
 			$value = "'" .implode("','", $value)."'";
 			$this->_extraConditions .= '`'.$this->_model.'`.`'.$field.'` '.$operator.' ('.$value.') AND ';
 		}else{
-			$this->_extraConditions .= '`'.$this->_model.'`.`'.$field.'` '.$operator.' \''.mysql_real_escape_string($value).'\' AND ';
+			$this->_extraConditions .= '`'.$this->_model.'`.`'.$field.'` '.$operator.' \''.mysqli_real_escape_string($this->_dbHandle, $value).'\' AND ';
 		}
 
 	}
 
 	function like($field, $value) {
-		$this->_extraConditions .= '`'.$this->_model.'`.`'.$field.'` LIKE \'%'.mysql_real_escape_string($value).'%\' AND ';
+		$this->_extraConditions .= '`'.$this->_model.'`.`'.$field.'` LIKE \'%'.mysqli_real_escape_string($this->_dbHandle, $value).'%\' AND ';
 	}
 
 	function showHasOne() {
@@ -115,7 +116,7 @@ class SQLQuery {
 		}
 	
 		if ($this->id) {
-			$conditions .= '`'.$this->_model.'`.`id` = \''.mysql_real_escape_string($this->id).'\' AND ';
+			$conditions .= '`'.$this->_model.'`.`id` = \''.mysqli_real_escape_string($this->_dbHandle, $this->id).'\' AND ';
 		}
 
 		if ($this->_extraConditions) {
@@ -139,18 +140,21 @@ class SQLQuery {
 		
 		$this->_query = 'SELECT '.$this->_select.' FROM '.$from.' WHERE '.$conditions;
 		#echo '<!--'.$this->_query.'-->';
-		$this->_result = mysql_query($this->_query, $this->_dbHandle);
+		$this->_result = mysqli_query($this->_dbHandle, $this->_query);
 		$result = array();
 		$table = array();
 		$field = array();
 		$tempResults = array();
-		$numOfFields = mysql_num_fields($this->_result);
-		for ($i = 0; $i < $numOfFields; ++$i) {
-		    array_push($table,mysql_field_table($this->_result, $i));
-		    array_push($field,mysql_field_name($this->_result, $i));
-		}
-		if (mysql_num_rows($this->_result) > 0 ) {
-			while ($row = mysql_fetch_row($this->_result)) {
+		$numOfFields = mysqli_num_fields($this->_result);
+
+		while ($finfo = $this->_result->fetch_field()) {
+			array_push($table,$finfo->table);
+		    array_push($field,$finfo->name);
+	    }
+
+
+		if (mysqli_num_rows($this->_result) > 0 ) {
+			while ($row = mysqli_fetch_row($this->_result)) {
 				for ($i = 0;$i < $numOfFields; ++$i) {
 					$tempResults[$table[$i]][$field[$i]] = $row[$i];
 				}
@@ -171,21 +175,21 @@ class SQLQuery {
 	
 						$queryChild =  'SELECT * FROM '.$fromChild.' WHERE '.$conditionsChild;	
 						#echo '<!--'.$queryChild.'-->';
-						$resultChild = mysql_query($queryChild, $this->_dbHandle);
+						$resultChild = mysqli_query($this->_dbHandle, $queryChild);
 				
 						$tableChild = array();
 						$fieldChild = array();
 						$tempResultsChild = array();
 						$resultsChild = array();
 						
-						if (mysql_num_rows($resultChild) > 0) {
-							$numOfFieldsChild = mysql_num_fields($resultChild);
+						if (mysqli_num_rows($resultChild) > 0) {
+							$numOfFieldsChild = mysqli_num_fields($resultChild);
 							for ($j = 0; $j < $numOfFieldsChild; ++$j) {
-								array_push($tableChild,mysql_field_table($resultChild, $j));
-								array_push($fieldChild,mysql_field_name($resultChild, $j));
+								array_push($tableChild,mysqli_field_table($resultChild, $j));
+								array_push($fieldChild,mysqli_field_name($resultChild, $j));
 							}
 
-							while ($rowChild = mysql_fetch_row($resultChild)) {
+							while ($rowChild = mysqli_fetch_row($this->_dbHandle, $resultChild)) {
 								for ($j = 0;$j < $numOfFieldsChild; ++$j) {
 									$tempResultsChild[$tableChild[$j]][$fieldChild[$j]] = $rowChild[$j];
 								}
@@ -195,7 +199,7 @@ class SQLQuery {
 						
 						$tempResults[$aliasChild] = $resultsChild;
 						
-						mysql_free_result($resultChild);
+						mysqli_free_result($resultChild);
 					}
 				}
 
@@ -223,21 +227,21 @@ class SQLQuery {
 
 						$queryChild =  'SELECT * FROM '.$fromChild.' WHERE '.$conditionsChild;	
 						#echo '<!--'.$queryChild.'-->';
-						$resultChild = mysql_query($queryChild, $this->_dbHandle);
+						$resultChild = mysqli_query($this->_dbHandle, $queryChild);
 				
 						$tableChild = array();
 						$fieldChild = array();
 						$tempResultsChild = array();
 						$resultsChild = array();
 						
-						if (mysql_num_rows($resultChild) > 0) {
-							$numOfFieldsChild = mysql_num_fields($resultChild);
+						if (mysqli_num_rows($resultChild) > 0) {
+							$numOfFieldsChild = mysqli_num_fields($resultChild);
 							for ($j = 0; $j < $numOfFieldsChild; ++$j) {
-								array_push($tableChild,mysql_field_table($resultChild, $j));
-								array_push($fieldChild,mysql_field_name($resultChild, $j));
+								array_push($tableChild,mysqli_field_table($resultChild, $j));
+								array_push($fieldChild,mysqli_field_name($resultChild, $j));
 							}
 
-							while ($rowChild = mysql_fetch_row($resultChild)) {
+							while ($rowChild = mysqli_fetch_row($resultChild)) {
 								for ($j = 0;$j < $numOfFieldsChild; ++$j) {
 									$tempResultsChild[$tableChild[$j]][$fieldChild[$j]] = $rowChild[$j];
 								}
@@ -246,24 +250,24 @@ class SQLQuery {
 						}
 						
 						$tempResults[$aliasChild] = $resultsChild;
-						mysql_free_result($resultChild);
+						mysqli_free_result($resultChild);
 					}
 				}
 
 				array_push($result,$tempResults);
 			}
 
-			if (mysql_num_rows($this->_result) == 1 && $this->id != null) {
-				mysql_free_result($this->_result);
+			if (mysqli_num_rows($this->_result) == 1 && $this->id != null) {
+				mysqli_free_result($this->_result);
 				$this->clear();
 				return($result[0]);
 			} else {
-				mysql_free_result($this->_result);
+				mysqli_free_result($this->_result);
 				$this->clear();
 				return($result);
 			}
 		} else {
-			mysql_free_result($this->_result);
+			mysqli_free_result($this->_result);
 			$this->clear();
 			return $result;
 		}
@@ -276,7 +280,7 @@ class SQLQuery {
 
 		global $inflect;
 
-		$this->_result = mysql_query($query, $this->_dbHandle);
+		$this->_result = mysqli_query($this->_dbHandle, $query);
 
 		$result = array();
 		$table = array();
@@ -284,13 +288,13 @@ class SQLQuery {
 		$tempResults = array();
 
 		if(substr_count(strtoupper($query),"SELECT")>0) {
-			if (mysql_num_rows($this->_result) > 0) {
-				$numOfFields = mysql_num_fields($this->_result);
+			if (mysqli_num_rows($this->_result) > 0) {
+				$numOfFields = mysqli_num_fields($this->_result);
 				for ($i = 0; $i < $numOfFields; ++$i) {
-					array_push($table,mysql_field_table($this->_result, $i));
-					array_push($field,mysql_field_name($this->_result, $i));
+					array_push($table,mysqli_field_table($this->_result, $i));
+					array_push($field,mysqli_field_name($this->_result, $i));
 				}
-					while ($row = mysql_fetch_row($this->_result)) {
+					while ($row = mysqli_fetch_row($this->_result)) {
 						for ($i = 0;$i < $numOfFields; ++$i) {
 							$table[$i] = ucfirst($inflect->singularize($table[$i]));
 							$tempResults[$table[$i]][$field[$i]] = $row[$i];
@@ -298,7 +302,7 @@ class SQLQuery {
 						array_push($result,$tempResults);
 					}
 			}
-			mysql_free_result($this->_result);
+			mysqli_free_result($this->_result);
 		}	
 		$this->clear();
 		return($result);
@@ -314,12 +318,12 @@ class SQLQuery {
 		if (!$this->_describe) {
 			$this->_describe = array();
 			$query = 'DESCRIBE '.$this->_table;
-			$this->_result = mysql_query($query, $this->_dbHandle);
-			while ($row = mysql_fetch_row($this->_result)) {
+			$this->_result = mysqli_query($this->_dbHandle, $query);
+			while ($row = mysqli_fetch_row($this->_result)) {
 				 array_push($this->_describe,$row[0]);
 			}
 
-			mysql_free_result($this->_result);
+			mysqli_free_result($this->_result);
 			$cache->set('describe'.$this->_table,$this->_describe);
 		}
 
@@ -332,8 +336,8 @@ class SQLQuery {
 
 	function delete() {
 		if ($this->id) {
-			$query = 'DELETE FROM '.$this->_table.' WHERE `id`=\''.mysql_real_escape_string($this->id).'\'';		
-			$this->_result = mysql_query($query, $this->_dbHandle);
+			$query = 'DELETE FROM '.$this->_table.' WHERE `id`=\''.mysqli_real_escape_string($this->id).'\'';		
+			$this->_result = mysqli_query($this->_dbHandle, $query);
 			$this->clear();
 			if ($this->_result == 0) {
 			    /** Error Generation **/
@@ -354,20 +358,20 @@ class SQLQuery {
 			$updates = '';
 			foreach ($this->_describe as $field) {
 				if ($this->$field) {
-					$updates .= '`'.$field.'` = \''.mysql_real_escape_string($this->$field).'\',';
+					$updates .= '`'.$field.'` = \''.mysqli_real_escape_string($this->$field).'\',';
 				}
 			}
 
 			$updates = substr($updates,0,-1);
 
-			$query = 'UPDATE '.$this->_table.' SET '.$updates.' WHERE `id`=\''.mysql_real_escape_string($this->id).'\'';			
+			$query = 'UPDATE '.$this->_table.' SET '.$updates.' WHERE `id`=\''.mysqli_real_escape_string($this->id).'\'';			
 		} else {
 			$fields = '';
 			$values = '';
 			foreach ($this->_describe as $field) {
 				if ($this->$field) {
 					$fields .= '`'.$field.'`,';
-					$values .= '\''.mysql_real_escape_string($this->$field).'\',';
+					$values .= '\''.mysqli_real_escape_string($this->$field).'\',';
 				}
 			}
 			$values = substr($values,0,-1);
@@ -375,7 +379,7 @@ class SQLQuery {
 
 			$query = 'INSERT INTO '.$this->_table.' ('.$fields.') VALUES ('.$values.')';
 		}
-		$this->_result = mysql_query($query, $this->_dbHandle);
+		$this->_result = mysqli_query($this->_dbHandle, $query);
 		$this->clear();
 		if ($this->_result == 0) {
             /** Error Generation **/
@@ -406,8 +410,8 @@ class SQLQuery {
 			$pattern = '/SELECT (.*?) FROM (.*)LIMIT(.*)/i';
 			$replacement = 'SELECT COUNT(*) FROM $2';
 			$countQuery = preg_replace($pattern, $replacement, $this->_query);
-			$this->_result = mysql_query($countQuery, $this->_dbHandle);
-			$count = mysql_fetch_row($this->_result);
+			$this->_result = mysqli_query($this->_dbHandle, $countQuery);
+			$count = mysqli_fetch_row($this->_result);
 			$totalPages = ceil($count[0]/$this->_limit);
 			return $totalPages;
 		} else {
@@ -419,6 +423,6 @@ class SQLQuery {
     /** Get error string **/
 
     function getError() {
-        return mysql_error($this->_dbHandle);
+        return mysqli_error($this->_dbHandle);
     }
 }
