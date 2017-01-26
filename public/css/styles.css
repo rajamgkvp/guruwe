@@ -1127,3 +1127,382 @@ li a {
     font-weight: normal;
     font-size: 12px;
 }
+
+.business-comparison-matrix--standard {
+    border: 1px solid #72b6ec;
+    border-collapse: collapse;
+    margin: 0 auto 60px;
+}
+.business-comparison-matrix--standard .tooltip-container {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+}
+.business-comparison-matrix--standard .tooltip-container-icon {
+    background: #72b6ec none repeat scroll 0 0;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 11px;
+    font-style: italic;
+    height: 15px;
+    letter-spacing: 2px;
+    line-height: 13px;
+    overflow: hidden;
+    position: absolute;
+    right: 20px;
+    text-align: center;
+    top: -8px;
+    vertical-align: middle;
+    width: 15px;
+}
+.business-comparison-matrix--standard .tooltip-container-content {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    display: none;
+    font-size: 12px;
+    padding: 20px;
+    position: absolute;
+    text-align: left;
+    top: 0;
+    transform: translate(30px, -15px);
+    z-index: 999;
+}
+.business-comparison-matrix--standard .tooltip-container-content:hover {
+    display: block;
+}
+.business-comparison-matrix--standard .tooltip-container:hover .tooltip-container-content {
+    display: block;
+}
+.business-comparison-matrix--standard thead, .business-comparison-matrix--standard tbody {
+    border-bottom: 1px solid #72b6ec;
+    border-top: 1px solid #72b6ec;
+}
+.business-comparison-matrix--standard .button-primary.button-big, .business-comparison-matrix--standard .button-secondary.button-big {
+    border-radius: 3px;
+    border-width: 1px;
+    font-size: 14px;
+}
+.business-comparison-matrix--standard .column--active {
+    background-color: #f6f9fc;
+}
+.business-comparison-matrix--standard .business-comparison-matrix__td {
+    border-left: 1px solid #72b6ec;
+    border-right: 1px solid #72b6ec;
+    min-height: 36px;
+    padding: 10px;
+    position: relative;
+}
+.business-comparison-matrix--standard .column--index {
+    padding-left: 25px;
+    padding-right: 25px;
+    text-align: right;
+}
+.business-comparison-matrix--standard .column--dfb, .business-comparison-matrix--standard .column--pro {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+}
+.business-comparison-matrix--standard > thead > tr:first-child > td {
+    padding-top: 20px;
+}
+.business-comparison-matrix--plans-comparison {
+    border-collapse: separate;
+    border-radius: 6px;
+}
+.business-comparison-matrix--plans-comparison td {
+    border-left: 1px solid #d0d4d9;
+    box-sizing: border-box;
+    padding: 0 10px;
+    text-align: center;
+}
+.business-comparison-matrix--plans-comparison td:first-child {
+    padding: 0;
+    text-align: left;
+}
+.business-comparison-matrix--plans-comparison td:last-child {
+    border-right: 1px solid #d0d4d9;
+}
+.business-comparison-matrix--plans-comparison td.business-comparison-breakdown__header {
+    font-weight: 600;
+}
+.business-comparison-matrix--plans-comparison td.column--active {
+    background-color: #f4faff;
+}
+.business-comparison-matrix--plans-comparison td .sprite {
+    vertical-align: middle;
+}
+.business-comparison-matrix--plans-comparison thead tr:first-child td.column--active {
+    background-color: #fff;
+}
+.business-comparison-matrix--plans-comparison thead td {
+    line-height: 20px;
+    vertical-align: top;
+}
+.business-comparison-matrix--plans-comparison thead tr:first-child td {
+    border-top: 1px solid #d0d4d9;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    height: 40px;
+    vertical-align: middle;
+}
+.business-comparison-matrix--plans-comparison thead tr:first-child td:first-child {
+    border-left: medium none;
+    border-top: medium none;
+}
+.business-comparison-matrix--plans-comparison thead tr:nth-child(2) td {
+    border-top: 1px solid #d0d4d9;
+    font-weight: 600;
+    padding-top: 32px;
+}
+.business-comparison-matrix--plans-comparison thead tr:nth-child(2) td:first-child {
+    border-top-left-radius: 6px;
+}
+.business-comparison-matrix--plans-comparison tbody td {
+    height: 40px;
+    line-height: 18px;
+    padding: 2px 10px;
+}
+.business-comparison-matrix--plans-comparison tbody td:first-child {
+    padding: 10px 20px;
+}
+.business-comparison-matrix--plans-comparison tfoot tr:last-child td {
+    border-bottom: 1px solid #d0d4d9;
+    vertical-align: top;
+}
+.business-comparison-matrix--plans-comparison tfoot tr:last-child td:first-child {
+    border-bottom-left-radius: 6px;
+}
+.business-comparison-matrix--plans-comparison tfoot tr:last-child td:last-child {
+    border-bottom-right-radius: 6px;
+}
+.business-comparison-matrix--plans-comparison tbody td, .business-comparison-matrix--plans-comparison tfoot td {
+    border-top: 1px solid #e8e8e8;
+}
+.business-comparison-matrix--plans-comparison.sticky thead td {
+    background-color: #fff;
+}
+.business-comparison-matrix--plans-comparison.sticky thead tr:first-child td {
+    border-top: medium none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.business-comparison-matrix--plans-comparison.sticky thead tr:last-child td {
+    border-bottom: 1px solid #d0d4d9;
+}
+.business-comparison-matrix--plans-comparison .button-primary, .business-comparison-matrix--plans-comparison .button-secondary {
+    margin: 10px 0;
+    width: 143px;
+}
+.business-comparison-matrix--plans-comparison .button-primary:disabled, .business-comparison-matrix--plans-comparison .button-primary.disabled {
+    background: #f2f2f2 none repeat scroll 0 0 !important;
+    border-color: #d0d4d9 !important;
+    color: #d0d4d9 !important;
+    opacity: 1 !important;
+}
+.business-comparison-matrix--three-columns td {
+
+}
+.business-comparison-matrix--pricing-bottom tfoot tr:first-child td {
+    line-height: 26px;
+    padding-top: 10px;
+}
+.business-comparison-matrix--pricing-bottom tfoot tr:last-child td {
+    border-top: 0 none;
+}
+.business-comparison-matrix .business-comparison-matrix__td--button {
+    vertical-align: top;
+}
+.business-comparison-matrix .business-comparison-matrix__cta--secondary {
+    font-size: 12px;
+    line-height: 12px;
+}
+.business-comparison-matrix .business-comparison-matrix__cta--secondary a {
+    color: #007ee5;
+    text-decoration: underline;
+}
+.business-comparison-matrix .business-comparison-matrix__cta--secondary a:hover, .business-comparison-matrix .business-comparison-matrix__cta--secondary a:focus {
+    text-decoration: none;
+}
+.business-comparison-matrix .tooltip {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border-bottom: medium none;
+    border-right: medium none;
+}
+.business-comparison-matrix .tooltip .tooltip-wrapper {
+    position: initial;
+    width: 100%;
+}
+.business-comparison-matrix .tooltip .tooltip-wrapper .tooltip-prompt {
+    -moz-box-pack: justify;
+    display: flex;
+    justify-content: space-between;
+    position: initial;
+}
+.business-comparison-matrix .tooltip .tooltip-bubble {
+    box-sizing: content-box;
+    max-width: 250px;
+}
+.business-comparison-matrix thead td.business-comparison-matrix__td--plan-description {
+    font-size: 12px;
+    line-height: normal;
+    padding: 20px 20px 10px;
+    vertical-align: middle;
+}
+.business-comparison-matrix .plan-cta--with-transition {
+    transition: background 0.25s ease-in-out 0s, border 0.25s ease-in-out 0s;
+}
+
+.business-comparison-matrix--plans-comparison {
+    border-collapse: separate;
+    border-radius: 6px;
+    width: 100%
+}
+.business-comparison-matrix--plans-comparison thead tr:nth-child(2) td {
+    border-top: 1px solid #d0d4d9;
+    font-weight: 600;
+    padding-top: 32px;
+}
+.business-comparison-matrix--plans-comparison.sticky thead td {
+    background-color: #fff;
+}
+.business-comparison-matrix--plans-comparison thead td {
+    line-height: 20px;
+    vertical-align: top;
+}
+.business-comparison-matrix--three-columns td {
+    
+}
+.business-comparison-matrix--plans-comparison td {
+    border-left: 1px solid #d0d4d9;
+    box-sizing: border-box;
+    padding: 0 10px;
+    text-align: center;
+    
+}
+.business-comparison-matrix--plans-comparison tbody td:first-child {
+    padding: 10px 20px;
+}
+.business-comparison-matrix--plans-comparison td:first-child {
+    padding: 0;
+    text-align: left;
+    
+}
+.business-comparison-matrix--plans-comparison tbody td, .business-comparison-matrix--plans-comparison tfoot td {
+    border-top: 1px solid #e8e8e8;
+}
+.business-comparison-matrix--plans-comparison tbody td {
+    height: 40px;
+    line-height: 18px;
+    padding: 2px 10px;
+}
+.business-comparison-matrix--three-columns td {
+    
+}
+.business-comparison-matrix--plans-comparison td {
+    border-left: 1px solid #d0d4d9;
+    box-sizing: border-box;
+    padding: 0 10px;
+    text-align: center;
+    
+}
+
+
+.sprite_business {
+    background-image: url("../img/business_sprites-vflP9Pj42.png");
+    background-position: 0 16px;
+    background-repeat: no-repeat;
+    height: 16px;
+    width: 16px;
+}
+.s_business_check-blue {
+    background-position: left -83px;
+    height: 16px;
+    width: 17px;
+}
+.business-comparison-matrix--plans-comparison td .sprite {
+    vertical-align: middle;
+}
+.payments-plans-compare .button-secondary {
+    background: #fff none repeat scroll 0 0;
+    border-color: #0071e0;
+    color: #0071e0;
+}
+.payments-plans-compare .button-primary, .payments-plans-compare .button-secondary {
+    border-radius: 6px;
+    font-weight: normal;
+    min-height: 0;
+    padding-bottom: 8px;
+    padding-top: 8px;
+}
+.business-comparison-matrix--plans-comparison .button-primary, .business-comparison-matrix--plans-comparison .button-secondary {
+    margin: 10px 0;
+    
+}
+.freshbutton-lightblue, .button-secondary, a.button-secondary {
+    background-color: #f4faff;
+    background-image: linear-gradient(#fffffe, #f4faff);
+    border: 1px solid #5eb0f0;
+    color: #007ee5;
+}
+.freshbutton-lightblue, .button-secondary, a.button-secondary {
+    background-color: #f4faff;
+    background-image: linear-gradient(#fffffe, #f4faff);
+    border: 1px solid #5eb0f0;
+    color: #007ee5;
+}
+.freshbutton-lightblue, .button-secondary, a.button-secondary {
+    background-color: #f4faff;
+    background-image: linear-gradient(#fffffe, #f4faff);
+    border: 1px solid #5eb0f0;
+    color: #007ee5;
+}
+.freshbutton, .freshbutton-red, .freshbutton-blue, .freshbutton-lightblue, .freshbutton-blue-on-gray, .freshbutton-gray, .freshbutton-silver, .freshbutton-green, .freshbutton-no-hover, .button-primary, .button-secondary, .button-tertiary {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    overflow: visible;
+    text-align: center;
+    text-decoration: none;
+}
+.button-primary, .button-secondary, .button-tertiary {
+    border-radius: 3px;
+    box-sizing: border-box;
+    line-height: normal;
+    margin: 16px 0 5px;
+    min-height: 34px;
+    padding: 6px 16px;
+}
+.freshbutton-lightblue, .button-secondary, a.button-secondary {
+    background-color: #f4faff;
+    background-image: linear-gradient(#fffffe, #f4faff);
+    border: 1px solid #5eb0f0;
+    color: #007ee5;
+}
+.freshbutton, .freshbutton-red, .freshbutton-blue, .freshbutton-lightblue, .freshbutton-blue-on-gray, .freshbutton-gray, .freshbutton-silver, .freshbutton-green, .freshbutton-no-hover, .button-primary, .button-secondary, .button-tertiary {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    overflow: visible;
+    text-align: center;
+    text-decoration: none;
+}
+.button-primary, .button-secondary, .button-tertiary {
+    border-radius: 3px;
+    box-sizing: border-box;
+    line-height: normal;
+    margin: 16px 0 5px;
+    min-height: 34px;
+    padding: 6px 16px;
+}
+.payments-plans-compare .compare-section__heading {
+    font-size: 32px;
+    font-weight: 300;
+    margin: 0;
+    padding: 0 0 65px;
+    color: #3d464d;
+}

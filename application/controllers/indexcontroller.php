@@ -470,4 +470,20 @@ class IndexController extends Controller {
 
         return $bytes;
 	}
+
+	function plans(){
+		$explode =  explode('/', $_SERVER['REQUEST_URI']);
+		if($_SERVER['HTTP_HOST']=='localhost'){
+			$slug = $explode[2];
+		}else{
+			$slug = $explode[1];
+		}
+		$this->set('slug',$slug);
+		$this->title = 'Pricing';
+		$this->set('title',$this->title);
+		$this->metadesc = '';
+		$this->set('metadesc',$this->metadesc);
+		$this->metakeywords = 'GuruTransfer, filetransfer, file transfer, file, transfer, transfer files';
+		$this->set('metakeywords',$this->metakeywords);				
+	}
 }

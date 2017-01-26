@@ -21,6 +21,8 @@ $routing['index/profile'] = array('profile', 'redirect');
 $routing['index/download'] = array('downloads', 'redirect');
 $routing['index/download2'] = array('downloads2', 'redirect');
 
+$routing['index/plans'] = array('plans', 'redirect');
+
 $routing['index/passwordupload'] = array('password-upload', 'redirect');
 
 $routing['products/view'] = array('product', 'redirect');
