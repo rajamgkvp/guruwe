@@ -39,7 +39,7 @@
 			        </li>
 				<?php }else{ ?>
 					<li>
-						<a href="javascript:void(0)" class="dropdown-toggle connect-with-facebook">Connect with <i class="fa fa-facebook"></i></a>
+						<a href="javascript:void(0)" class="dropdown-toggle connect-with-facebook">Connect with Facebook</a>
 					</li>
 				<?php } ?>
 				<!--<li class="menu-item blog">

@@ -67,6 +67,12 @@ $(window).load(function()
                         $('#info_panel p').html('Please enter valid email address.');
                         $('#info_panel').css('top', topo+'px').fadeIn();
                         removetips();
+                    }else if($('input[name="terms"]:checked').length == 0){
+                        setval = 1;
+                        $('#info_panel h3').html('Doh!');
+                        $('#info_panel p').html('Please select terms and conditions.');
+                        $('#info_panel').css('top', topo+'px').fadeIn();
+                        removetips();
                     }else{
                         setval = 0;
                     }
@@ -475,7 +481,7 @@ function doSlideshow(length) {
 
         imgNum++;
         if (imgNum == length+1) { imgNum = 1; }
-        setTimeout('doSlideshow('+length+')', 5000);
+        setTimeout('doSlideshow('+length+')', 1800000);
     });
     }
 }
