@@ -22,6 +22,7 @@ $routing['index/download'] = array('downloads', 'redirect');
 $routing['index/download2'] = array('downloads2', 'redirect');
 
 $routing['index/plans'] = array('plans', 'redirect');
+$routing['index/compareplans'] = array('compare-plans', 'redirect');
 
 $routing['index/passwordupload'] = array('password-upload', 'redirect');
 

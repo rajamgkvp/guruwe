@@ -74,7 +74,7 @@
                         <textarea placeholder="Message" name="message"></textarea>
                     </div>
                     <div class="terms">
-                        <label><input type="checkbox" id="terms" name="terms" value="terms" checked="checked" title="Plese accept terms and conditions"> Please accept <a href="<?php echo BASE_PATH; ?>/terms">t&c</a></label>
+                        <label><input type="checkbox" id="terms" name="terms" value="terms" checked="checked" title="Plese accept terms and conditions"> I accept <a href="<?php echo BASE_PATH; ?>/terms">T&C</a></label>
                     </div>
                     <div class="clearfix"></div>
                 </div>

@@ -34,7 +34,7 @@ if($_SERVER['HTTP_HOST']=='localhost'){
 	define('DB_PASSWORD', '');
 	define('DB_HOST', 'localhost');
 }else if($_SERVER['HTTP_HOST']=='139.162.20.253'){
-	define('DB_NAME', 'gurucmsnew');
+	define('DB_NAME', 'guru');
 	define('DB_USER', 'guru');
 	define('DB_PASSWORD', 'Guru@123');
 	define('DB_HOST', '139.162.20.253');

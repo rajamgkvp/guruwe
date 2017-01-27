@@ -78,8 +78,6 @@
             </div>
             <div class="transfer-again download-btn-password"><a class="btn transfer-again" href="javascript:void(0)" data-href="<?php echo $download_link; ?>">Download</a></div>
         <?php } ?>
-
-
     </div>
 </div>
 
