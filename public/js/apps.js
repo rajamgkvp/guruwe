@@ -73,6 +73,12 @@ $(window).load(function()
                         $('#info_panel p').html('Please select terms and conditions.');
                         $('#info_panel').css('top', topo+'px').fadeIn();
                         removetips();
+                    }else if($('#countremain').val() <= 0){
+                        setval = 1;
+                        $('#info_panel h3').html('Doh!');
+                        $('#info_panel p').html('You have used your max password limit. <a href="'+baseUrl+'/pricing" style="text-decoration:underline; color:#fff">Click here</a> to upgrade your plan');
+                        $('#info_panel').css('top', topo+'px').fadeIn();
+                        setTimeout(function(){ $('.nofiles').fadeOut(); }, 5000);
                     }else{
                         setval = 0;
                     }
@@ -168,6 +174,7 @@ $(window).load(function()
     //         alert('An error occour '+ txt);
     //     }
     // });
+
 
     setTimeout(function(){$('.ax-file-list').perfectScrollbar();}, 3000);
 
@@ -364,6 +371,11 @@ $(document).ready(function() {
         }
         
     });
+
+    $('#passwordupload').keyup(function(){
+        checkcount();
+    });
+    
 
     fbandtwitter();
     doSlideshow(length);
@@ -641,3 +653,15 @@ function centerIt(el) {
         moveIt();
     }
 }
+
+function checkcount(){
+    if($('#countremain').val() <= 0){
+        var topo = ($('.button .more > li:last-child').offset().top)/2;
+        $('#info_panel h3').html('Doh!');
+        $('#info_panel p').html('You have used your max password limit. <a href="'+baseUrl+'/pricing" style="text-decoration:underline; color:#fff">Click here</a> to upgrade your plan');
+        $('#info_panel').css('top', topo+'px').fadeIn();
+        setTimeout(function(){ $('.nofiles').fadeOut(); }, 5000);
+    }
+}
+
+

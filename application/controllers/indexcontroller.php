@@ -46,6 +46,16 @@ class IndexController extends Controller {
         $data = $this->curl($target_url, array());
         $expire_time = (array)$data->data;
         $this->set('expire_time',$expire_time);
+
+        if(isset($_SESSION['Member']['id'])){
+        	$target_url = API_TARGET_URL.'getsecurecount';
+			$result = array();
+	        $data = $this->curl($target_url, array('uid'=>$_SESSION['Member']['id']));
+	        $countremain = ($data->max) - ($data->count);	
+        }else{
+        	$countremain = 0;	
+        }
+    	$this->set('countremain',$countremain);
 	}
 
 
@@ -129,11 +139,6 @@ class IndexController extends Controller {
     function upload_files(){
     	$this->render = 0;
 
-    	if($data['password'] != ''){
-    		$target_url = API_TARGET_URL.'filemuploadeadvance';
-    	}else{
-    		$target_url = API_TARGET_URL.'filemuploade';
-    	}
     	$dir = UPLOADS_PATH.'/';
     	$post = array();
 
@@ -147,6 +152,12 @@ class IndexController extends Controller {
 			parse_str($query_data, $data);
 			//echo "<pre>"; print_r($data); echo "</pre>";
 
+			if($data['password'] != ''){
+	    		$target_url = API_TARGET_URL.'filemuploadeadvance';
+	    	}else{
+	    		$target_url = API_TARGET_URL.'filemuploade';
+	    	}
+	    	
 			foreach ($files as $key => $files_name) {
 				$files_arr["uploads"][$key] = $dir.$files_name;
             	$post["uploads[$key]"] = '@'.$dir.$files_name;
@@ -306,33 +317,6 @@ class IndexController extends Controller {
 		unset($_SESSION['Member']);
 		header('Location: /');
 	}
-
-	/*function download(){
-		$this->set('slug','/');
-		$Slider = new Slider();
-		$sliders = $Slider->getSliders();
-		$this->set('sliders',$sliders);
-
-		$this->title = 'GuruTransfer';
-		$this->set('title',$this->title);
-
-		$this->metadesc = 'GuruTransfer is a Secure File Transfer and Cloud Storage Service. Keep your data with you at all time, on the go!';
-		$this->set('metadesc',$this->metadesc);
-
-		$this->metakeywords = 'GuruTransfer, filetransfer, file transfer, file, transfer, transfer files, Download files';
-		$this->set('metakeywords',$this->metakeywords);
-
-		$download_link = '';
-
-		$env = $download_link.$this->getrequesturi('e');
-		if($env =='l'){
-			$download_link = BASE_PATH.'/download/down.php?f=';
-		}else{
-			$download_link = 'http://139.162.20.253/download/down.php?f=';
-		}
-		$download_link = $download_link.$this->getrequesturi('url');
-		$this->set('download_link',$download_link);
-	}*/
 
 	function download(){
 		$this->set('slug','/');

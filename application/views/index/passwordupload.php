@@ -40,6 +40,7 @@
             <?php }else{ ?>
                 <input type="hidden" value="0" name="useremail">
             <?php } ?>
+            <input type="hidden" value="<?php echo $countremain; ?>" name="countremain" id="countremain">
             <input type="hidden" value="<?php echo $totalupload; ?>" name="total_upload" id="total_upload">
             <div class="upload-panel">
                 <h2>Send Up To <?php echo $total ?></h2><div class="clearfix"></div>
@@ -67,7 +68,7 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="friend-password-block">
-                        <input type="password" value="" name="password" placeholder="Password">
+                        <input type="password" value="" name="password" placeholder="Password" id="passwordupload">
                         <div class="clearfix"></div>
                     </div>
 
@@ -169,5 +170,8 @@
     }
     .gurutransfer .transferbody{
         padding: 5px 5px 0;
+    }
+    .status{
+        top:62px;
     }
 </style>
