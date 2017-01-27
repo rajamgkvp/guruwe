@@ -157,7 +157,7 @@ class IndexController extends Controller {
 	    	}else{
 	    		$target_url = API_TARGET_URL.'filemuploade';
 	    	}
-	    	
+
 			foreach ($files as $key => $files_name) {
 				$files_arr["uploads"][$key] = $dir.$files_name;
             	$post["uploads[$key]"] = '@'.$dir.$files_name;
@@ -198,7 +198,7 @@ class IndexController extends Controller {
 
 	function getcontent(){
 		$explode =  explode('/', $_SERVER['REQUEST_URI']);
-		if($_SERVER['HTTP_HOST']=='localhost'){
+		if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='139.162.20.253'){
 			$slug = $explode[2];
 		}else{
 			$slug = $explode[1];
