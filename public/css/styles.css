@@ -1212,6 +1212,7 @@ li a {
 .business-comparison-matrix--plans-comparison {
     border-collapse: separate;
     border-radius: 6px;
+    width: 100%;
 }
 .business-comparison-matrix--plans-comparison td {
     border-left: 1px solid #d0d4d9;
