@@ -951,7 +951,7 @@ li a {
 }
 
 .profile-usermenu ul li a {
-  color: #93a3b5;
+  color: #f7b14b;
   font-size: 14px;
   font-weight: 400;
 }
@@ -971,10 +971,10 @@ li a {
 }
 
 .profile-usermenu ul li.active a {
-  color: #5b9bd1;
-  background-color: #f6f9fb;
-  border-left: 2px solid #5b9bd1;
-  margin-left: -2px;
+    background-color: #f4dfc1;
+    border-left: 2px solid #f7b14b;
+    color: #f7b14b;
+    margin-left: -2px;
 }
 
 /* Profile Content */
@@ -1065,7 +1065,7 @@ li a {
     margin: 5px 8px 12px 0;
 }
 .download-btn-panel {
-    background: #41cac0 none repeat scroll 0 0;
+    background: #f7b14b none repeat scroll 0 0;
     color: #fff;
     padding: 10px;
     text-align: right;
@@ -1127,6 +1127,7 @@ li a {
     font-weight: normal;
     font-size: 12px;
 }
+
 
 .business-comparison-matrix--standard {
     border: 1px solid #72b6ec;
@@ -1302,207 +1303,237 @@ li a {
     color: #d0d4d9 !important;
     opacity: 1 !important;
 }
-.business-comparison-matrix--three-columns td {
 
+/*============================================================
+Pricing BACKGROUND COLORS
+============================================================*/
+.db-bk-color-one {
+    background-color: #efedee;
 }
-.business-comparison-matrix--pricing-bottom tfoot tr:first-child td {
-    line-height: 26px;
+
+.db-bk-color-two {
+    background-color: #efedee;
+}
+
+.db-bk-color-three {
+    background-color: #efedee;
+}
+
+.db-bk-color-six {
+    background-color: #efedee;
+}
+/*============================================================
+PRICING STYLES
+==========================================================*/
+.db-padding-btm {
+    padding: 50px;
+}
+.db-button-color-square {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.50);
+    border: none;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+}
+
+    .db-button-color-square:hover {
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.50);
+        border: none;
+    }
+
+
+.db-pricing-eleven {
+    margin-bottom: 30px;
+    margin-top: 50px;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+    color: #878586;
+    line-height: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.db-pricing-eleven .free-plan{
+    background: rgba(0, 0, 0, 0) url("../img/free.png") no-repeat scroll 0 0 / 100% auto;
+}
+.db-pricing-eleven .paid-plan{
+    background: rgba(0, 0, 0, 0) url("../img/paid.png") no-repeat scroll -5px 0 / 102% auto;
+}
+.db-pricing-eleven .paid-plan2{
+    background: rgba(0, 0, 0, 0) url("../img/paid2.png") no-repeat scroll 0 -2px/ 102% auto;
+}
+.db-pricing-eleven .plan {
+    padding-bottom: 150px;
+}
+.db-pricing-eleven .free-plan .price {
+    padding-bottom: 10px;
+}
+.db-pricing-eleven ul.ullist li{
+    margin: 0 40px;
+    padding-bottom: 10px;
     padding-top: 10px;
-}
-.business-comparison-matrix--pricing-bottom tfoot tr:last-child td {
-    border-top: 0 none;
-}
-.business-comparison-matrix .business-comparison-matrix__td--button {
-    vertical-align: top;
-}
-.business-comparison-matrix .business-comparison-matrix__cta--secondary {
-    font-size: 12px;
-    line-height: 12px;
-}
-.business-comparison-matrix .business-comparison-matrix__cta--secondary a {
-    color: #007ee5;
-    text-decoration: underline;
-}
-.business-comparison-matrix .business-comparison-matrix__cta--secondary a:hover, .business-comparison-matrix .business-comparison-matrix__cta--secondary a:focus {
-    text-decoration: none;
-}
-.business-comparison-matrix .tooltip {
-    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-    border-bottom: medium none;
-    border-right: medium none;
-}
-.business-comparison-matrix .tooltip .tooltip-wrapper {
-    position: initial;
-    width: 100%;
-}
-.business-comparison-matrix .tooltip .tooltip-wrapper .tooltip-prompt {
-    -moz-box-pack: justify;
-    display: flex;
-    justify-content: space-between;
-    position: initial;
-}
-.business-comparison-matrix .tooltip .tooltip-bubble {
-    box-sizing: content-box;
-    max-width: 250px;
-}
-.business-comparison-matrix thead td.business-comparison-matrix__td--plan-description {
-    font-size: 12px;
-    line-height: normal;
-    padding: 20px 20px 10px;
-    vertical-align: middle;
-}
-.business-comparison-matrix .plan-cta--with-transition {
-    transition: background 0.25s ease-in-out 0s, border 0.25s ease-in-out 0s;
-}
-
-.business-comparison-matrix--plans-comparison {
-    border-collapse: separate;
-    border-radius: 6px;
-    width: 100%
-}
-.business-comparison-matrix--plans-comparison thead tr:nth-child(2) td {
-    border-top: 1px solid #d0d4d9;
-    font-weight: 600;
-    padding-top: 32px;
-}
-.business-comparison-matrix--plans-comparison.sticky thead td {
-    background-color: #fff;
-}
-.business-comparison-matrix--plans-comparison thead td {
-    line-height: 20px;
-    vertical-align: top;
-}
-.business-comparison-matrix--three-columns td {
-    
-}
-.business-comparison-matrix--plans-comparison td {
-    border-left: 1px solid #d0d4d9;
-    box-sizing: border-box;
-    padding: 0 10px;
-    text-align: center;
-    
-}
-.business-comparison-matrix--plans-comparison tbody td:first-child {
-    padding: 10px 20px;
-}
-.business-comparison-matrix--plans-comparison td:first-child {
-    padding: 0;
+    border-bottom: 1px solid #d6d6d6;
     text-align: left;
-    
 }
-.business-comparison-matrix--plans-comparison tbody td, .business-comparison-matrix--plans-comparison tfoot td {
-    border-top: 1px solid #e8e8e8;
+.db-pricing-eleven ul.ullist li i{
+    color: #F89520;
 }
-.business-comparison-matrix--plans-comparison tbody td {
-    height: 40px;
-    line-height: 18px;
-    padding: 2px 10px;
+
+    .db-pricing-eleven ul {
+        list-style: none;
+        margin: 0;
+        text-align: center;
+        padding-left: 0px;
+    }
+
+        .db-pricing-eleven ul li {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            cursor: pointer;
+        }
+
+            .db-pricing-eleven ul li i {
+                margin-right: 5px;
+            }
+
+
+    .db-pricing-eleven .price {
+        padding: 40px 20px 0px;
+        font-size: 60px;
+        font-weight: 900;
+        color: #FFFFFF;
+    }
+
+        .db-pricing-eleven .price small {
+            color: #fff;
+            display: block;
+            font-size: 20px;
+            margin-top: 22px;
+        }
+
+
+        .db-pricing-eleven.popular .big-plan .price {
+            padding: 30px 20px 0;
+        }
+        .db-pricing-eleven.popular .big-plan .price .sub-head {
+            font-size: 29px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            margin-bottom: 10px;
+        }
+        .paid-plan sup {
+            top: -0.3em;
+        }
+        .db-pricing-eleven ul.list-inline li {
+            display: inline-block;
+            margin-left: -12px;
+        }
+        .btn.btn-pricing {
+            background: #393a3c none repeat scroll 0 0;
+            border-radius: 0;
+            color: #fff;
+            padding: 4px 20px;
+        }
+    .db-pricing-eleven .type {
+        color: #fff;
+        font-size: 30px;
+        font-weight: 900;
+        padding: 10px 0;
+        text-transform: uppercase;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .db-pricing-eleven .pricing-footer {
+        padding: 20px;
+    }
+
+.db-attached > .col-lg-4,
+.db-attached > .col-lg-3,
+.db-attached > .col-md-4,
+.db-attached > .col-md-3,
+.db-attached > .col-sm-4,
+.db-attached > .col-sm-3 {
+    padding-left: 0;
+    padding-right: 0;
 }
-.business-comparison-matrix--three-columns td {
-    
+
+.db-pricing-eleven.popular {
+    margin-top: 10px;
 }
-.business-comparison-matrix--plans-comparison td {
-    border-left: 1px solid #d0d4d9;
-    box-sizing: border-box;
-    padding: 0 10px;
-    text-align: center;
-    
+
+    .db-pricing-eleven.popular .price {
+        padding-top: 80px;
+    }
+
+
+
+
+
+
+
+/*=========================
+  Icons
+ ================= */
+
+/* footer social icons */
+ul.social-network {
+    list-style: none;
+    display: inline;
+    margin-left:0 !important;
+    padding: 0;
+}
+ul.social-network li {
+    display: inline;
+    margin: 0 5px;
 }
 
 
-.sprite_business {
-    background-image: url("../img/business_sprites-vflP9Pj42.png");
-    background-position: 0 16px;
-    background-repeat: no-repeat;
-    height: 16px;
-    width: 16px;
+/* footer social icons */
+.social-network a.icoFacebook:hover {
+    background-color:#3B5998;
 }
-.s_business_check-blue {
-    background-position: left -83px;
-    height: 16px;
-    width: 17px;
+.social-network a.icoTwitter:hover {
+    background-color:#33ccff;
 }
-.business-comparison-matrix--plans-comparison td .sprite {
-    vertical-align: middle;
+.social-network a.icoRss:hover i, .social-network a.icoFacebook:hover i, .social-network a.icoTwitter:hover i,
+.social-network a.icoGoogle:hover i, .social-network a.icoVimeo:hover i, .social-network a.icoLinkedin:hover i {
+    color:#fff;
 }
-.payments-plans-compare .button-secondary {
-    background: #fff none repeat scroll 0 0;
-    border-color: #0071e0;
-    color: #0071e0;
+.social-circle li a {
+    display:inline-block;
+    position:relative;
+    margin:0 auto 0 auto;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    border-radius:50%;
+    text-align:center;
+    width: 50px;
+    height: 50px;
+    font-size:20px;
 }
-.payments-plans-compare .button-primary, .payments-plans-compare .button-secondary {
-    border-radius: 6px;
-    font-weight: normal;
-    min-height: 0;
-    padding-bottom: 8px;
-    padding-top: 8px;
-}
-.business-comparison-matrix--plans-comparison .button-primary, .business-comparison-matrix--plans-comparison .button-secondary {
-    margin: 10px 0;
-    
-}
-.freshbutton-lightblue, .button-secondary, a.button-secondary {
-    background-color: #f4faff;
-    background-image: linear-gradient(#fffffe, #f4faff);
-    border: 1px solid #5eb0f0;
-    color: #007ee5;
-}
-.freshbutton-lightblue, .button-secondary, a.button-secondary {
-    background-color: #f4faff;
-    background-image: linear-gradient(#fffffe, #f4faff);
-    border: 1px solid #5eb0f0;
-    color: #007ee5;
-}
-.freshbutton-lightblue, .button-secondary, a.button-secondary {
-    background-color: #f4faff;
-    background-image: linear-gradient(#fffffe, #f4faff);
-    border: 1px solid #5eb0f0;
-    color: #007ee5;
-}
-.freshbutton, .freshbutton-red, .freshbutton-blue, .freshbutton-lightblue, .freshbutton-blue-on-gray, .freshbutton-gray, .freshbutton-silver, .freshbutton-green, .freshbutton-no-hover, .button-primary, .button-secondary, .button-tertiary {
-    cursor: pointer;
-    display: inline-block;
-    font-size: 13px;
-    font-weight: 600;
-    overflow: visible;
+.social-circle li i {
+    margin:0;
+    line-height:50px;
     text-align: center;
-    text-decoration: none;
 }
-.button-primary, .button-secondary, .button-tertiary {
-    border-radius: 3px;
-    box-sizing: border-box;
-    line-height: normal;
-    margin: 16px 0 5px;
-    min-height: 34px;
-    padding: 6px 16px;
+
+.social-circle li a:hover i, .triggeredHover {
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -ms--transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    transition: all 0.2s;
 }
-.freshbutton-lightblue, .button-secondary, a.button-secondary {
-    background-color: #f4faff;
-    background-image: linear-gradient(#fffffe, #f4faff);
-    border: 1px solid #5eb0f0;
-    color: #007ee5;
-}
-.freshbutton, .freshbutton-red, .freshbutton-blue, .freshbutton-lightblue, .freshbutton-blue-on-gray, .freshbutton-gray, .freshbutton-silver, .freshbutton-green, .freshbutton-no-hover, .button-primary, .button-secondary, .button-tertiary {
-    cursor: pointer;
-    display: inline-block;
-    font-size: 13px;
-    font-weight: 600;
-    overflow: visible;
-    text-align: center;
-    text-decoration: none;
-}
-.button-primary, .button-secondary, .button-tertiary {
-    border-radius: 3px;
-    box-sizing: border-box;
-    line-height: normal;
-    margin: 16px 0 5px;
-    min-height: 34px;
-    padding: 6px 16px;
-}
-.payments-plans-compare .compare-section__heading {
-    font-size: 32px;
-    font-weight: 300;
-    margin: 0;
-    padding: 0 0 65px;
-    color: #3d464d;
+.social-circle i {
+    color: #fff;
+    -webkit-transition: all 0.8s;
+    -moz-transition: all 0.8s;
+    -o-transition: all 0.8s;
+    -ms-transition: all 0.8s;
+    transition: all 0.8s;
 }
