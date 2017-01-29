@@ -5,7 +5,7 @@
                 <div class="row content-page">
                     <?php echo $content[0]['Content']['content']; ?>
                     <?php if($content[0]['Content']['slug'] == 'guru-transfer-pro'){ ?>
-                        <div class="col-sm-6 col-md-6">
+                        <div class="col-sm-6 col-md-6 pro-form">
                             <div class="feedback-form">
                                 <form id="feedback" method="post" action="<?php echo BASE_PATH; ?>/index/feedback">
                                     <div class="forms">

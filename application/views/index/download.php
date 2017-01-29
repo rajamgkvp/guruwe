@@ -27,16 +27,18 @@
     </div>
     <div class="header"></div>
     <div class="status download2">
-        <div class="c100">
-            <span class="tickmark show">
-                <div class="arrow-down"><i class="fa fa-arrow-down"></i></div>
-            </span>
+        <div class="firstnot" style="display: none">
+            <div class="c100">
+                <span class="tickmark show">
+                    <div class="arrow-down"><i class="fa fa-arrow-down"></i></div>
+                </span>
 
-            <div class="slice">
-                <div class="bar"></div>
-                <div class="fill"></div>
-            </div>
-        </div><div class="clearfix"></div>
+                <div class="slice">
+                    <div class="bar"></div>
+                    <div class="fill"></div>
+                </div>
+            </div><div class="clearfix"></div>
+        </div>
 
         <?php if($passworddata){ ?>
             <?php if(isset($passworddata['flag']) && $passworddata['flag'] == 5){ ?>
@@ -49,19 +51,53 @@
                 </div>
                 <div class="transfer-again"><a class="btn transfer-again" href="<?php echo BASE_PATH; ?>">Try Again</a></div>
             <?php }else{ ?>
-                <div class="transfer-done">
-                    <h3>We're ready...</h3>
-                    <div class="info">
-                        <span class="filename"><span style="display: inline-block"><?php echo basename($passworddata['file']); ?></span></span>
-                        <br>
+
+                <div class="firstnot" style="display: none">
+                    <div class="transfer-done">
+                        <h3>We're ready...</h3>
+                        <div class="info">
+                            <span class="filename"><span style="display: inline-block"><?php echo basename($passworddata['file']); ?></span></span>
+                            <br>
+                        </div>
                     </div>
+                      <div class="sharepage">
+                              <ul class="list-inline social-share">
+                                <li class="facebook"><a href="https://www.facebook.com/sharer.php?u=<?php echo BASE_PATH.$_SERVER['REQUEST_URI']; ?>"><i class="fa fa-facebook"></i></a></li>
+                                <li class="twitter"><a href="http://twitter.com/share?url=<?php echo BASE_PATH.$_SERVER['REQUEST_URI']; ?>"><i class="fa fa-twitter"></i></a></li>
+                              </ul>
+                        </div>
+                </div>
+
+
+                <div class="transfer-list">
+                    <table>
+                        <?php foreach ($passworddata['fileList'] as $key => $filelist) {
+                            if($_SERVER['HTTP_HOST']=='localhost'){
+                                $download_link_s = 'http://139.162.20.253/download/down.php?f='.$filelist->url;
+                            }else{
+                                $download_link_s = BASE_PATH.'/download/down.php?f='.$filelist->url;
+                            }
+                        ?>
+                            <tr>
+                                <td>
+                                    <?php echo substr($filelist->file, 8); ?>
+                                </td>
+                                <td>
+                                    <div class="download-btn-password-list"><a class="transfer-list-link" href="javascript:void(0)" data-href="<?php echo $download_link_s; ?>" data-hisid="<?php echo $passworddata['histid'] ?>"><i class="fa fa-download"></i></a></div>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                    </table>
                 </div>
 
                 <?php if($passworddata['password'] != ''){ ?>
-                    <input type="hidden" value="<?php echo $passworddata['password']; ?>" id="password_value">
-                    <div class="friend-password-block download">
-                        <input type="password" value="" name="password" placeholder="Password" id="password_enter">
-                        <div class="clearfix"></div>
+                    <div class="passworddatablock">
+                        <label>Enter Password</label>
+                        <input type="hidden" value="<?php echo $passworddata['password']; ?>" id="password_value">
+                        <div class="friend-password-block download">
+                            <input type="password" value="" name="password" placeholder="Password" id="password_enter">
+                            <div class="clearfix"></div>
+                        </div>
                     </div>
                 <?php } ?>
 

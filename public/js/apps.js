@@ -304,7 +304,10 @@ $(document).ready(function() {
         if($('#password_enter').val() != $('#password_value').val()){
             $('#tip_panel').show();
         }else{
+            $('.transfer-list').hide();
+            $('.firstnot').show();
             $('#tip_panel').hide();
+            $('.status.download2').height($('.c100').height() + $('.transfer-done').height() + $('.friend-password-block').height()+130);
             idmy = setInterval(function () {
                 $(".download2 .c100").addClass("p"+t);
                 t = t + 1;
@@ -312,8 +315,19 @@ $(document).ready(function() {
            
             var downloadalllink = $('.download-btn-password > a').attr('data-href');
             var id = $('.download-btn-password > a').attr('data-hisid');
-            // setTimeout(function(){ download(); window.open($('.download-btn-password > a').attr('data-href'),'_self'); return false; }, 1100);
-            setTimeout(function(){ download(); loaddownlaoddata(id, downloadalllink, 'downloadpage'); return false; }, 1100);
+            setTimeout(function(){ download(); window.open($('.download-btn-password > a').attr('data-href'),'_self'); return false; }, 1100);
+            //setTimeout(function(){ download(); loaddownlaoddata(id, downloadalllink, 'downloadpage'); return false; }, 1100);
+        }
+    });
+
+    $('.download-btn-password-list').click(function(){
+        if($('#password_enter').val() != $('#password_value').val()){
+            $('#tip_panel').show();
+        }else{
+            $('#tip_panel').hide();
+            var downloadalllink = $('.download-btn-password-list > a').attr('data-href');
+            var id = $('.download-btn-password-list > a').attr('data-hisid');
+            setTimeout(function(){ window.open($('.download-btn-password-list > a').attr('data-href'),'_self'); return false; }, 1000);
         }
     });
 
@@ -385,11 +399,11 @@ $(document).ready(function() {
 function download(){
     $(".download2 .c100").addClass("p100");
     $('.tickmark.show').html('<div class="checkmark"><div class="checkmark_stem"></div><div class="checkmark_kick"></div></div>');
-    $('.transfer-done h3').html('Download');
+    $('.transfer-done h3').html('Downloading...');
     $('.transfer-done .info').remove();
     $('.friend-password-block').remove();
-    $('.status.download2').height($('.c100').height() + $('.transfer-done').height() + $('.friend-password-block').height()+130);
-    $('.download-btn-password > a').attr('disabled','disabled');
+    $('.status.download2').height($('.c100').height() + $('.transfer-done').height() + $('.friend-password-block').height()+170);
+    //$('.download-btn-password > a').attr('disabled','disabled');
     clearInterval(idmy);
 }
 
@@ -412,6 +426,7 @@ function uploadfinish(results){
     }else{
         $('.transfer-done .small').html('You did it! Expect a confirmation email in your inbox shortly.');
     }
+    $('.sharepage').show();
 }
 
 
