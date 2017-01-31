@@ -462,13 +462,20 @@ class IndexController extends Controller {
 		}else{
 			$slug = $explode[1];
 		}
+                
+                $target_url = API_TARGET_URL.'plans';
+		$result = array();
+                $data = $this->curl($target_url, array());
+                $plandata = (array)$data->data;
+                
+                 $this->set('plans',$plans);
+                
 		$this->set('slug',$slug);
 		$this->title = 'Pricing';
 		$this->set('title',$this->title);
 		$this->metadesc = '';
 		$this->set('metadesc',$this->metadesc);
 		$this->metakeywords = 'GuruTransfer, filetransfer, file transfer, file, transfer, transfer files';
-		$this->set('metakeywords',$this->metakeywords);				
 	}
 	
 	function compareplans(){
