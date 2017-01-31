@@ -466,7 +466,7 @@ class IndexController extends Controller {
                 $target_url = API_TARGET_URL.'plans';
 		$result = array();
                 $data = $this->curl($target_url, array());
-                $plandata = (array)$data->data;
+                $plans = (array)$data;
                 
                  $this->set('plans',$plans);
                 

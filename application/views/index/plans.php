@@ -1,6 +1,6 @@
 <?php
-echo "<pre>";
-print_r($plans);
+//echo "<pre>";
+//print_r($plans);
 ?>
 
 <div class="section">
