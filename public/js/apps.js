@@ -73,13 +73,16 @@ $(window).load(function()
                         $('#info_panel p').html('Please select terms and conditions.');
                         $('#info_panel').css('top', topo+'px').fadeIn();
                         removetips();
-                    }else if($('#countremain').val() <= 0){
-                        setval = 1;
-                        $('#info_panel h3').html('Doh!');
-                        $('#info_panel p').html('You have used your max password limit. <a href="'+baseUrl+'/plans" style="text-decoration:underline; color:#fff">Click here</a> to upgrade your plan');
-                        $('#info_panel').css('top', topo+'px').fadeIn();
-                        setTimeout(function(){ $('.nofiles').fadeOut(); }, 5000);
-                    }else{
+                    }
+                    // else if($('#countremain').val() <= 0){
+                    //     setval = 1;
+                    //     $('#info_panel h3').html('Doh!');
+                    //     $('#info_panel p').html('You have used your max password limit. <a href="'+baseUrl+'/plans" style="text-decoration:underline; color:#fff">Click here</a> to upgrade your plan');
+                    //     $('#info_panel').css('top', topo+'px').fadeIn();
+                    //     setTimeout(function(){ $('.nofiles').fadeOut(); }, 5000);
+                    // }
+
+                    else{
                         setval = 0;
                     }
 
@@ -386,9 +389,9 @@ $(document).ready(function() {
         
     });
 
-    $('#passwordupload').keyup(function(){
-        checkcount();
-    });
+    // $('#passwordupload').keyup(function(){
+    //     checkcount();
+    // });
     
 
     fbandtwitter();
