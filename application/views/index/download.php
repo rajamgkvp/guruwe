@@ -68,29 +68,6 @@
                               </ul>
                         </div>
                 </div>
-
-
-                <!--<div class="transfer-list">
-                    <table>
-                        <?php foreach ($passworddata['fileList'] as $key => $filelist) {
-                            if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='139.162.20.25'){
-                                $download_link_s = 'http://139.162.20.253/download/down.php?f='.$filelist->url;
-                            }else{
-                                $download_link_s = BASE_PATH.'/download/down.php?f='.$filelist->url;
-                            }
-                        ?>
-                            <tr>
-                                <td>
-                                    <?php echo substr($filelist->file, 8); ?>
-                                </td>
-                                <td>
-                                    <div class="download-btn-password-list"><a class="transfer-list-link" href="javascript:void(0)" data-href="<?php echo $download_link_s; ?>" data-hisid="<?php echo $passworddata['histid'] ?>"><i class="fa fa-download"></i></a></div>
-                                </td>
-                            </tr>
-                        <?php } ?>
-                    </table>
-                </div>-->
-
                 
 
                 <?php if(isset($passworddata['password']) && $passworddata['password'] != ''){ ?>
@@ -115,7 +92,7 @@
                         <tbody>
                             <?php
                             foreach($passworddata['fileList'] as $filelist){
-                                if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='139.162.20.25'){
+                                if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='139.162.20.253'){
                                     $download_link_s = 'http://139.162.20.253/download/down.php?f='.$filelist->url;
                                 }else{
                                     $download_link_s = BASE_PATH.'/download/down.php?f='.$filelist->url;
