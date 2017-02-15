@@ -155,6 +155,7 @@ class IndexController extends Controller {
 			if($data['password'] != ''){
 	    		$target_url = API_TARGET_URL.'filemuploadeadvance';
 	    	}else{
+	    		//$target_url = API_TARGET_URL.'filemuploadeadvance';
 	    		$target_url = API_TARGET_URL.'filemuploade';
 	    	}
 
