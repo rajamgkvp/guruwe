@@ -1,7 +1,3 @@
-<?php
-//echo "<pre>";
-//print_r($plans);
-?>
 
 <div class="section">
     <div class="container">

@@ -9,8 +9,8 @@ if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
 	 $s = 's';
 }
 
-if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='139.162.20.253'){
-	define ('BASE_PATH','http://'.$_SERVER['HTTP_HOST'].'/gurutransfer');
+if($_SERVER['HTTP_HOST']=='localhost'){
+	define ('BASE_PATH','http://'.$_SERVER['HTTP_HOST'].'/guruweb');
 	define ('ADMIN_PATH','http://'.$_SERVER['HTTP_HOST'].'/gurutransfer/transferadmin/');
 	define ('API_TARGET_URL','http://139.162.20.253/soc/');
 	define ('DIGEST','test:123456');
@@ -18,26 +18,30 @@ if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='139.162.20.253'
 	define ('BASE_PATH','http'.$s.'://'.$_SERVER['HTTP_HOST']);
 	define ('ADMIN_PATH','http'.$s.'://'.$_SERVER['HTTP_HOST'].'/transferadmin/');
 	define ('API_TARGET_URL','http'.$s.'://'.$_SERVER['HTTP_HOST'].'/api/');
-	define ('DIGEST','gTSeventeenCube:GtSeventeen3123app01');
+	//define ('DIGEST','gTSeventeenCube:GtSeventeen3123app01');
+        define ('DIGEST','test:123456');
 }
 
 define ('SITE_NAME','GuruTransfer');
 
 //define ('FACEBOOK_APP_ID','1535182570125606');
-define ('FACEBOOK_APP_ID','284717701632906');
+define ('FACEBOOK_APP_ID','1535182570125606');
 define ('FBPERMISSIONS','public_profile,email');
-define ('FACEBOOK_SECRET','5dfcdb5afba6115eefb007acdbd3c3d2');
+define ('FACEBOOK_SECRET','b1c41c4619d1dc9a7f94e7dd2c69896e');
 
 if($_SERVER['HTTP_HOST']=='localhost'){
+       /*
 	define('DB_NAME', 'gurutransfer');
 	define('DB_USER', 'root');
 	define('DB_PASSWORD', '');
 	define('DB_HOST', 'localhost');
-}else if($_SERVER['HTTP_HOST']=='139.162.20.253'){
-	define('DB_NAME', 'guru');
+        
+        * 
+        */
+        define('DB_NAME', 'guru');
 	define('DB_USER', 'guru');
 	define('DB_PASSWORD', 'Guru@123');
-	define('DB_HOST', '139.162.20.253');
+	define('DB_HOST', '139.162.63.185');
 }else{
 	define('DB_NAME', 'guru');
 	define('DB_USER', 'guru');
