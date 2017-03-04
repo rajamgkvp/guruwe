@@ -12,6 +12,7 @@
 
     <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
        Remove this if you use the .htaccess -->
+    <meta name="msvalidate.01" content="64AF61C84113C15D43831A43C49168B9" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
