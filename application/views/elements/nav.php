@@ -17,14 +17,21 @@
 					<a class="dropdown-toggle" href="<?php echo BASE_PATH;?>">Home</a>
 				</li>
 				<li <?php if($slug == 'questions'){ echo "class='active question'";} ?>>
-					<a href="<?php echo BASE_PATH;?>/questions" class="dropdown-toggle">Question</a>
+					<a href="<?php echo BASE_PATH;?>/questions" class="dropdown-toggle">FAQ</a>
 				</li>
+                                <?php
+                                /*
 				<li <?php if($slug == 'guru-transfer-pro'){ echo "class='active question'";} ?>>
 					<a href="<?php echo BASE_PATH;?>/guru-transfer-pro" class="dropdown-toggle">Guru Transfer Pro</a>
 				</li>
+                                
 				<li <?php if($slug == 'mobile'){ echo "class='active mobile'";} ?>>
 					<a href="<?php echo BASE_PATH;?>/mobile" class="dropdown-toggle">Mobile</a>
 				</li>
+                                  * 
+                                 */
+                                ?>
+         
 				<li>
 					<a href="<?php echo BASE_PATH;?>/blog/" class="dropdown-toggle">Blog</a>
 				</li>
@@ -39,7 +46,7 @@
 			        </li>
 				<?php }else{ ?>
 					<li>
-						<a href="javascript:void(0)" class="dropdown-toggle connect-with-facebook">Connect with Facebook</a>
+						<a href="javascript:void(0)" class="dropdown-toggle connect-with-facebook">Sign Up with Facebook</a>
 					</li>
 				<?php } ?>
 				<!--<li class="menu-item blog">
