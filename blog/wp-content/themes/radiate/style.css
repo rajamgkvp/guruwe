@@ -1,25 +1,25 @@
 /*
-Theme Name: Radiate
-Theme URI: http://themegrill.com/themes/radiate/
-Author: ThemeGrill
-Author URI: http://themegrill.com/f
-Description: Radiate is a clean, creative and light retina ready responsive blogging theme supporting parallax header image. It integrates primary color option, custom background, custom css and few other features through WordPress customizer. The theme is translation ready and you can get free support on http://themegrill.com/support-forum. View demo at http://demo.themegrill.com/radiate. Available Translations: French, German, Russian, Swedish, Dutch, Norwegian, Brazilian Portuguese and Spanish.
-Version: 1.2.1
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: radiate
-Domain Path: /languages/
-Tags: light, white, two-columns, right-sidebar, responsive-layout, custom-header, custom-background, custom-menu, custom-colors, post-formats, sticky-post, threaded-comments, translation-ready
-
-Resetting and rebuilding styles have been helped along thanks to the fine work of
-Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
-along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
-and Blueprint http://www.blueprintcss.org/
-*/
+ * Theme Name: Radiate
+ * Theme URI: http://themegrill.com/themes/radiate/
+ * Author: ThemeGrill
+ * Author URI: http://themegrill.com/
+ * Description: Radiate is a clean, creative and light retina ready responsive blogging theme supporting parallax header image. It integrates primary color option, custom background, custom css and few other features through WordPress customizer. The theme is translation ready and you can get free support on http://themegrill.com/support-forum. View demo at http://demo.themegrill.com/radiate. Available Translations: French, German, Russian, Swedish, Dutch, Norwegian, Brazilian Portuguese and Spanish.
+ * Version: 1.2.1
+ * License: GNU General Public License v2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain: radiate
+ * Domain Path: /languages/
+ * Tags: light, white, two-columns, right-sidebar, responsive-layout, custom-header, custom-background, custom-menu, custom-colors, post-formats, sticky-post, threaded-comments, translation-ready
+ *
+ * Resetting and rebuilding styles have been helped along thanks to the fine work of
+ * Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+ * along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+ * and Blueprint http://www.blueprintcss.org/
+ * */
 
 
 /* =Reset
--------------------------------------------------------------- */
+ * -------------------------------------------------------------- */
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -99,7 +99,7 @@ a img {
 }
 
 /* =Global
------------------------------------------------ */
+ * ----------------------------------------------- */
 
 body,
 button,
@@ -376,12 +376,12 @@ a:active {
 }
 /* start commented backslash hack \*/
 * html .clearfix {
-	height:1%;
-}
-.clearfix {
-	display: block;
-}
-/* close commented backslash hack */
+* 	height:1%;
+* 	}
+* 	.clearfix {
+* 		display: block;
+* 		}
+*/* close commented backslash hack */
 
 /* Alignment */
 .alignleft {
@@ -459,7 +459,7 @@ a:active {
 }
 
 /* =Layout
------------------------------------------------ */
+ * ----------------------------------------------- */
 .inner-wrap {
 	max-width: 1218px;
 	margin: 0 auto;
@@ -480,7 +480,7 @@ a:active {
 }
 
 /* =Header
------------------------------------------------ */
+ * ----------------------------------------------- */
 #parallax-bg {
   position: fixed;
   top: 0;
@@ -502,7 +502,7 @@ a:active {
 	width: 100%;
 	margin: 0 auto;
 	z-index: 999999;
-	background-color: #CCC;
+	background-color: #eee;
 	opacity:0.9;
   	filter:alpha(opacity=90); /* For IE8 and earlier */
 }
@@ -568,7 +568,7 @@ img.header-image {
 
 
 /* =Menu
------------------------------------------------ */
+ * ----------------------------------------------- */
 
 .main-navigation {
 	float: right;
@@ -660,7 +660,7 @@ img.header-image {
 
 
 /* =Content
------------------------------------------------ */
+ * ----------------------------------------------- */
 .sticky {
 }
 .hentry {
@@ -773,7 +773,7 @@ img.header-image {
 .entry-meta .edit-link:before 		{ content: '\f411'; }
 
 /* =Featured pages section - front page
------------------------------------------------ */
+ * ----------------------------------------------- */
 .tg-one-third {
 	float: left;
 	width: 31.143952%;
@@ -827,7 +827,7 @@ img.header-image {
 }
 
 /* =No Results
------------------------------------------------ */
+ * ----------------------------------------------- */
 .not-found .page-content {
 	padding: 30px;
 	padding: 3rem;
@@ -838,7 +838,7 @@ img.header-image {
 }
 
 /* =Asides
------------------------------------------------ */
+ * ----------------------------------------------- */
 
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
@@ -847,7 +847,7 @@ img.header-image {
 
 
 /* =Media
------------------------------------------------ */
+ * ----------------------------------------------- */
 
 .page-content img.wp-smiley,
 .entry-content img.wp-smiley,
@@ -889,7 +889,7 @@ img.header-image {
 }
 
 /* =WordPress Gallery Support
------------------------------------------------ */
+ * ----------------------------------------------- */
 .gallery {
 	margin: 0 auto 15px;
 }
@@ -933,7 +933,7 @@ img.header-image {
 
 
 /* =Navigation
------------------------------------------------ */
+ * ----------------------------------------------- */
 
 .site-main [class*="navigation"] {
 	margin: 0 0 15px;
@@ -951,7 +951,7 @@ img.header-image {
 }
 
 /* =Comments
------------------------------------------------ */
+ * ----------------------------------------------- */
 
 #comments {
 	padding: 30px;
@@ -1124,7 +1124,7 @@ img.header-image {
 
 
 /* =Widgets
------------------------------------------------ */
+ * ----------------------------------------------- */
 .widget {
 	margin-bottom: 40px;
 	margin-bottom: 4rem;
@@ -1166,7 +1166,7 @@ img.header-image {
 }
 
 /* =Infinite Scroll
------------------------------------------------ */
+ * ----------------------------------------------- */
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
 .infinite-scroll .paging-navigation, /* Older / Newer Posts Navigation (always hidden) */
 .infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
@@ -1179,7 +1179,7 @@ img.header-image {
 }
 
 /* =Footer
------------------------------------------------ */
+ * ----------------------------------------------- */
 #colophon {
 	border-top: 1px solid #E1E4E6;
 	padding: 20px 0;
@@ -1192,7 +1192,7 @@ img.header-image {
 }
 
 /* =SCROLL UP
------------------------------------------------ */
+ * ----------------------------------------------- */
 a#scroll-up {
    bottom: -5px;
    position: fixed;
@@ -1316,7 +1316,7 @@ a#scroll-up:hover {
 }
 
 /* =Responsive Structure
------------------------------------------------ */
+ * ----------------------------------------------- */
 @media screen and (max-width: 1308px) {
 	#page {
 		width: 100%;
@@ -1360,12 +1360,12 @@ a#scroll-up:hover {
 		margin: 1rem 2.5rem 0 0;
 	}
 	.site-header .menu-toggle {
-		background-color: #CCC;
+		background-color: #eee;
 		color: #F9B342;
 	}
 	.site-header .menu-toggle:hover {
 		color: #F9B342;
-		background-color: #CCC;
+		background-color: #eee;
 	}
 	.main-small-navigation ul {
 		width: 200px;

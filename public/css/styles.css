@@ -849,7 +849,7 @@ span.button_area_new{
 li a {
   color: #686868;
   display: inline-block;
-  padding: 15px 20px;
+  padding: 10px 15px;
   width: 100%;
 }
 
@@ -1600,7 +1600,7 @@ ul.social-network li {
     color: #000;
 }
 .firstnot .sharepage ul {
-    margin: 50px 0;
+    margin: 48px 0;
 }
 .passworddatablock label {
     font-size: 12px;
