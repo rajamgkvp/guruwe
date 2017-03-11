@@ -58,7 +58,7 @@
 
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
 	<!--<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56b380b1dd5c3ad2" async="async"></script>-->
-    <script src="//images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
+   <!-- <script src="//images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
 	<script type="text/javascript" defer>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -69,6 +69,6 @@
 	  ga('send', 'pageview');
 
 	</script>
-
+-->
 </body>
 </html>

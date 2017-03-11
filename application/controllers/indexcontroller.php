@@ -1,6 +1,6 @@
 <?php
 require_once(ROOT . DS .'public/inc/facebooksdk/facebook.php' );
-
+error_reporting(0);
 class IndexController extends Controller {
 
 	function beforeAction () {

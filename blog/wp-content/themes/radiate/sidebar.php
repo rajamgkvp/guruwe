@@ -14,7 +14,16 @@
 			<aside id="search" class="widget widget_search">
 				<?php get_search_form(); ?>
 			</aside>
-
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- my blog ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9947635423203396"
+     data-ad-slot="4025605668"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 			<aside id="archives" class="widget">
 				<h3 class="widget-title"><?php _e( 'Archives', 'radiate' ); ?></h3>
 				<ul>
