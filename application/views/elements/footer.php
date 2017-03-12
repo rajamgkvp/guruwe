@@ -10,7 +10,7 @@
 			<ul id="disclaimer">
 				<li>
 					<li><img src="<?php echo BASE_PATH;?>/img/comodo_secure_white.png"></li>
-                    <li><a href="http://www.dmca.com/Protection/Status.aspx?ID=69081482-2732-4d85-bc81-87505bf67c71" title="DMCA.com Protection Status" class="dmca-badge"> <img src="//images.dmca.com/Badges/dmca-badge-w100-5x1-11.png?ID=69081482-2732-4d85-bc81-87505bf67c71" alt="DMCA.com Protection Status"></a></li>
+                    <li><a href="https://www.dmca.com/Protection/Status.aspx?ID=69081482-2732-4d85-bc81-87505bf67c71" title="DMCA.com Protection Status" class="dmca-badge"> <img src="//images.dmca.com/Badges/dmca-badge-w100-5x1-11.png?ID=69081482-2732-4d85-bc81-87505bf67c71" alt="DMCA.com Protection Status"></a></li>
 				</li>
 			</ul>
 		</div>

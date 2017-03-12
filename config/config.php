@@ -16,7 +16,7 @@ if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='139.162.20.253'
 	define ('DIGEST','test:123456');
 }else{
 	define ('BASE_PATH','http'.$s.'://'.$_SERVER['HTTP_HOST']);
-	define ('ADMIN_PATH','http'.$s.'://'.$_SERVER['HTTP_HOST'].'/transferadmin/');
+	define ('ADMIN_PATH','https'.$s.'://'.$_SERVER['HTTP_HOST'].'/transferadmin/');
 	define ('API_TARGET_URL','http'.$s.'://'.$_SERVER['HTTP_HOST'].'/api/');
 	define ('DIGEST','gTSeventeenCube:GtSeventeen3123app01');
 }
