@@ -23,8 +23,8 @@ if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='139.162.20.253'
 
 define ('SITE_NAME','GuruTransfer');
 
-//define ('FACEBOOK_APP_ID','1535182570125606');
-define ('FACEBOOK_APP_ID','284717701632906');
+define ('FACEBOOK_APP_ID','1535182570125606');
+//define ('FACEBOOK_APP_ID','284717701632906');
 define ('FBPERMISSIONS','public_profile,email');
 define ('FACEBOOK_SECRET','5dfcdb5afba6115eefb007acdbd3c3d2');
 
