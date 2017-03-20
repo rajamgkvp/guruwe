@@ -9,6 +9,18 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php
+   if( the_post_thumbnail() ) {
+      $image = '';
+      $title_attribute = the_title_attribute( 'echo=0' );
+      $image .= '<figure class="post-featured-image">';
+      $image .= '<a href="' . get_permalink() . '" title="'.$title_attribute.'">';
+      $image .= get_the_post_thumbnail( $post->ID, 'featured-image-medium', array( 'title' => $title_attribute, 'alt' => $title_attribute ) ).'</a>';
+      $image .= '</figure>';
+
+      echo $image;
+   }
+   ?>
 	<header class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 

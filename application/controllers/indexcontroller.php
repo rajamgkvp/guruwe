@@ -1,6 +1,6 @@
 <?php
 require_once(ROOT . DS .'public/inc/facebooksdk/facebook.php' );
-
+error_reporting(0);
 class IndexController extends Controller {
 
 	function beforeAction () {
@@ -13,13 +13,13 @@ class IndexController extends Controller {
 		$sliders = $Slider->getSliders();
 		$this->set('sliders',$sliders);
 
-		$this->title = 'Guru  Transfer | Send Big Files Online | Upload Large File Free';
+		$this->title = 'Free big & secure files sharing, sending, storage & transfer website';
 		$this->set('title',$this->title);
 
-		$this->metadesc = 'GuruTransfer: Send Big Files Online, Upload Large File Free, Transfer and Cloud Storage Service. Keep your data with your email at all time, on the go!';
+		$this->metadesc = 'Gurutransfer is a faster way to big and secure files sharing, sending, storage & transfer websites. Keep your data with your email at all time, on the go!';
 		$this->set('metadesc',$this->metadesc);
 
-		$this->metakeywords = 'GuruTransfer, filetransfer, file transfer, file, transfer, transfer files';
+		$this->metakeywords = 'file sharing, send big files, share file, file storage, transfer files, free file sharing sites, file transfer, big file transfer sites, file sharing website, secure file sharing';
 		$this->set('metakeywords',$this->metakeywords);
 
 	}
@@ -31,13 +31,13 @@ class IndexController extends Controller {
 		$sliders = $Slider->getSliders();
 		$this->set('sliders',$sliders);
 
-		$this->title = 'Guru  Transfer | Send Big Files Online | Upload Large File Free';
+		$this->title = 'Free big & secure files sharing, sending, storage & transfer website';
 		$this->set('title',$this->title);
 
-		$this->metadesc = 'GuruTransfer: Send Big Files Online, Upload Large File Free, Transfer and Cloud Storage Service. Keep your data with your email at all time, on the go!';
+		$this->metadesc = 'Gurutransfer is a faster way to big and secure files sharing, sending, storage & transfer websites. Keep your data with your email at all time, on the go!';
 		$this->set('metadesc',$this->metadesc);
 
-		$this->metakeywords = 'GuruTransfer, filetransfer, file transfer, file, transfer, transfer files';
+		$this->metakeywords = 'file sharing, send big files, share file, file storage, transfer files, free file sharing sites, file transfer, big file transfer sites, file sharing website, secure file sharing';
 		$this->set('metakeywords',$this->metakeywords);
 
 
@@ -155,6 +155,7 @@ class IndexController extends Controller {
 			if($data['password'] != ''){
 	    		$target_url = API_TARGET_URL.'filemuploadeadvance';
 	    	}else{
+	    		//$target_url = API_TARGET_URL.'filemuploadeadvance';
 	    		$target_url = API_TARGET_URL.'filemuploade';
 	    	}
 
@@ -320,9 +321,9 @@ class IndexController extends Controller {
 
 	function download(){
 		$this->set('slug','/');
-		$Slider = new Slider();
-		$sliders = $Slider->getSliders();
-		$this->set('sliders',$sliders);
+		// $Slider = new Slider();
+		// $sliders = $Slider->getSliders();
+		// $this->set('sliders',$sliders);
 
 		$this->title = 'GuruTransfer';
 		$this->set('title',$this->title);

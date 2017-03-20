@@ -115,9 +115,9 @@
         </div>
         <div class="transfer-done"><div class="transfer">Uploading...</div><div class="small"></div></div>
         <div class="sharepage" style="display: none;">
-              <ul class="list-inline social-share">
-                <li class="facebook"><a href="https://www.facebook.com/sharer.php?u=<?php echo BASE_PATH; ?>"><i class="fa fa-facebook"></i></a></li>
-                <li class="twitter"><a href="http://twitter.com/share?url=<?php echo BASE_PATH; ?>"><i class="fa fa-twitter"></i></a></li>
+              <ul class="list-inline social-share" style="bottom: 50px">
+                <li class="facebook"><a href="https://www.facebook.com/sharer.php?u=<?php echo BASE_PATH; ?>" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                <li class="twitter"><a href="http://twitter.com/share?url=<?php echo BASE_PATH; ?>" target="_blank"><i class="fa fa-twitter"></i></a></li>
               </ul>
         </div>
         <div class="transfer-again hide"><a class="btn transfer-again" href="<?php echo BASE_PATH; ?>">Transfer again</a></div>

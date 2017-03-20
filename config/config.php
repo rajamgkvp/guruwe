@@ -16,7 +16,7 @@ if($_SERVER['HTTP_HOST']=='localhost'){
 	define ('DIGEST','test:123456');
 }else{
 	define ('BASE_PATH','http'.$s.'://'.$_SERVER['HTTP_HOST']);
-	define ('ADMIN_PATH','http'.$s.'://'.$_SERVER['HTTP_HOST'].'/transferadmin/');
+	define ('ADMIN_PATH','https'.$s.'://'.$_SERVER['HTTP_HOST'].'/transferadmin/');
 	define ('API_TARGET_URL','http'.$s.'://'.$_SERVER['HTTP_HOST'].'/api/');
 	//define ('DIGEST','gTSeventeenCube:GtSeventeen3123app01');
         define ('DIGEST','test:123456');
@@ -25,7 +25,10 @@ if($_SERVER['HTTP_HOST']=='localhost'){
 define ('SITE_NAME','GuruTransfer');
 
 //define ('FACEBOOK_APP_ID','1535182570125606');
+###################### live ########
 define ('FACEBOOK_APP_ID','1535182570125606');
+##############################################
+//define ('FACEBOOK_APP_ID','284717701632906');
 define ('FBPERMISSIONS','public_profile,email');
 define ('FACEBOOK_SECRET','b1c41c4619d1dc9a7f94e7dd2c69896e');
 

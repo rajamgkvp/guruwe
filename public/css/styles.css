@@ -64,6 +64,9 @@ body{
     width: 100%;
     z-index: 9;
 }
+.no-margin{
+    margin:0; 
+}
 .gurutransfer .header {
     background: rgba(0, 0, 0, 0) url("../img/gurubackground.png") repeat scroll 0 0;
     height: 220px;
@@ -527,7 +530,7 @@ span.button_area_new{
     max-width: 100%;
 }
 
-.lightbox-overlay, .lightbox-feedback {
+.lightbox-overlay, .lightbox-feedback, .lightbox-overlay2 {
     background: #000 none repeat scroll 0 0;
     height: 100%;
     opacity: 0.2;
@@ -846,7 +849,7 @@ span.button_area_new{
 li a {
   color: #686868;
   display: inline-block;
-  padding: 15px 20px;
+  padding: 10px 15px;
   width: 100%;
 }
 
@@ -1071,15 +1074,21 @@ li a {
     text-align: right;
     margin-top: 40px;
 }
-.btn-download {
+.btn-download, .btn-download-with-password {
     background: #fff none repeat scroll 0 0;
     border-radius: 5px;
     float: right;
     padding: 5px 10px;
 }
-.btn-download a{
+.btn-download a, .btn-download-with-password a{
     color: #000;
     text-transform:uppercase;
+}
+.pull-left.error {
+    font-size: 12px;
+    line-height: 31px;
+    color: #b94a48;
+    display: none;
 }
 .view-message a{
     color: #000;
@@ -1094,6 +1103,9 @@ li a {
     max-height: 272px;
     overflow: scroll;
 }
+.passworddatablock {
+    float: left;
+}
 
 .downloadpage .lightbox-content {
     left: 30% !important;
@@ -1103,7 +1115,7 @@ li a {
     margin-left: 0;
     padding: 0;
     border: 1px solid #f9ab30;
-    z-index: 9;
+    z-index: 9999;
 }
 .downloadpage.lightbox .light-box-close {
     margin: 5px 8px 12px 0;
@@ -1588,7 +1600,7 @@ ul.social-network li {
     color: #000;
 }
 .firstnot .sharepage ul {
-    margin: 50px 0;
+    margin: 48px 0;
 }
 .passworddatablock label {
     font-size: 12px;

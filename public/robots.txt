@@ -1,4 +1,6 @@
 User-agent: *
-Disallow: /?*
-Disallow: /downloads/
-Disallow: /api/
+
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+
+Sitemap: https://www.gurutransfer.com/sitemap.xml
