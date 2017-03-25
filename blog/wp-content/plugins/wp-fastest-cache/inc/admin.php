@@ -341,26 +341,29 @@
 			}else if($this->isPluginActive('mobilepress/mobilepress.php')){
 				return $this->warningIncompatible("MobilePress", array("name" => "WPtouch Mobile", "url" => "https://wordpress.org/plugins/wptouch/"));
 			}else if($this->isPluginActive('speed-booster-pack/speed-booster-pack.php')){
-				return array("Speed Booster Pack needs to be deactive<br>", "error");
+				return array("Speed Booster Pack needs to be deactivated<br>", "error");
 			}else if($this->isPluginActive('cdn-enabler/cdn-enabler.php')){
-				return array("CDN Enabler needs to be deactive<br>This plugin has aldready CDN feature", "error");
+				return array("CDN Enabler needs to be deactivated<br>This plugin has aldready CDN feature", "error");
 			}else if($this->isPluginActive('wp-performance-score-booster/wp-performance-score-booster.php')){
-				return array("WP Performance Score Booster needs to be deactive<br>This plugin has aldready Gzip, Leverage Browser Caching features", "error");
+				return array("WP Performance Score Booster needs to be deactivated<br>This plugin has aldready Gzip, Leverage Browser Caching features", "error");
 			}else if($this->isPluginActive('bwp-minify/bwp-minify.php')){
-				return array("Better WordPress Minify needs to be deactive<br>This plugin has aldready Minify feature", "error");
+				return array("Better WordPress Minify needs to be deactivated<br>This plugin has aldready Minify feature", "error");
 			}else if($this->isPluginActive('check-and-enable-gzip-compression/richards-toolbox.php')){
-				return array("Check and Enable GZIP compression needs to be deactive<br>This plugin has aldready Gzip feature", "error");
+				return array("Check and Enable GZIP compression needs to be deactivated<br>This plugin has aldready Gzip feature", "error");
 			}else if($this->isPluginActive('gzippy/gzippy.php')){
-				return array("GZippy needs to be deactive<br>This plugin has aldready Gzip feature", "error");
+				return array("GZippy needs to be deactivated<br>This plugin has aldready Gzip feature", "error");
 			}else if($this->isPluginActive('gzip-ninja-speed-compression/gzip-ninja-speed.php')){
-				return array("GZip Ninja Speed Compression needs to be deactive<br>This plugin has aldready Gzip feature", "error");
+				return array("GZip Ninja Speed Compression needs to be deactivated<br>This plugin has aldready Gzip feature", "error");
 			}else if($this->isPluginActive('wordpress-gzip-compression/ezgz.php')){
-				return array("WordPress Gzip Compression needs to be deactive<br>This plugin has aldready Gzip feature", "error");
+				return array("WordPress Gzip Compression needs to be deactivated<br>This plugin has aldready Gzip feature", "error");
 			}else if($this->isPluginActive('filosofo-gzip-compression/filosofo-gzip-compression.php')){
-				return array("GZIP Output needs to be deactive<br>This plugin has aldready Gzip feature", "error");
+				return array("GZIP Output needs to be deactivated<br>This plugin has aldready Gzip feature", "error");
 			}else if($this->isPluginActive('head-cleaner/head-cleaner.php')){
-				return array("Head Cleaner needs to be deactive", "error");
+				return array("Head Cleaner needs to be deactivated", "error");
+			}else if($this->isPluginActive('far-future-expiry-header/far-future-expiration.php')){
+				return array("Far Future Expiration Plugin needs to be deactivated", "error");
 			}else if(is_writable($path.".htaccess")){
+				$htaccess = $this->insertWebp($htaccess);
 				$htaccess = $this->insertLBCRule($htaccess, $post);
 				$htaccess = $this->insertGzipRule($htaccess, $post);
 				$htaccess = $this->insertRewriteRule($htaccess, $post);
@@ -383,15 +386,56 @@
 			}
 		}
 
+		public function insertWebp($htaccess){
+			$tester_arr = array(
+				//"tr-TR",
+				"berkatan.com",
+				"pembeportakal.com",
+				"wpfastestcache.com",
+				"zamknijkonto.pl",
+				"devv.zamknijkonto.pl",
+				"goldsgym.nl"
+				);
+														
+			if(in_array(get_bloginfo('language'), $tester_arr) || in_array(str_replace("www.", "", $_SERVER["HTTP_HOST"]), $tester_arr)){
+				$data = "# BEGIN WEBPWpFastestCache"."\n".
+						"<IfModule mod_rewrite.c>"."\n".
+						"RewriteEngine On"."\n".
+						"RewriteCond %{HTTP_ACCEPT} image/webp"."\n".
+						"RewriteCond %{REQUEST_URI} jpg|png"."\n".
+						"RewriteCond %{DOCUMENT_ROOT}/$1.webp -f"."\n".
+						"RewriteRule ^(.*) \"/$1.webp\" [L]"."\n".
+						"</IfModule>"."\n".
+						"<IfModule mod_headers.c>"."\n".
+						"Header append Vary Accept env=REDIRECT_accept"."\n".
+						"Header set Expires \"max-age=2592000, public\""."\n".
+						"Header unset ETag"."\n".
+						"Header set Connection keep-alive"."\n".
+						"FileETag None"."\n".
+						"</IfModule>"."\n".
+						"AddType image/webp .webp"."\n".
+						"# END WEBPWpFastestCache"."\n";
+
+				if(!preg_match("/BEGIN\s*WEBPWpFastestCache/", $htaccess)){
+					$htaccess = $data.$htaccess;
+				}
+
+				return $htaccess;
+			}else{
+				return $htaccess;
+			}
+		}
+
 		public function insertLBCRule($htaccess, $post){
 			if(isset($post["wpFastestCacheLBC"]) && $post["wpFastestCacheLBC"] == "on"){
 
 
 			$data = "# BEGIN LBCWpFastestCache"."\n".
-					'<FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf|x-html|css|xml|js|woff|woff2|ttf|svg|eot)(\.gz)?$">'."\n".
+					'<FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|webp|js|css|swf|x-html|css|xml|js|woff|woff2|ttf|svg|eot)(\.gz)?$">'."\n".
 					'<IfModule mod_expires.c>'."\n".
 					'ExpiresActive On'."\n".
 					'ExpiresDefault A0'."\n".
+					'ExpiresByType image/webp A2592000'."\n".
 					'ExpiresByType image/gif A2592000'."\n".
 					'ExpiresByType image/png A2592000'."\n".
 					'ExpiresByType image/jpg A2592000'."\n".
@@ -557,7 +601,10 @@
 				$data = $data."RewriteCond %{DOCUMENT_ROOT}/".WPFC_WP_CONTENT_BASENAME."/cache/all/$1/index.html -f"."\n";
 			}else{
 				$data = $data."RewriteCond %{DOCUMENT_ROOT}/".WPFC_WP_CONTENT_BASENAME."/cache/all/$1/index.html -f [or]"."\n";
-				$data = $data."RewriteCond ".WPFC_WP_CONTENT_DIR."/cache/all/".$this->getRewriteBase(true)."$1/index.html -f"."\n";
+				// to escape spaces
+				$tmp_WPFC_WP_CONTENT_DIR = str_replace(" ", "\ ", WPFC_WP_CONTENT_DIR);
+
+				$data = $data."RewriteCond ".$tmp_WPFC_WP_CONTENT_DIR."/cache/all/".$this->getRewriteBase(true)."$1/index.html -f"."\n";
 			}
 
 			$data = $data.'RewriteRule ^(.*) "/'.$this->getRewriteBase().WPFC_WP_CONTENT_BASENAME.'/cache/all/'.$this->getRewriteBase(true).'$1/index.html" [L]'."\n";
@@ -712,6 +759,7 @@
 			$this->systemMessage = count($this->systemMessage) > 0 ? $this->systemMessage : $this->getSystemMessage();
 
 			$wpFastestCacheCombineCss = isset($this->options->wpFastestCacheCombineCss) ? 'checked="checked"' : "";
+			$wpFastestCacheGoogleFonts = isset($this->options->wpFastestCacheGoogleFonts) ? 'checked="checked"' : "";
 			$wpFastestCacheGzip = isset($this->options->wpFastestCacheGzip) ? 'checked="checked"' : "";
 			$wpFastestCacheCombineJs = isset($this->options->wpFastestCacheCombineJs) ? 'checked="checked"' : "";
 			$wpFastestCacheCombineJsPowerFul = isset($this->options->wpFastestCacheCombineJsPowerFul) ? 'checked="checked"' : "";
@@ -808,17 +856,54 @@
 							</div>
 
 
+
+
 							<?php
 
 							$tester_arr = array(
+											"tr-TR",
 											"berkatan.com",
+											"hciwla.org"
 											);
 														
 							if(in_array(get_bloginfo('language'), $tester_arr) || in_array(str_replace("www.", "", $_SERVER["HTTP_HOST"]), $tester_arr)){ ?>
-								<div class="questionCon">
-									<div class="question">Widget Cache</div>
-									<div class="inputCon"><input type="checkbox" <?php echo $wpFastestCacheWidgetCache; ?> id="wpFastestCacheWidgetCache" name="wpFastestCacheWidgetCache"><label for="wpFastestCacheWidgetCache">Reduce the number of SQL queries</label></div>
-								</div>
+								
+
+
+								<?php if(class_exists("WpFastestCachePowerfulHtml")){ ?>
+									<?php if(file_exists(WPFC_WP_CONTENT_DIR."/plugins/wp-fastest-cache-premium/pro/library/widget-cache.php")){ ?>
+										<?php include_once WPFC_WP_CONTENT_DIR."/plugins/wp-fastest-cache-premium/pro/library/widget-cache.php"; ?>
+
+										<?php if(class_exists("WpfcWidgetCache") && method_exists("WpfcWidgetCache", "add_filter_admin")){ ?>
+											<div class="questionCon">
+												<div class="question">Widget Cache</div>
+												<div class="inputCon"><input type="checkbox" <?php echo $wpFastestCacheWidgetCache; ?> id="wpFastestCacheWidgetCache" name="wpFastestCacheWidgetCache"><label for="wpFastestCacheWidgetCache">Reduce the number of SQL queries</label></div>
+												<div class="get-info"><a target="_blank" href="http://www.wpfastestcache.com/premium/widget-cache-reduce-the-number-of-sql-queries/"><img src="<?php echo plugins_url("wp-fastest-cache/images/info.png"); ?>" /></a></div>
+											</div>
+										<?php }else{ ?>
+											<div class="questionCon update-needed">
+												<div class="question">Widget Cache</div>
+												<div class="inputCon"><input type="checkbox" <?php echo $wpFastestCacheWidgetCache; ?> id="wpFastestCacheWidgetCache"><label for="wpFastestCacheWidgetCache">Reduce the number of SQL queries</label></div>
+												<div class="get-info"><a target="_blank" href="http://www.wpfastestcache.com/premium/widget-cache-reduce-the-number-of-sql-queries/"><img src="<?php echo plugins_url("wp-fastest-cache/images/info.png"); ?>" /></a></div>
+											</div>
+										<?php } ?>
+									<?php }else{ ?>
+										<div class="questionCon update-needed">
+											<div class="question">Widget Cache</div>
+											<div class="inputCon"><input type="checkbox" <?php echo $wpFastestCacheWidgetCache; ?> id="wpFastestCacheWidgetCache"><label for="wpFastestCacheWidgetCache">Reduce the number of SQL queries</label></div>
+											<div class="get-info"><a target="_blank" href="http://www.wpfastestcache.com/premium/widget-cache-reduce-the-number-of-sql-queries/"><img src="<?php echo plugins_url("wp-fastest-cache/images/info.png"); ?>" /></a></div>
+										</div>
+									<?php } ?>
+								<?php }else{ ?>
+									<div class="questionCon disabled">
+										<div class="question">Widget Cache</div>
+										<div class="inputCon"><input type="checkbox" <?php echo $wpFastestCacheWidgetCache; ?> id="wpFastestCacheWidgetCache"><label for="wpFastestCacheWidgetCache">Reduce the number of SQL queries</label></div>
+										<div class="get-info"><a target="_blank" href="http://www.wpfastestcache.com/premium/widget-cache-reduce-the-number-of-sql-queries/"><img src="<?php echo plugins_url("wp-fastest-cache/images/info.png"); ?>" /></a></div>
+									</div>
+								<?php } ?>
+
+
+
 							<?php } ?>
 
 
@@ -860,6 +945,7 @@
 									"canliradyodinle.life",
 									"canlitvturk.org",
 									"haftahaftahamilelik.gen.tr",
+									"tooxclusive.com",
 									"canliradyodinle.fm"
 									);
 
@@ -1023,6 +1109,41 @@
 									<div class="get-info"><a target="_blank" href="http://www.wpfastestcache.com/premium/render-blocking-js/"><img src="<?php echo plugins_url("wp-fastest-cache/images/info.png"); ?>" /></a></div>
 								</div>
 							<?php } ?>
+
+
+
+
+
+							<?php if(class_exists("WpFastestCachePowerfulHtml")){ ?> 
+								<?php if(method_exists("WpFastestCachePowerfulHtml", "google_fonts")){ ?>
+									<div class="questionCon">
+										<div class="question">Google Fonts</div>
+										<div class="inputCon"><input type="checkbox" <?php echo $wpFastestCacheGoogleFonts; ?> id="wpFastestCacheGoogleFonts" name="wpFastestCacheGoogleFonts"><label for="wpFastestCacheGoogleFonts">Load Google Fonts asynchronously </label></div>
+										<div class="get-info"><a target="_blank" href="http://www.wpfastestcache.com/premium/google-fonts-optimize-css-delivery/"><img src="<?php echo plugins_url("wp-fastest-cache/images/info.png"); ?>" /></a></div>
+									</div>
+								<?php }else{ ?>
+									<div class="questionCon update-needed">
+										<div class="question">Google Fonts</div>
+										<div class="inputCon"><input type="checkbox" id="wpFastestCacheGoogleFonts" name="wpFastestCacheGoogleFonts"><label for="wpFastestCacheGoogleFonts">Load Google Fonts asynchronously</label></div>
+										<div class="get-info"><a target="_blank" href="http://www.wpfastestcache.com/premium/google-fonts-optimize-css-delivery/"><img src="<?php echo plugins_url("wp-fastest-cache/images/info.png"); ?>" /></a></div>
+									</div>
+								<?php } ?>
+							<?php }else{ ?>
+								<div class="questionCon disabled">
+									<div class="question">Google Fonts</div>
+									<div class="inputCon"><input type="checkbox" id="wpFastestCacheGoogleFonts" name="wpFastestCacheGoogleFonts"><label for="wpFastestCacheGoogleFonts">Load Google Fonts asynchronously</label></div>
+									<div class="get-info"><a target="_blank" href="http://www.wpfastestcache.com/premium/google-fonts-optimize-css-delivery/"><img src="<?php echo plugins_url("wp-fastest-cache/images/info.png"); ?>" /></a></div>
+								</div>
+							<?php } ?>
+
+
+
+
+
+
+
+
+
 
 							<?php
 

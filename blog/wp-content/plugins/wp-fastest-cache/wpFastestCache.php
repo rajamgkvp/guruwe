@@ -3,7 +3,7 @@
 Plugin Name: WP Fastest Cache
 Plugin URI: http://wordpress.org/plugins/wp-fastest-cache/
 Description: The simplest and fastest WP Cache system
-Version: 0.8.6.6
+Version: 0.8.6.7
 Author: Emre Vona
 Author URI: http://tr.linkedin.com/in/emrevona
 Text Domain: wp-fastest-cache
@@ -20,8 +20,8 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
-*/ 
-	// test
+*/
+	//test7
 	if (!defined('WPFC_WP_CONTENT_BASENAME')) {
 		if (!defined('WPFC_WP_PLUGIN_DIR')) {
 			if(preg_match("/(\/trunk\/|\/wp-fastest-cache\/)$/", plugin_dir_path( __FILE__ ))){
@@ -88,9 +88,12 @@ GNU General Public License for more details.
 				$this->rm_folder_recursively($this->getWpContentDir()."/cache/tmpWpfc");
 			}
 
-
-
-
+			if($this->isPluginActive('wp-polls/wp-polls.php')){
+					//for WP-Polls 
+					require_once "inc/wp-polls.php";
+					$wp_polls = new WpPollsForWpFc();
+					$wp_polls->hook();
+			}
 
 			if(isset($_GET) && isset($_GET["action"]) && in_array($_GET["action"], $optimize_image_ajax_requests)){
 				if($this->isPluginActive("wp-fastest-cache-premium/wpFastestCachePremium.php")){
@@ -272,11 +275,10 @@ GNU General Public License for more details.
 
 		public function wpfc_check_url_ajax_request_callback(){
 			if(current_user_can('manage_options')){
-				if(preg_match("/wp\.com/", $_GET["url"])){
-					$res = array("success" => true);
-					echo json_encode($res);
-					exit;
+				if(preg_match("/wp\.com/", $_GET["url"]) || $_GET["url"] == "random"){
+					wp_send_json(array("success" => true));
 				}
+
 				$host = str_replace("www.", "", $_SERVER["HTTP_HOST"]);
 				$_GET["url"] = esc_url_raw($_GET["url"]);				
 				
@@ -317,8 +319,8 @@ GNU General Public License for more details.
 						}
 					}
 				}
-				echo json_encode($res);
-				exit;
+				
+				wp_send_json($res);
 			}else{
 				wp_die("Must be admin");
 			}
@@ -636,7 +638,6 @@ GNU General Public License for more details.
 			if(isset($_GET["page"]) && $_GET["page"] == "wpfastestcacheoptions"){
 				wp_enqueue_style("wp-fastest-cache-buycredit", plugins_url("wp-fastest-cache/css/buycredit.css"), array(), time(), "all");
 				wp_enqueue_style("wp-fastest-cache-flaticon", plugins_url("wp-fastest-cache/css/flaticon.css"), array(), time(), "all");
-				wp_enqueue_style("wp-fastest-cache-db-flaticon", plugins_url("wp-fastest-cache/css/db/flaticon.css"), array(), time(), "all");
 				wp_enqueue_style("wp-fastest-cache-dialog", plugins_url("wp-fastest-cache/css/dialog.css"), array(), time(), "all");
 			}
 		}
@@ -870,39 +871,9 @@ GNU General Public License for more details.
 					}
 				}
 				
-				// Sometimes there is no path of post/page static pages 
-				if(get_option('page_on_front') == $post_id){
-					@unlink($this->getWpContentDir()."/cache/all/index.html");
-					@unlink($this->getWpContentDir()."/cache/wpfc-mobile-cache/index.html");
-				}
-
-				if(is_sticky($post_id)){
-					@unlink($this->getWpContentDir()."/cache/all/index.html");
-					@unlink($this->getWpContentDir()."/cache/wpfc-mobile-cache/index.html");
-				}
-
-				// to check the post appears on homepage
-				if(!get_option('page_on_front')){
-					$numberposts = get_option("posts_per_page") - count(get_option('sticky_posts'));
-
-					if($numberposts > 0){
-			    		$recent_posts = wp_get_recent_posts(array(
-										'numberposts' => $numberposts,
-									    'orderby' => 'post_date',
-									    'order' => 'DESC',
-									    'post_type' => 'post',
-									    'post_status' => 'publish',
-									    'suppress_filters' => true
-									    ), ARRAY_A);
-
-						foreach ((array)$recent_posts as $key => $value) {
-							if($post_id == $value["ID"]){
-								@unlink($this->getWpContentDir()."/cache/all/index.html");
-								@unlink($this->getWpContentDir()."/cache/wpfc-mobile-cache/index.html");
-							}
-						}
-					}
-				}
+				// to clear cache of homepage
+				@unlink($this->getWpContentDir()."/cache/all/index.html");
+				@unlink($this->getWpContentDir()."/cache/wpfc-mobile-cache/index.html");
 
 				// to clear cache of cats which contains the post (only first page)
 				foreach (wp_get_post_categories($post_id) as $cat_key => $cat_id) {
@@ -1073,14 +1044,12 @@ GNU General Public License for more details.
 
 			if(!empty($_POST) && isset($_POST["wpFastestCachePreload"])){
 				foreach ($_POST as $key => $value) {
-					$key = esc_url_raw($key);
-					$value = esc_url_raw($value);
+					$key = esc_attr($key);
+					$value = esc_attr($value);
 					
 					preg_match("/wpFastestCachePreload_(.+)/", $key, $type);
 
 					if(!empty($type)){
-						$value = preg_replace("/[^0-9]+/", "", $value);
-						
 						if($type[1] == "number"){
 							$preload_arr[$type[1]] = $value; 
 						}else{
@@ -1566,13 +1535,19 @@ GNU General Public License for more details.
 			    'wpfc' => true
 		    );
 
+		    $schedules['everythreedays'] = array(
+			    'interval' => 60*60*24*3,
+			    'display' => __( 'Once Every 3 Days' ),
+			    'wpfc' => true
+		    );
+
 		    $schedules['weekly'] = array(
 			    'interval' => 60*60*24*7,
 			    'display' => __( 'Once a Week' ),
 			    'wpfc' => true
 		    );
 
-		    $schedules['weekly'] = array(
+		    $schedules['everytendays'] = array(
 			    'interval' => 60*60*24*10,
 			    'display' => __( 'Once Every 10 Days' ),
 			    'wpfc' => true
@@ -1644,6 +1619,11 @@ GNU General Public License for more details.
 				foreach ($this->cdn as $key => $cdn) {
 					if(preg_match("/manifest\.json\.php/i", $matches[0])){
 						return $matches[0];
+					}
+
+					if(preg_match("/^\/\/random/", $cdn->cdnurl) || preg_match("/\/\/i\d\.wp\.com/", $cdn->cdnurl)){
+						$cdn->cdnurl = "//i".rand(0,3).".wp.com/".str_replace("www.", "", $_SERVER["HTTP_HOST"]);
+						$cdn->cdnurl = preg_replace("/\/\/i\d\.wp\.com/", "//i".rand(0,3).".wp.com", $cdn->cdnurl);
 					}
 
 					$cdn->file_types = str_replace(",", "|", $cdn->file_types);

@@ -362,6 +362,18 @@
 			return false;
 		}
 
+		public function is_json(){
+			if(isset($_SERVER["HTTP_ACCEPT"]) && preg_match("/json/i", $_SERVER["HTTP_ACCEPT"])){
+				return true;
+			}
+
+			if(preg_match("/^\/wp-json/", $_SERVER["REQUEST_URI"])){
+				return true;
+			}
+
+			return false;
+		}
+
 		public function is_xml($buffer){
 			if(preg_match("/^\s*\<\?xml/i", $buffer)){
 				return true;
@@ -385,7 +397,7 @@
 				return $buffer;
 			}else if (is_user_logged_in() || $this->isCommenter()){
 				return $buffer;
-			} else if(isset($_SERVER["HTTP_ACCEPT"]) && preg_match("/json/i", $_SERVER["HTTP_ACCEPT"])){
+			}else if($this->is_json()){
 				return $buffer;
 			}else if(isset($_COOKIE["wptouch-pro-view"])){
 				return $buffer."<!-- \$_COOKIE['wptouch-pro-view'] has been set -->";
@@ -505,7 +517,7 @@
 					$content = $this->minify($content);
 					
 					if($this->cdn){
-						$content = preg_replace_callback("/(srcset|src|href|data-lazyload)\=[\'\"]([^\'\"]+)[\'\"]/i", array($this, 'cdn_replace_urls'), $content);
+						$content = preg_replace_callback("/(srcset|src|href|data-lazyload)\s{0,2}\=[\'\"]([^\'\"]+)[\'\"]/i", array($this, 'cdn_replace_urls'), $content);
 						// url()
 						$content = preg_replace_callback("/(url)\(([^\)]+)\)/i", array($this, 'cdn_replace_urls'), $content);
 						// {"concatemoji":"http:\/\/your_url.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.7"}
@@ -689,12 +701,9 @@
 		public function is_amp($content){
 			$request_uri = trim($_SERVER["REQUEST_URI"], "/");
 
-			// https://wordpress.org/plugins/amp/
-			if($this->isPluginActive('amp/amp.php')){
-				if(preg_match("/amp$/", $request_uri)){
-					if(preg_match("/<html[^\>]+amp[^\>]*>/i", $content)){
-						return true;
-					}
+			if(preg_match("/amp$/", $request_uri)){
+				if(preg_match("/<html[^\>]+amp[^\>]*>/i", $content)){
+					return true;
 				}
 			}
 

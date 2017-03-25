@@ -4398,7 +4398,7 @@ function acx_smw_purchased_licence_add_callback()
 	{
 		if($acx_smwp_retry_array[$acx_smw_purchased_licence]['activation_licence_check'] >= 3)
 		{
-			$retry = false;
+			$retry = false;	
 		}
 	}
 		

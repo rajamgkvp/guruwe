@@ -152,16 +152,20 @@ add_action( 'wp_ajax_nopriv_mashsb_refresh_cache', 'mashsb_ajax_refresh_cache' )
 function mashsb_get_expiration_method_async() {
     // post age in seconds
     $post_age = floor( date( 'U' ) - get_post_time( 'U', true ) );
+    
+    $three_months_period = apply_filters('mashsb_three_months', 5184000);
+    
+    $three_weeks_period = apply_filters('mashsb_three_weeks', 1814400);
 
-    if( isset( $post_age ) && $post_age > 5184000 ) {
+    if( isset( $post_age ) && $post_age > $three_months_period ) {
         // Post older than 60 days - expire cache after 12 hours
-        $seconds = 43200;
-    } else if( isset( $post_age ) && $post_age > 75600 ) {
+        $seconds = apply_filters('mashsb_refresh_60_days', 43200);
+    } else if( isset( $post_age ) && $post_age > $three_weeks_period ) {
         // Post older than 21 days - expire cache after 4 hours.
-        $seconds = 14400;
+        $seconds = apply_filters('mashsb_refresh_21_days', 14400);
     } else {
         // expire cache after one hour
-        $seconds = 3600;
+        $seconds = apply_filters('mashsb_refresh_1_hour', 3600);;
     }
 
     return $seconds;

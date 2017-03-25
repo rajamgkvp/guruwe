@@ -1148,6 +1148,7 @@ function acx_smw_install_licence_refresh_callback()
 add_action("wp_ajax_acx_smw_install_licence_refresh","acx_smw_install_licence_refresh_callback");
 function acx_smw_license_refresh_with_forcing($acx_license,$addon_key)
 {
+	$retry = true;
 	$acx_smw_ip =  isset($_SERVER['SERVER_ADDR']) ? $_SERVER['SERVER_ADDR'] : $_SERVER['LOCAL_ADDR'];
 	$acx_smw_domain = $_SERVER['SERVER_NAME'];
 	$acx_smw_directory = dirname(__FILE__);

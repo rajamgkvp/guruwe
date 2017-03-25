@@ -3,8 +3,8 @@ Contributors: emrevona
 Donate link: http://profiles.wordpress.org/emrevona/
 Tags: cache, performance, wp-cache, total cache, super cache
 Requires at least: 3.3
-Tested up to: 4.7.2
-Stable tag: 0.8.6.6
+Tested up to: 4.7.3
+Stable tag: 0.8.6.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -101,9 +101,18 @@ Wpfc does not support Wordpress Multisite yet.
 
 == Changelog ==
 
+= 0.8.6.7 =
+* to escape spaces in path for htaccess
+* to fix the error of htaccess not writeable warning
+* <strong>[FEATURE]</strong> WP AMP — Accelerated Mobile Pages for WordPress and WooCommerce
+* <strong>[FEATURE]</strong> to support webp for leverage browser caching
+* <strong>[FEATURE]</strong> to exclude REST API url which start with /wp-json
+* <strong>[FEATURE]</strong> Google Fonts Async [<a target="_blank" href="http://www.wpfastestcache.com/premium/google-fonts-optimize-css-delivery/">Details</a>]
+* <strong>[FEATURE]</strong> Random option for Photon CDN
+
 = 0.8.6.6 =
 * to make compatible with the new rules of wordpress
-* <strong>[FEATURE]</strong> Database Cleanup
+* <strong>[FEATURE]</strong> Database Cleanup [<a target="_blank" href="http://www.wpfastestcache.com/premium/database-cleanup-speed-up-databases/">Details</a>]
 * to decode URLs in non-latin languages for singleDeleteCache()
 * to change the method of the premium update <a href="http://www.wpfastestcache.com/blog/premium-update-before-v1-3-6/">Details</a>
 
