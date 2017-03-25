@@ -23,7 +23,7 @@
   });
 </script>
     <title><?php echo $title; ?></title>
-
+    <meta name="robots" content="index,follow,noodp,noydir"/> 
     <meta property="og:url" content="https://www.gurutransfer.com<?php echo $_SERVER['REQUEST_URI']; ?>">
     <meta property="og:description" content="<?php echo $metadesc; ?>">
     <meta property="og:title" content="<?php echo $title; ?>">
