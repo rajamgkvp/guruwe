@@ -36,7 +36,7 @@
 		<div class="col-sm-3 col-xs-6 text-left">
 			<ul>
 				<li><h4>Support</h4></li>
-				<li><a href="<?php echo BASE_PATH;?>/how-it-works">How it works</a></li>
+				<!--<li><a href="<?php echo BASE_PATH;?>/how-it-works">How it works</a></li>-->
 				<li><a href="<?php echo BASE_PATH;?>/questions">Questions</a></li>
 				<!-- <li><a href="<?php echo BASE_PATH;?>/guru-transfer-pro">Guru Transfer Pro</a></li> -->
 			</ul>
@@ -53,9 +53,9 @@
                                  */
                                 ?>
                                 <li><a target="_blank" href="https://www.instagram.com/gurutransfer">Instagram</a></li>
-                                <li><a target="_blank" href="https://www.youtube.com/channel/UCtrDTgU1ogFptF7YO2q--Qw">Youtube</a></li>
+                                <!--<li><a target="_blank" href="https://www.youtube.com/channel/UCtrDTgU1ogFptF7YO2q--Qw">Youtube</a></li>-->
                                 <li><a target="_blank" href="https://www.linkedin.com/showcase/10503685?pathWildcard=10503685">Linkedin</a></li>
-                                <li><a target="_blank" href="https://in.pinterest.com/gurutransfer">Pintrest</a></li>
+                                <!--<li><a target="_blank" href="https://in.pinterest.com/gurutransfer">Pintrest</a></li>-->
 			</ul>
 		</div>
 	</div>

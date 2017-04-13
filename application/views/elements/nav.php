@@ -46,7 +46,11 @@
 			        </li>
 				<?php }else{ ?>
 					<li>
-						<a href="javascript:void(0)" class="dropdown-toggle connect-with-facebook">Sign Up with Facebook</a>
+						<?php
+                                                /*<a href="javascript:void(0)" class="dropdown-toggle connect-with-facebook">Sign Up with Facebook</a>
+                                                 * 
+                                                 */
+                                                ?>
 					</li>
 				<?php } ?>
 				<!--<li class="menu-item blog">
