@@ -46,12 +46,7 @@
 			<ul>
 				<li><h4>Community</h4></li>
 				<li><a target="_blank" href="https://twitter.com/gurutransferapp">Twitter</a></li>
-				<?php
-                                /*
                                 <li><a target="_blank" href="http://www.facebook.com/gurutransfer">Facebook</a></li>
-                                 * 
-                                 */
-                                ?>
                                 <li><a target="_blank" href="https://www.instagram.com/gurutransfer">Instagram</a></li>
                                 <!--<li><a target="_blank" href="https://www.youtube.com/channel/UCtrDTgU1ogFptF7YO2q--Qw">Youtube</a></li>-->
                                 <li><a target="_blank" href="https://www.linkedin.com/showcase/10503685?pathWildcard=10503685">Linkedin</a></li>
