@@ -110,6 +110,9 @@ Have more questions ? [Drop a mail](http://www.acurax.com/contact.php/ "Drop an 
 
 == Upgrade Notice ==
 
+= 3.2.4 =
+* Fix - Security Fixes
+
 = 3.2.3 =
 * Fix - Perfomance Improvements
 * Code Improvements
@@ -222,6 +225,9 @@ Have more questions ? [Drop a mail](http://www.acurax.com/contact.php/ "Drop an 
 * Graphics Improvements.
 
 == Changelog ==
+
+= 3.2.4 =
+* Fix - Security Fixes
 
 = 3.2.3 =
 * Fix - Perfomance Improvements

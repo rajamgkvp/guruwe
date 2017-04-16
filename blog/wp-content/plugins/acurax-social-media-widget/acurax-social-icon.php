@@ -4,7 +4,7 @@ Plugin Name: Social Media Widget by Acurax
 Plugin URI: http://www.acurax.com/products/floating-social-media-icon-plugin-wordpress/
 Description: A Simple Wordpress Plugin Which Allow You To Add Widget Which Links Social Media Icons to Your Social Media Profiles Twitter,Facebook,Pinterest,Youtube,Rss Feed,Linkedin,google plus. You can define icon style size for each widget.
 Author: Acurax 
-Version: 3.2.3
+Version: 3.2.4
 Author URI: http://www.acurax.com/
 License: GPLv2 or later
 */
@@ -24,7 +24,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */ 
 define('ACX_SOCIALMEDIA_WIDGET_TOTAL_THEMES', 30);
 define('ACX_SMW_TOTAL_STATIC_SERVICES', 8);
-define('ACX_SMW_VERSION', "3.2.3");
+define('ACX_SMW_VERSION', "3.2.4");
 define("ACX_SMW_BASE_LOCATION",plugin_dir_url( __FILE__ ));
 define("ACX_SMW_WP_SLUG","acurax-social-media-widget");
 include_once(plugin_dir_path( __FILE__ ).'function.php');

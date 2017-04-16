@@ -15,7 +15,7 @@ function acx_smw_nonce_field()
 
 function acx_smw_option_form_start()
 {
-	echo "<form name='acx_smw_form' id='acx_smw_form'  method='post' action='".str_replace( '%7E', '~',$_SERVER['REQUEST_URI'])."'>";
+	echo "<form name='acx_smw_form' id='acx_smw_form'  method='post' action='".esc_url(str_replace( '%7E', '~',$_SERVER['REQUEST_URI']))."'>";
 } add_action('acx_smw_hook_option_form_head','acx_smw_option_form_start',100);
 
 
@@ -184,7 +184,7 @@ function acx_smw_misc_nonce_field()
 
 function acx_smw_misc_option_form_start()
 {
-	echo "<form name='acx_smw_misc_form' id='acx_smw_form'  method='post' action='".str_replace( '%7E', '~',$_SERVER['REQUEST_URI'])."'>";
+	echo "<form name='acx_smw_misc_form' id='acx_smw_form'  method='post' action='".esc_url(str_replace( '%7E', '~',$_SERVER['REQUEST_URI']))."'>";
 } add_action('acx_smw_misc_hook_option_form_head','acx_smw_misc_option_form_start',100);
 
 
