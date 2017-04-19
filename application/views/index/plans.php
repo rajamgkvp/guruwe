@@ -1,38 +1,48 @@
-
+<?php
+//echo "<pre>";
+//print_r($plans);
+?>
 <div class="section">
     <div class="container">
         <div class="content row">
             <div class="col-sm-12 col-md-12">
                 <div class="row content-page">
                     
-
                     <div class="row db-padding-btm db-attached">
+                        
+                        <?php
+                        foreach($plans['filedata'] as $value)
+                        {
+                           // echo "<pre>";
+                            //print_r($value);
+                            ?>
                         <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
                             <div class="db-wrapper">
                                 <div class="db-pricing-eleven db-bk-color-one">
                                     <div class="plan free-plan">
                                         <div class="type">
-                                            Guest
+                                            <?php echo $value->plan;?>
                                         </div>
                                         <div class="price">
                                             <ul class="list-inline">
-                                                <li>Free*</li>
+                                                <li><?php echo $value->label;?><br/>
+                                                <?php echo $value->price;?></li>
                                             </ul>
                                         </div>
                                         <button type="button" class="btn btn-pricing">Get Started</button>
                                     </div>
-                                    <ul class="ullist">
-
-                                        <li><i class="fa fa-check"></i>30+ Accounts </li>
-                                        <li><i class="fa fa-check"></i>150+ Projects </li>
-                                        <li><i class="fa fa-check"></i>Lead Required</li>
-                                    </ul>
+                                    <?php echo $value->description;?>
+                                    
                                     <div class="pricing-footer">
                                         
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <?php }
+                        /*
+                        ?>
+                        
                         <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
                               <div class="db-wrapper">
                             <div class="db-pricing-eleven db-bk-color-two popular">
@@ -61,6 +71,9 @@
                             </div>
                                   </div>
                         </div>
+                        
+                        
+                        
                         <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
                               <div class="db-wrapper">
                             <div class="db-pricing-eleven db-bk-color-three">
@@ -87,6 +100,7 @@
                             </div>
                                   </div>
                         </div>
+                        
                         <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
                               <div class="db-wrapper">
                             <div class="db-pricing-eleven db-bk-color-six">
@@ -112,7 +126,9 @@
                             </div>
                         </div>
                     </div>
-
+<?php
+*/
+?>
 
                 </div>
             </div>

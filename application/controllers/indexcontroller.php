@@ -457,6 +457,8 @@ class IndexController extends Controller {
 	}
 
 	function plans(){
+            
+            
 		$explode =  explode('/', $_SERVER['REQUEST_URI']);
 		if($_SERVER['HTTP_HOST']=='localhost'){
 			$slug = $explode[2];

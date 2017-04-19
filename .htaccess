@@ -3,8 +3,9 @@ php_value max_input_vars 100000
 RewriteEngine On
 #RewriteCond %{HTTP_HOST} ^[^.]+\.[^.]+$
 #RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [L,R=301]
-RewriteCond %{HTTPS} !on
-RewriteRule (.*) https://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+#RewriteCond %{HTTPS} !on
+#RewriteRule (.*) https://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
 <IfModule mod_rewrite.c>
     RewriteEngine on
