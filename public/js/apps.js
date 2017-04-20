@@ -695,4 +695,154 @@ function checkcount(){
     }
 }
 
+function gotosignup(){
+    $('.sign-in-block').addClass('hide');
+    $('.sign-up-block').removeClass('hide');
+}
 
+function gotosignin(){
+    $('.sign-in-block').removeClass('hide');
+    $('.sign-up-block').addClass('hide');
+}
+
+function handleLogin() {
+    let form = document.forms["login"];
+    if(signinvalidation(form)){
+        return true;
+    }else{
+        return false;
+    }
+  }
+
+function signinvalidation(form){
+  var return_type = true;
+  let email = form.elements["email"];
+  let password = form.elements["password"];
+
+  email.parentNode.classList.remove('has-error');
+  password.parentNode.classList.remove('has-error');
+
+  var elems = document.getElementsByClassName("help-block");
+  for (var k = elems.length - 1; k >= 0; k--) {
+      var parent = elems[k].parentNode;
+      parent.removeChild(elems[k]);
+  }
+
+  if(email.value == ''){
+        var el = document.createElement("span");
+        el.className = "help-block text-left";
+        el.innerHTML = "Please enter email";
+        email.parentNode.classList.add('has-error');
+        email.parentNode.insertBefore(el, email.nextSibling);
+        return_type = false;
+    }else{
+        var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+        if (testEmail.test(email.value)){
+
+        }else{
+            var el = document.createElement("span");
+            el.className = "help-block text-left";
+            el.innerHTML = "Please enter valid email";
+            email.parentNode.classList.add('has-error');
+            email.parentNode.insertBefore(el, email.nextSibling);
+            return_type = false;
+        }
+    }
+
+
+    if(password.value == ''){
+        password.parentNode.classList.add('has-error');
+        var el = document.createElement("span");
+        el.className = "help-block text-left";
+        el.innerHTML = "Please enter password";
+        password.parentNode.insertBefore(el, password.nextSibling);
+        return_type = false;
+    }
+
+    if(password.value != '' && password.value.length < 5){
+        password.parentNode.classList.add('has-error');
+        var el = document.createElement("span");
+        el.className = "help-block text-left";
+        el.innerHTML = "Please enter atleast 6 characters for password.";
+        password.parentNode.insertBefore(el, password.nextSibling);
+        return_type = false;
+    }
+
+    return return_type;
+}
+
+function handleSignup() {
+    let form = document.forms["signup"];
+    if(signupvalidation(form)){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function signupvalidation(form){
+  var return_type = true;
+  let email = form.elements["email"];
+  let password = form.elements["password"];
+  let name = form.elements["fullname"];
+
+  email.parentNode.classList.remove('has-error');
+  password.parentNode.classList.remove('has-error');
+
+  var elems = document.getElementsByClassName("help-block");
+  for (var k = elems.length - 1; k >= 0; k--) {
+      var parent = elems[k].parentNode;
+      parent.removeChild(elems[k]);
+  }
+
+  if(name.value == ''){
+      var el = document.createElement("span");
+        el.className = "help-block text-left";
+        el.innerHTML = "Please enter name";
+        name.parentNode.classList.add('has-error');
+        name.parentNode.insertBefore(el, email.nextSibling);
+        return_type = false;
+  }
+
+  if(email.value == ''){
+        var el = document.createElement("span");
+        el.className = "help-block text-left";
+        el.innerHTML = "Please enter email";
+        email.parentNode.classList.add('has-error');
+        email.parentNode.insertBefore(el, email.nextSibling);
+        return_type = false;
+    }else{
+        var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+        if (testEmail.test(email.value)){
+
+        }else{
+            var el = document.createElement("span");
+            el.className = "help-block text-left";
+            el.innerHTML = "Please enter valid email";
+            email.parentNode.classList.add('has-error');
+            email.parentNode.insertBefore(el, email.nextSibling);
+            return_type = false;
+        }
+    }
+
+
+    if(password.value == ''){
+        password.parentNode.classList.add('has-error');
+        var el = document.createElement("span");
+        el.className = "help-block text-left";
+        el.innerHTML = "Please enter password";
+        password.parentNode.insertBefore(el, password.nextSibling);
+        return_type = false;
+    }
+
+    if(password.value != '' && password.value.length < 5){
+        password.parentNode.classList.add('has-error');
+        var el = document.createElement("span");
+        el.className = "help-block text-left";
+        el.innerHTML = "Please enter atleast 6 characters for password.";
+        password.parentNode.insertBefore(el, password.nextSibling);
+        return_type = false;
+    }
+
+    return return_type;
+}

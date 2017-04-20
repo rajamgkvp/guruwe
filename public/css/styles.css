@@ -45,6 +45,7 @@ body{
 	background: url('../img/background.png');
 	height: 100%;
 	width: 100%;
+    background-size: cover;
 }
 .gurutransfer{
     position: absolute;
@@ -462,13 +463,13 @@ span.button_area_new{
 }
 .lightbox-content {
     background: #fff none repeat scroll 0 0;
-    border-radius: 5px;
-    padding: 10px;
+    border-radius: 0;
+    padding: 20px 30px 0;
     left: 50%;
-    margin-left: -135px;
+    margin-left: -200px;
     position: fixed;
-    top: 40%;
-    width: 272px;
+    top: 15%;
+    width: 350px;
     z-index: 9999;
     overflow: hidden;
 }
@@ -523,7 +524,7 @@ span.button_area_new{
 .lightbox .light-box-close {
     text-align: right;
     cursor: pointer;
-    margin: -9px -5px 12px 0px;
+    margin: -15px -18px 12px 0px;
 }
 .lightbox .content img {
     margin: 10px 0 0 0;
@@ -1606,4 +1607,203 @@ ul.social-network li {
     font-size: 12px;
     font-weight: normal;
     margin: 0;
+}
+.checkout-form{
+
+}
+.checkout-form .section-block{
+    padding: 20px 20px 60px 20px;
+    background: #efeded;
+    margin: 10px;
+}
+.checkout-form  .section-heading {
+    font: bold 14px Gotham-Book;
+}
+.checkout-form .form-group{
+    margin-bottom: 8px;
+}
+.checkout-form .form-control {
+    padding: 4px 12px;
+    height: auto;
+    border-radius: 0;
+    box-shadow: 0 0 0 0;
+}
+
+.checkout-form input[type=radio]{
+   display: none;
+ }
+.checkout-form .list-inline {
+    padding: 0;
+}
+.checkout-form ul.list-inline li {
+    list-style: none;
+    display: inline-block;
+    width: 49.5%;
+}
+ .checkout-form input[type="radio"]:checked + label {
+   background: url('../img/tick-select1.png') no-repeat 10px 10px #f9aa3e;
+   color: #fff;
+ }
+.checkout-form .price {
+    font-size: 32px;
+    line-height: 32px;
+}
+.checkout-form .time {
+    font-size: 14px;
+    margin: 7px 0;
+}
+.checkout-form .labelsave {
+    font-size: 11px;
+}
+.checkout-form .pricing-block label {
+   display: block;
+   background: url('../img/tick-select2.png') no-repeat 10px 10px #fff;
+   appearance: button;
+   -webkit-appearance: button;
+   -moz-appearance: button;
+   -ms-appearance: button;
+   padding: 17px;
+   width: 100%;
+   margin: 0 auto;
+   text-align: center;
+   font-family: gotham-book;
+   color: #f9aa3e;
+}
+
+.checkout-form label a{
+    color: #f9aa3e;   
+}
+.checkout-form  .btn.btn-default{
+    background: #f9aa3e;
+    border: none;
+    color: #fff;
+    border-radius: 0;
+}
+
+
+
+
+.login-container .social-btn > button {
+    border: medium none;
+    border-radius: 0;
+    font-size: 0.9em;
+    line-height: 20px;
+    position: relative;
+    width: 100%;
+    margin-bottom:30px;
+}
+.login-container .social-btn > button span {
+    font-size: 1.7em;
+    left: 27px;
+    position: absolute;
+    top: 30%;
+}
+.forgot-block-link {
+    padding-top: 10px;
+}
+.btn-facebook button{
+    background: #4a7cd9 none repeat scroll 0 0;
+    color: #fff;
+    padding: 15px 50px;
+}
+.btn-google button{
+    background: #fff none repeat scroll 0 0;
+    color: #000;
+    padding: 13px 77px;
+    margin-top: 14px;
+}
+.login-container .social-btn.btn-google > button{
+    border: 1px solid #000;
+}
+.login-container .social-btn.btn-google{
+    padding-bottom: 54px;
+}
+.login-container .close-video{
+    display: none;
+}
+.sign-in-block, .sign-up-block {    
+    width: 100%;
+}
+.box-title {
+    padding-bottom: 9px;
+}
+.inputbox input {
+    margin-bottom: 14px;
+    padding: 8px;
+    width: 100%;
+}
+.btn.btn-danger.btn-login {
+    background: #f9aa3e none repeat scroll 0 0;
+    border: 0 none;
+    border-radius: 0;
+    color: #fff;
+    font-size: 0.9em;
+    margin-top: 5px;
+    padding: 14px 0 14px;
+    width: 100%;
+}
+.footer-label {
+    background: #f5f5f5 none repeat scroll 0 0;
+    margin: 20px -50px 0;
+    padding: 22px 50px;
+}
+.link{
+    color: #f9aa3e;
+}
+.forgot-block {
+    padding: 16px 0;
+    font-size: 0.9em;
+}
+.forgot-block input[type="checkbox"] + label {
+    padding: 0 5px;
+    font-weight: normal;
+}
+.move-block {
+    font-size: .9em;
+}
+.terms-line {
+    color: #c4c4c4;
+    font-size: 0.8em;
+    padding-top: 5px;
+}
+.inputbox .help-block {
+    font-size: 0.9em;
+    margin-top: -10px;
+}
+.alert.alert-danger.box-error {
+    background: #ffd3d3 none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 0;
+    color: #fa3756;
+    padding: 2px;
+    position: absolute;
+    text-align: center;
+    top: -47px;
+    width: 100%;
+}
+.forgot-block{
+    margin-bottom: 100px;
+}
+.forgot-text{
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+.forgot-back-arrow{
+    cursor: pointer;
+}
+
+.resetpassword-main{
+    padding: 3em;
+    margin-top: 50px;
+}
+
+.resetpassword-title {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.divLabel {
+    color: #f9aa3e;
+    margin: -3px 0px 24px 0px;
 }
