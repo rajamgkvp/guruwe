@@ -26,12 +26,6 @@
     $totalupload = '2G';
 } ?>
 <div class="gurutransfer">
-    <div class="plus-panel">
-        <a href="<?php echo BASE_PATH; ?>/guru-transfer-pro"><div class="panel2 panelp">
-            Guru Transfer Pro
-        </div></a>
-    </div>
-    <div class="header"></div>
     <div class="transferbody">
         <form id="uploadform" method="post" enctype="multipart/form-data" action="<?php echo BASE_PATH; ?>">
             <input type="hidden" value="email-block" id="openedblock" name="openedblock">
@@ -42,16 +36,12 @@
             <?php } ?>
             <input type="hidden" value="<?php echo $totalupload; ?>" name="total_upload" id="total_upload">
             <div class="upload-panel">
-                <h2>Send Up To <?php echo $total ?></h2><div class="clearfix"></div>
                 <div class="add-files-block">
                     <div class="button">
                         <ul class="more">
                             <li>
+                                <div class="uploader__empty-state"><svg viewBox="24 0 72 72"><path d="M60.493 72C79.883 72 96 55.882 96 36.493 96 16.118 79.882 0 60.493 0 40.118 0 24 16.118 24 36.493 24 55.883 40.118 72 60.493 72z" fill="#F9AA3E" fill-rule="evenodd"></path><path d="M58 34h-9c-.553 0-1 .452-1 1.01v1.98c0 .567.448 1.01 1 1.01h9v9c0 .553.452 1 1.01 1h1.98c.567 0 1.01-.448 1.01-1v-9h9c.553 0 1-.452 1-1.01v-1.98c0-.567-.448-1.01-1-1.01h-9v-9c0-.553-.452-1-1.01-1h-1.98c-.567 0-1.01.448-1.01 1v9z" fill="#FFF" fill-rule="evenodd"></path></svg><h2>Add your files</h2><p>Add up to <?php echo $total ?></p></div>
                                 <div id="uploader_div"></div>
-                                <!--<div class="upload-wrap-btn-Change">
-                                    <span class="button_area_new">+ ADD FILES</span>
-                                    <input type="file" name="files[]" id="files" value="" class="files">
-                                </div>-->
                             </li>
                         </ul>
                     </div>
@@ -95,7 +85,6 @@
                     </ul>
                 </div>
                 <button class="transfer">transfer</button>
-                <div class="info"></div>
                 <div class="clearfix"></div>
             </div>
         </form>

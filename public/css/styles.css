@@ -47,12 +47,40 @@ body{
 	width: 100%;
     background-size: cover;
 }
-.gurutransfer{
+.logo{
     position: absolute;
-    width: 157px;
-    left: 4%;
-    z-index: 999;
-    top:25px;
+    left: 4.75em;
+    top: 0.5em;
+    cursor: pointer;
+}
+.uploader__empty-state {
+    padding-top: 0;
+    min-height: 7.938em;
+    position: relative;
+}
+
+.uploader__empty-state svg {
+    margin: 0 0.625em 0 1.25em;
+    height: 2.25em;
+    width: 2.25em;
+    top: 3.5em;
+    position: absolute;
+}
+.uploader__empty-state h2 {
+    position: absolute;
+    left: 3.4em;
+    top: 2em;
+}
+.uploader__empty-state  p {
+    left: 6.5em;
+    top: 6em;
+    position: absolute;
+    font-weight: 400;
+    font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+    line-height: 1;
+    font-size: 0.8125em;
+    color: #919599;
+    width: 120px;
 }
 .navbar-fixed-top, .navbar-fixed-bottom{
     z-index: 9;
@@ -74,9 +102,24 @@ body{
     width: 157px;
 }
 .gurutransfer .transferbody {
-    background: #f9ab30 none repeat scroll 0 0;
-    border-radius: 0 0 5px 5px;
-    padding: 0 5px;
+    background:#FFFFFF;
+    position:absolute;
+    z-index:40;
+    border-radius:10px;
+    box-shadow:0 0 12px 0 rgba(0,0,0,0.1),0 10px 30px 0 rgba(0,0,0,0.2);
+    -webkit-transition:-webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    transition:-webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    transition:transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    transition:transform 0.5s cubic-bezier(0.77, 0, 0.175, 1),-webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    margin:-12.8125em 0 0;
+    height:25.625em;
+    width:17.5em;
+    left:5em;
+    top:50%;
+}
+#uploadform {
+    max-height: 308px;
+    overflow: scroll;
 }
 .upload-panel {
     background: #fff none repeat scroll 0 0;
@@ -88,6 +131,7 @@ body{
     font: 15px gotham-bold;
     margin: 9px 0;
     text-align: center;
+    width: 120px;
 }
 .button ul {
     list-style: outside none none;
@@ -119,12 +163,17 @@ body{
 }
 .share-and-transfer {
     padding: 0 0 10px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    border-top: 1px solid #D4D7D9;
+    box-shadow: 0px -5px 9px -3px #d4d7d9;
 }
 .share-and-transfer .share {
     background: #fff url("../img/button-app-icon-share.png") repeat scroll 0 0;
     border-radius: 50%;
     height: 32px;
-    margin: 8px 0 0;
+    margin: 8px 0 0 15px;
     width: 32px;
     float: left;
     cursor: pointer;
@@ -151,19 +200,20 @@ body{
     width: 32px;
 }
 .share-and-transfer .transfer {
-    background: #fff none repeat scroll 0 0;
+    background: #F9AA3E none repeat scroll 0 0;
     border-radius: 20px;
-    color: #646769;
+    color: #fff;
     float: left;
-    font-size: 11px;
+    font-size: 13px;
     line-height: 31px;
     margin: 9px 5px 0;
     text-align: center;
     text-transform: uppercase;
-    width: 49%;
-    border:none;
+    width: 50%;
+    border: none;
     float: left;
     height: 32px;
+    font-weight: bold;
 }
 .status {
     background: #fff none repeat scroll 0 0;
@@ -409,7 +459,7 @@ span.button_area_new{
 .share-option {
     background: #fff none repeat scroll 0 0;
     border-radius: 23px;
-    margin: 9px 0 0 37px;
+    margin: 9px 0 0 52px;
     position: absolute;
     width: 0px;
     overflow: hidden;
@@ -425,7 +475,7 @@ span.button_area_new{
     display: inline-block;
     padding: 6px 5px;
     text-align: center;
-    width: 53px;
+    width: 52px;
     cursor: pointer;
 }
 .share-option li.active {
@@ -1807,3 +1857,4 @@ ul.social-network li {
     color: #f9aa3e;
     margin: -3px 0px 24px 0px;
 }
+

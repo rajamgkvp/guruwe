@@ -32,7 +32,7 @@ $routing['products/1234'] = array('product/(.*?)', 'regax');
 $default['controller'] = 'index';
 
 if(isset($_SESSION['Member']['id'])){
-	$default['action'] = 'index';	
+	$default['action'] = 'passwordupload';	
 }else{
 	$default['action'] = 'index';
 }

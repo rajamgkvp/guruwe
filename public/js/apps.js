@@ -240,10 +240,10 @@ $(document).ready(function() {
     });
 
     $('.share').click(function(){
-        if($('.share-option').width() == 110){
+        if($('.share-option').width() == 126){
             $('.share-option').animate({ width: 0 }, 'fast');
         }else{
-            $('.share-option').animate({ width: 110 }, 'fast');
+            $('.share-option').animate({ width: 126 }, 'fast');
         }
     });
 

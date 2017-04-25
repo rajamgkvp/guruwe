@@ -1,3 +1,4 @@
+<div class="logo"><img src="<?php echo BASE_PATH; ?>/img/gt-logo.png"></div>
 <nav id="mainNav" class="nav navbar-right">
     <div class="container-fluid navbar-header">
 		<div class="bars float-left"><a id="headerMenu" href="javascript:void(0);" class="menu"><div class="bar"></div></a></div>
