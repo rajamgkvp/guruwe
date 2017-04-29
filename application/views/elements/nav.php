@@ -1,6 +1,54 @@
-<div class="logo"><img src="<?php echo BASE_PATH; ?>/img/gt-logo.png"></div>
+<div class="logo"><img src="<?php echo BASE_PATH; ?>/img/gt-logo.png" style="width: 100%;"></div>
+
+<nav class="nav nav--loaded">
+	<ul class="nav__items">
+		<li <?php if($slug == '/'){ echo "class='active home nav__item'";}else{echo "class='nav__item'";} ?> >
+			<a class="dropdown-toggle" href="<?php echo BASE_PATH;?>">Home</a>
+		</li>
+		<li <?php if($slug == 'questions'){ echo "class='active question nav__item'";}else{echo "class='nav__item'";} ?>>
+			<a href="<?php echo BASE_PATH;?>/questions" class="dropdown-toggle">FAQ</a>
+		</li>
+		<li class='nav__item'>
+			<a href="<?php echo BASE_PATH;?>/blog/" class="dropdown-toggle">Blog</a>
+		</li>
+                        <?php
+                        /*
+		<li <?php if($slug == 'guru-transfer-pro'){ echo "class='active question'";} ?>>
+			<a href="<?php echo BASE_PATH;?>/guru-transfer-pro" class="dropdown-toggle">Guru Transfer Pro</a>
+		</li>
+                        
+		<li <?php if($slug == 'mobile'){ echo "class='active mobile'";} ?>>
+			<a href="<?php echo BASE_PATH;?>/mobile" class="dropdown-toggle">Mobile</a>
+		</li>
+                          * 
+                         */
+                        ?>
+ 
+		
+
+		<?php /*if(isset($_SESSION['Member']) && !empty($_SESSION['Member'])){
+				$parts = explode(" ", $_SESSION['Member']['user_name']);
+				$lastname = array_pop($parts);
+				$firstname = implode(" ", $parts);
+		?>
+			<li class='nav__item'>
+	        	<a href="<?php echo BASE_PATH;?>/profile" class="dropdown-toggle">Welcome <?php echo $firstname; ?></a>
+	        </li>
+		<?php }else{ ?>
+			<li class='nav__item'>
+				<a href="javascript:void(0)" class="dropdown-toggle connect-with-facebook">Sign Up / Log In</a>
+			</li>
+		<?php } */?>
+		<!--<li class="menu-item blog">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog</a>
+		</li>-->
+	</ul>
+</nav>
+
+
 <nav id="mainNav" class="nav navbar-right">
     <div class="container-fluid navbar-header">
+
 		<div class="bars float-left"><a id="headerMenu" href="javascript:void(0);" class="menu"><div class="bar"></div></a></div>
 		<div class="left-nav">
 		    <!--<dl id="leftMenu" class="leftMenu accordion" style="height: 210px;">
