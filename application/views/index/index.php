@@ -76,8 +76,26 @@
                 </div>
             </div>
 
+            <div class="transfer_slider">
+                <div class="transfer__options">
+                    <div class="transfer__option">
+                        <label>Send as</label>
+                        <div class="radioinput transfer__type-radio">
+                            <input type="radio" class="button" id="email" name="type"></input>
+                            <label for="email"><div class="radioinput__check"></div><div class="pull-left radioll">Email</div></label>
+                        </div>
+                        <div class="radioinput transfer__type-radio">
+                            <input type="radio" class="button" id="link" name="type"></input>
+                            <label for="link"><div class="radioinput__check"></div><div class="pull-left radioll">Link</div></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="share-and-transfer">
-                <div class="share"></div>
+                <div class="share">
+                    <svg class="transfer__toggle-options" viewBox="0 0 24 24"><path fill="#BABCBF" d="M12,24 C5.372583,24 0,18.627417 0,12 C0,5.372583 5.372583,0 12,0 C18.627417,0 24,5.372583 24,12 C24,18.627417 18.627417,24 12,24 Z M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M16.5,13.5 C17.3284271,13.5 18,12.8284271 18,12 C18,11.1715729 17.3284271,10.5 16.5,10.5 C15.6715729,10.5 15,11.1715729 15,12 C15,12.8284271 15.6715729,13.5 16.5,13.5 Z M12,13.5 C12.8284271,13.5 13.5,12.8284271 13.5,12 C13.5,11.1715729 12.8284271,10.5 12,10.5 C11.1715729,10.5 10.5,11.1715729 10.5,12 C10.5,12.8284271 11.1715729,13.5 12,13.5 Z M7.5,13.5 C8.32842712,13.5 9,12.8284271 9,12 C9,11.1715729 8.32842712,10.5 7.5,10.5 C6.67157288,10.5 6,11.1715729 6,12 C6,12.8284271 6.67157288,13.5 7.5,13.5 Z"></path></svg>
+                </div>
                 <div class="share-option">
                     <ul>
                         <li class="active" data-for="email-block">Email</li>

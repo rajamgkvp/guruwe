@@ -117,6 +117,7 @@ body{
     width:17.5em;
     left:5em;
     top:50%;
+    overflow: hidden;
 }
 #uploadform {
     max-height: 308px;
@@ -169,13 +170,12 @@ body{
     bottom: 0;
     border-top: 1px solid #D4D7D9;
     box-shadow: 0px -5px 9px -3px #d4d7d9;
+    background-color: #fff;
 }
 .share-and-transfer .share {
-    background: #fff url("../img/button-app-icon-share.png") repeat scroll 0 0;
-    border-radius: 50%;
-    height: 32px;
-    margin: 8px 0 0 15px;
-    width: 32px;
+    height: 25px;
+    margin: 13px 15px 0px 15px;
+    width: 25px;
     float: left;
     cursor: pointer;
 }
@@ -1579,10 +1579,93 @@ PRICING STYLES
 
 
 
-
-
-
-
+.transfer__options {
+    background: #F7F9FA;
+    border-top: 1px solid #D4D7D9;
+    padding: 0 10px;
+}
+.transfer__options .transfer__option {
+    position: relative;
+    padding: 0.625em;
+}
+.transfer__options .transfer__option > label {
+    display: block;
+    font-weight: 400;
+    font-size: 0.75em;
+    color: #484A4D;
+    margin: 0 0.625em 0 0;
+}
+.transfer__options .transfer__option .transfer__type-radio {
+    margin-top: 0.28571em;
+    display: inline-block;
+    margin-right: 1.28571em;
+}
+.radioinput__field {
+    position: absolute;
+    visibility: hidden;
+}
+.radioinput__check {
+    cursor: pointer;
+    position: absolute;
+    background-color: #FFFFFF;
+    border: 1px solid #BABCBF;
+    border-radius: 100%;
+    height: 1.125em;
+    width: 1.125em;
+}
+.radioinput__field:checked ~ .radioinput__label {
+    color: #409FFF;
+}
+.radioinput__field:checked ~ .radioinput__label {
+    color:#409FFF
+}
+.radioinput__field:checked ~ .radioinput__check:before {
+    background-color:#409FFF
+}
+.radioinput__label {
+    cursor:pointer;
+    font-size:0.875em;
+    display:block;
+    height:1.42857em;
+    padding-left:1.66667em
+}
+.radioinput__check {
+    cursor:pointer;
+    position:absolute;
+    background-color:#FFFFFF;
+    border:1px solid #BABCBF;
+    border-radius:100%;
+    height:1.125em;
+    width:1.125em
+}
+.radioinput__check:before {
+    position: absolute;
+    content: '';
+    border-radius: 100%;
+    height: 0.5em;
+    width: 0.5em;
+    top: 3.2px;
+    left: 3px;
+    margin: auto;
+}
+.transfer_slider {
+    height: 0;
+    overflow: hidden;
+}
+.transfer__option input[type=radio], .transfer__option input[type=checkbox] {
+   display: none;
+}
+.transfer__option input[type="radio"]:checked + label .radioinput__check{
+    border: 1px solid #409FFF;
+}
+.transfer__option input[type="radio"]:checked + label .radioinput__check:before {
+   background: #409FFF;
+}
+.pull-left.radioll {
+    margin: -2px 0 0 22px;
+    font-weight: 400;
+    font-size: 13px;
+}
 /*=========================
   Icons
  ================= */

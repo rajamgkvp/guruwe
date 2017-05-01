@@ -6,6 +6,7 @@ $(window).load(function()
     centerContent();
     //$('.files').perfectScrollbar();
     $('.friend-email-scroll').perfectScrollbar();
+    $('.upload-panel').perfectScrollbar();
     //$(".ax-file-list").perfectScrollbar();
 
     $( ".add-files-block" ).on( "change", ".files", function() {
@@ -240,12 +241,22 @@ $(document).ready(function() {
     });
 
     $('.share').click(function(){
-        if($('.share-option').width() == 126){
-            $('.share-option').animate({ width: 0 }, 'fast');
+        if($('.transfer_slider').height() == 0){
+            $( ".transfer_slider" ).animate({
+                height:"65px",
+                scrollTop: 400
+            },400,"swing", function(){
+                $('#uploadform').scrollTop(1200);
+            });
         }else{
-            $('.share-option').animate({ width: 126 }, 'fast');
+            $( ".transfer_slider" ).animate({
+                height:0,
+                scrollTop: 400
+            },400,"swing");
         }
     });
+
+    
 
     $('.addpassword').click(function(){
         $('.addpassword').toggleClass('active');
@@ -267,18 +278,16 @@ $(document).ready(function() {
     });
 
     $('#openedblock').val('email-block');
-    $('.share-option li').click(function(){
-        var clickpanel = $(this).attr('data-for');
+
+    $('.transfer__option input:radio').click(function(){
+        var clickpanel = $(this).attr('id')+'-block';
         var opened = $('#openedblock').val();
         if(opened != clickpanel){
             resetforms();
-            $('.share-option li').removeClass('active');
-            $(this).addClass('active');
-
             $('.'+opened).fadeOut('fast', function() {
                 $('.'+clickpanel).fadeIn('fast', function() {
                     $('#openedblock').val(clickpanel);
-                    $('.share-option').width(0);
+                    $('#uploadform').scrollTop(1200);
                 });
             });
         }
@@ -529,8 +538,7 @@ function doSlideshow(length) {
     }
 }
 
-function centerContent()
-{
+function centerContent(){
     $('.slider').height($(window).height()+22);
     var content = $('.gurutransfer');
     //content.css("left", (container.width()-content.width())/2);
