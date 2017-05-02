@@ -121,7 +121,6 @@ body{
 }
 #uploadform {
     max-height: 308px;
-    overflow: scroll;
 }
 .upload-panel {
     background: #fff none repeat scroll 0 0;
@@ -405,7 +404,7 @@ body{
 
 .content.row {
     background: #fff none repeat scroll 0 0;
-    margin-top: 50px;
+    margin-top: 80px;
 }
 .bigImages li{
     margin-top: -21px;
@@ -747,6 +746,13 @@ span.button_area_new{
 .btn.transfer-again:hover {
     background: #646769 none repeat scroll 0 0;
     color: #fff;
+}
+.banner-text {
+    position: absolute;
+    z-index: 99;
+    width: 50%;
+    right: 0;
+    top: 45%;
 }
 
 

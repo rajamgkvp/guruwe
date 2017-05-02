@@ -6,6 +6,7 @@ $(window).load(function()
     centerContent();
     //$('.files').perfectScrollbar();
     $('.friend-email-scroll').perfectScrollbar();
+    $('#uploadform').perfectScrollbar();
     $('.upload-panel').perfectScrollbar();
     //$(".ax-file-list").perfectScrollbar();
 
@@ -479,7 +480,9 @@ function progressbar(total){
         percentComplete = percentComplete/$(".ax-progress-info").length;
     }
 
-
+    if(percentComplete >= 100){
+        percentComplete = 99;
+    }
     //console.log("percentage complete: "+percentComplete);
     //return false;
 

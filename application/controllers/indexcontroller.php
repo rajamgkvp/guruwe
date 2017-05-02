@@ -13,6 +13,10 @@ class IndexController extends Controller {
 		$sliders = $Slider->getSliders();
 		$this->set('sliders',$sliders);
 
+		$Content = new Blogpost();
+		$content = $Content->getContent('homebanner');
+		$this->set('content',$content);
+
 		$this->title = 'Free big & secure files sharing, sending, storage & transfer website';
 		$this->set('title',$this->title);
 

@@ -1,22 +1,21 @@
 <div id="gallery">
-<div class="bigImages">
-    <ul>
-        <?php foreach ($sliders as $key => $slider) { ?>
-            <?php $class = ''; if($key != 0){
-                $class = 'style="display:none"';
-            } ?>
-            <li <?php echo $class; ?>>
-                <?php if($slider['Slider']['image_link'] != '#'){ ?>
-                    <a href="<?php echo $slider['Slider']['image_link']; ?>" target="_blank"><div class="slider" style="background: transparent url('<?php echo ADMIN_PATH ?>/files/slides/<?php echo $slider['Slider']['image_name'] ?>') repeat scroll 0% 0% / cover ;"></div></a>
-                <?php }else{ ?>
-                    <div class="slider" style="background: transparent url('<?php echo ADMIN_PATH ?>/files/slides/<?php echo $slider['Slider']['image_name'] ?>') repeat scroll 0% 0% / cover ;"></div>
-                <?php } ?>
-
-
-            </li>
-        <?php } ?>
-    </ul>
+    <div class="bigImages">
+        <ul>
+            <?php foreach ($sliders as $key => $slider) { ?>
+                <?php $class = ''; if($key != 0){
+                    $class = 'style="display:none"';
+                } ?>
+                <li <?php echo $class; ?>>
+                    <?php if($slider['Slider']['image_link'] != '#'){ ?>
+                        <a href="<?php echo $slider['Slider']['image_link']; ?>" target="_blank"><div class="slider" style="background: transparent url('<?php echo ADMIN_PATH ?>/files/slides/<?php echo $slider['Slider']['image_name'] ?>') repeat scroll 0% 0% / cover ;"></div></a>
+                    <?php }else{ ?>
+                        <div class="slider" style="background: transparent url('<?php echo ADMIN_PATH ?>/files/slides/<?php echo $slider['Slider']['image_name'] ?>') repeat scroll 0% 0% / cover ;"></div>
+                    <?php } ?>
+                </li>
+            <?php } ?>
+        </ul>
     </div>
+    <div class="banner-text"><?php echo $content[0]['Blogpost']['post_content']; ?></div>
 </div>
 <?php if(isset($_SESSION['Member']) && !empty($_SESSION['Member'])){
     $total = '3GB';
