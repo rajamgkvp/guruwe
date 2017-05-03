@@ -480,8 +480,8 @@ function progressbar(total){
         percentComplete = percentComplete/$(".ax-progress-info").length;
     }
 
-    if(percentComplete >= 100){
-        percentComplete = 99;
+    if(percentComplete > 100){
+        percentComplete = 100;
     }
     //console.log("percentage complete: "+percentComplete);
     //return false;
