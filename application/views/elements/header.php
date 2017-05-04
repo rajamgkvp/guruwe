@@ -12,6 +12,7 @@
 
     <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
        Remove this if you use the .htaccess -->
+   <meta name="google-site-verification" content="IUssZCf14MfoosGza8gh44LRPhPa2GA9inXG3QU0gSo" />
     <meta name="p:domain_verify" content="6843b03c83000afaaaa9d249d90c07f8"/>
     <meta name="msvalidate.01" content="64AF61C84113C15D43831A43C49168B9" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
