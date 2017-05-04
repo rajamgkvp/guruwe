@@ -208,14 +208,14 @@ class IndexController extends Controller {
 		}else{
 			$slug = $explode[1];
 		}
-		$Content = new Blogpost();
+		$Content = new Content();
 		$content = $Content->getContent($slug);
 		$this->set('slug',$slug);
 		$this->set('content',$content);
 
-		$this->title = $content[0]['Blogpost']['post_title'];
+		$this->title = $content[0]['Content']['post_title'];
 		$this->set('title',$this->title);
-		$this->metadesc = $content[0]['Blogpost']['post_title'];
+		$this->metadesc = $content[0]['Content']['post_title'];
 		$this->set('metadesc',$this->metadesc);
 		$this->metakeywords = 'GuruTransfer, filetransfer, file transfer, file, transfer, transfer files';
 		$this->set('metakeywords',$this->metakeywords);
