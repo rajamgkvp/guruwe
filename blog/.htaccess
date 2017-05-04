@@ -2,18 +2,18 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /
-RewriteCond %{HTTP_HOST} ^gurutransfer.com
-RewriteRule ^(.*)$ http\:\/\/www\.gurutransfer\.com\/blog\/$1 [R=301,L]
+RewriteCond %{HTTPS} =on
+RewriteCond %{HTTP_HOST} ^www.gurutransfer.com
 # Start WPFC Exclude
 # End WPFC Exclude
 RewriteCond %{HTTP_HOST} ^www.gurutransfer.com
 RewriteCond %{HTTP_USER_AGENT} !(facebookexternalhit|WhatsApp|Mediatoolkitbot)
 RewriteCond %{REQUEST_METHOD} !POST
-RewriteCond %{HTTPS} !=on
 RewriteCond %{REQUEST_URI} !(\/){2}$
 RewriteCond %{QUERY_STRING} !.+
-RewriteCond %{HTTP:Cookie} !(wordpress_logged_in|wp_woocommerce_session)
+RewriteCond %{HTTP:Cookie} !wordpress_logged_in
 RewriteCond %{HTTP:Cookie} !comment_author_
+RewriteCond %{HTTP:Cookie} !wp_woocommerce_session
 RewriteCond %{HTTP:Cookie} !safirmobilswitcher=mobil
 RewriteCond %{HTTP:Profile} !^[a-z0-9\"]+ [NC]
 RewriteCond %{HTTP_USER_AGENT} !^.*(Vivaldi|\bCrMo\b|CriOS|Android.*Chrome\/[.0-9]*\s(Mobile)?|\bDolfin\b|Opera.*Mini|Opera.*Mobi|Android.*Opera|Mobile.*OPR\/[0-9.]+|Coast\/[0-9.]+|Skyfire|Mobile\sSafari\/[.0-9]*\sEdge|IEMobile|MSIEMobile|fennec|firefox.*maemo|(Mobile|Tablet).*Firefox|Firefox.*Mobile|bolt|teashark|Blazer|Version.*Mobile.*Safari|Safari.*Mobile|MobileSafari|Tizen|UC.*Browser|UCWEB|baiduboxapp|baidubrowser|DiigoBrowser|Puffin|\bMercury\b|Obigo|NF-Browser|NokiaBrowser|OviBrowser|OneBrowser|TwonkyBeamBrowser|SEMC.*Browser|FlyFlow|Minimo|NetFront|Novarra-Vision|MQQBrowser|MicroMessenger|Android.*PaleMoon|Mobile.*PaleMoon|Android|blackberry|\bBB10\b|rim\stablet\sos|PalmOS|avantgo|blazer|elaine|hiptop|palm|plucker|xiino|Symbian|SymbOS|Series60|Series40|SYB-[0-9]+|\bS60\b|Windows\sCE.*(PPC|Smartphone|Mobile|[0-9]{3}x[0-9]{3})|Window\sMobile|Windows\sPhone\s[0-9.]+|WCE;|Windows\sPhone\s10.0|Windows\sPhone\s8.1|Windows\sPhone\s8.0|Windows\sPhone\sOS|XBLWP7|ZuneWP7|Windows\sNT\s6\.[23]\;\sARM\;|\biPhone.*Mobile|\biPod|\biPad|MeeGo|Maemo|J2ME\/|\bMIDP\b|\bCLDC\b|webOS|hpwOS|\bBada\b|BREW).*$ [NC]
@@ -21,7 +21,7 @@ RewriteCond %{DOCUMENT_ROOT}/wp-content/cache/all/$1/index.html -f [or]
 RewriteCond /var/www/html/gurutransfer.com/blog/wp-content/cache/all/blog/$1/index.html -f
 RewriteRule ^(.*) "/blog/wp-content/cache/all/blog/$1/index.html" [L]
 </IfModule>
-<FilesMatch "\.(html|htm)$">
+<FilesMatch "index\.(html|htm)$">
 AddDefaultCharset UTF-8
 <ifModule mod_headers.c>
 FileETag None
@@ -54,6 +54,7 @@ AddOutputFilterByType DEFLATE font/opentype font/ttf font/eot font/otf
 # BEGIN LBCWpFastestCache
 <FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|webp|js|css|swf|x-html|css|xml|js|woff|woff2|ttf|svg|eot)(\.gz)?$">
 <IfModule mod_expires.c>
+AddType application/font-woff2 .woff2
 ExpiresActive On
 ExpiresDefault A0
 ExpiresByType image/webp A2592000
@@ -67,6 +68,7 @@ ExpiresByType text/css A2592000
 ExpiresByType text/javascript A2592000
 ExpiresByType application/javascript A2592000
 ExpiresByType application/x-javascript A2592000
+ExpiresByType application/font-woff2 A2592000
 </IfModule>
 <IfModule mod_headers.c>
 Header set Expires "max-age=2592000, public"
@@ -76,6 +78,9 @@ FileETag None
 </IfModule>
 </FilesMatch>
 # END LBCWpFastestCache
+
+
+
 
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
