@@ -20,12 +20,6 @@
 </div>
 
 <div class="gurutransfer">
-    <div class="plus-panel">
-        <a href="<?php echo BASE_PATH; ?>/guru-transfer-pro"><div class="panel2 panelp">
-            Guru Transfer Pro
-        </div></a>
-    </div>
-    <div class="header"></div>
     <div class="status download2">
         <div class="firstnot">
             <div class="c100">
@@ -70,14 +64,14 @@
                 </div>
                 
 
+                <div class="share-and-transfer">
                 <?php if(isset($passworddata['password']) && $passworddata['password'] != ''){ ?>
                     <div class="transfer-again download-btn-password"><a class="btn transfer-again" href="javascript:void(0)">Download</a></div>
                 <?php }else{ ?>
                     <div class="transfer-again download-btn"><a class="btn transfer-again" href="#">Download</a></div>
                 <?php } ?>
-
+                </div>
             <?php } ?>
-        
     </div>
 </div>
 

@@ -13,6 +13,10 @@ class IndexController extends Controller {
 		$sliders = $Slider->getSliders();
 		$this->set('sliders',$sliders);
 
+		$Content = new Blogpost();
+		$content = $Content->getContent('homebanner');
+		$this->set('content',$content);
+
 		$this->title = 'Free big & secure files sharing, sending, storage & transfer website';
 		$this->set('title',$this->title);
 
@@ -209,9 +213,9 @@ class IndexController extends Controller {
 		$this->set('slug',$slug);
 		$this->set('content',$content);
 
-		$this->title = $content[0]['Content']['page_title'];
+		$this->title = $content[0]['Content']['post_title'];
 		$this->set('title',$this->title);
-		$this->metadesc = $content[0]['Content']['short_description'];
+		$this->metadesc = $content[0]['Content']['post_title'];
 		$this->set('metadesc',$this->metadesc);
 		$this->metakeywords = 'GuruTransfer, filetransfer, file transfer, file, transfer, transfer files';
 		$this->set('metakeywords',$this->metakeywords);
@@ -481,6 +485,22 @@ class IndexController extends Controller {
 		}
 		$this->set('slug',$slug);
 		$this->title = 'Pricing';
+		$this->set('title',$this->title);
+		$this->metadesc = '';
+		$this->set('metadesc',$this->metadesc);
+		$this->metakeywords = 'GuruTransfer, filetransfer, file transfer, file, transfer, transfer files';
+		$this->set('metakeywords',$this->metakeywords);				
+	}
+
+	function checkout(){
+		$explode =  explode('/', $_SERVER['REQUEST_URI']);
+		if($_SERVER['HTTP_HOST']=='localhost'){
+			$slug = $explode[2];
+		}else{
+			$slug = $explode[1];
+		}
+		$this->set('slug',$slug);
+		$this->title = 'Checkout';
 		$this->set('title',$this->title);
 		$this->metadesc = '';
 		$this->set('metadesc',$this->metadesc);

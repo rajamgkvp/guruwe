@@ -3,7 +3,7 @@
     background: #fff none repeat scroll 0 0;
     font-size: 16px;
     text-align: left;
-    width: 132px;
+    width: 218px;
 }
 
 .ax-main-title{
@@ -16,25 +16,10 @@
     font-weight: 400;
     text-shadow: 0 1px 1px #FFFFFF;
 }
-
 /*****************Button base style***********************************************/
-	.ax-button
-	{
-	    margin-right: 0.3em;
-	    margin-bottom: 0.3em;
-	    overflow: hidden;
-	    position: relative;
-	    border: none;
-	    border-radius: 17px;
-	    cursor: pointer;
-	    display: inline-block;
-	    font-size:12px;
-	    line-height: 1.4em;
-	    padding: 0.3em 0.5em;
-	    text-align: center;
-	    vertical-align: middle;
-	    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
-	    color: #FFFFFF;
+	
+	.ax-button .ax-browse{
+		height: 50px;
 	}
 	.ax-icon
 	{
@@ -48,7 +33,7 @@
 
 
 
-/***************************Browse********************************************/
+/***************************Browse********************************************
 	.ax-browse-c
 	{
 	 	background-color: #5BB75B;
@@ -146,24 +131,24 @@
 }
 /****************************************************************************/
 
-.ax-browse-c:hover,.ax-upload-all:hover,.ax-clear:hover
-{
-	opacity:0.9;
-	filter:alpha(opacity=90);
-}
 
 .ax-remove, .ax-ask-no {
-    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-    border-radius: 0;
-    box-shadow: none;
-    color: #000;
-    line-height: 0;
-    margin: 3px 0 0;
+    
     opacity: 0.8;
-    padding: 0 4px;
+    	
+}
+.ax-browse-c {
+    position: absolute;
+    top: 32px;
+    opacity: 0;
 }
 .ax-clear{
 	display: none;
+}
+
+li .ax-toolbar a{
+	padding:0;
+	cursor: pointer;
 }
 
 .ax-upload, .ax-ask-yes
@@ -225,7 +210,7 @@
 	    margin: 0 0 10px !important;
 	    overflow: hidden;
 	    padding: 0 8px 0 0 !important;
-	    width: 132px;
+	    width: 218px;
 	    position: relative;
 	}
 	
@@ -316,9 +301,11 @@
 
 .ax-toolbar
 {
-	float:right;
+	float: right;
 	display: inline-block;
-	overflow:hidden;
+	overflow: hidden;
+	width: 12px;
+	height: 12px;
 }
 
 .ax-browse
@@ -335,7 +322,7 @@
 .ax-details
 {
  	float: left;
-	width: 75%;
+	width: 90%;
 }
 .ax-file-list li .ax-file-name {
     text-overflow: ellipsis;

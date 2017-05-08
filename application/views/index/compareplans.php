@@ -48,27 +48,27 @@
                             </tr>
                             <tr>
                                 <td class="business-comparison-breakdown__td column--features">Best-in-class sync technology</td>
-                                <td class="pass-fail business-comparison-breakdown__td column--pro"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--pro"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
                             </tr>
                             <tr>
                                 <td class="business-comparison-breakdown__td column--features">256-bit AES and SSL encryption</td>
-                                <td class="pass-fail business-comparison-breakdown__td column--pro"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--pro"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
                             </tr>
                             <tr>
                                 <td class="business-comparison-breakdown__td column--features">MS Office 365 integration</td>
-                                <td class="pass-fail business-comparison-breakdown__td column--pro"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--pro"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
                             </tr>
                             <tr>
                                 <td class="business-comparison-breakdown__td column--features">Dropbox badge (in Office collaboration tool)</td>
-                                <td class="pass-fail business-comparison-breakdown__td column--pro"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--pro"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
                             </tr>
                             <tr>
                                 <td colspan="5" class="business-comparison-breakdown__header business-comparison-breakdown__td column--features">Advanced data protection</td>
@@ -76,62 +76,62 @@
                             <tr>
                                 <td class="business-comparison-breakdown__td column--features">Unlimited file recovery and version history</td>
                                 <td class="business-comparison-breakdown__td column--pro">30 days</td>
-                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
                             </tr>
                             <tr>
                                 <td class="business-comparison-breakdown__td column--features">View-only sharing permissions</td>
-                                <td class="pass-fail business-comparison-breakdown__td column--pro"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--pro"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
                             </tr>
                             <tr>
                                 <td class="business-comparison-breakdown__td column--features">Password-protected and expiring shared links</td>
-                                <td class="pass-fail business-comparison-breakdown__td column--pro"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--pro"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
                             </tr>
                             <tr>
                                 <td class="business-comparison-breakdown__td column--features">Remote device wipe</td>
-                                <td class="pass-fail business-comparison-breakdown__td column--pro"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--pro"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
                             </tr>
                             <tr>
                                 <td class="business-comparison-breakdown__td column--features">Granular permissions</td>
                                 <td class="business-comparison-breakdown__td column--pro"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
                             </tr>
                             <tr>
                                 <td class="business-comparison-breakdown__td column--features">System alerts</td>
                                 <td class="business-comparison-breakdown__td column--pro"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
                             </tr>
                             <tr>
                                 <td class="business-comparison-breakdown__td column--features">Account transfer tool</td>
                                 <td class="business-comparison-breakdown__td column--pro"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
                             </tr>
                             <tr>
                                 <td class="business-comparison-breakdown__td column--features">Enables HIPAA compliance</td>
                                 <td class="business-comparison-breakdown__td column--pro"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
                             </tr>
                             <tr>
                                 <td class="business-comparison-breakdown__td column--features">Device approvals</td>
                                 <td class="business-comparison-breakdown__td column--pro"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
                             </tr>
                             <tr>
                                 <td class="business-comparison-breakdown__td column--features">Network control</td>
                                 <td class="business-comparison-breakdown__td column--pro"></td>
                                 <td class="business-comparison-breakdown__td column--dfb"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
                             </tr>
                             <tr>
                                 <td colspan="5" class="business-comparison-breakdown__header business-comparison-breakdown__td column--features">Advanced collaboration tools</td>
@@ -139,14 +139,14 @@
                             <tr>
                                 <td class="business-comparison-breakdown__td column--features">Company-managed groups</td>
                                 <td class="business-comparison-breakdown__td column--pro"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
                             </tr>
                             <tr>
                                 <td class="business-comparison-breakdown__td column--features">Team folder</td>
                                 <td class="business-comparison-breakdown__td column--pro"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
                             </tr>
                             <tr>
                                 <td colspan="5" class="business-comparison-breakdown__header business-comparison-breakdown__td column--features">Powerful administrative tools</td>
@@ -154,89 +154,89 @@
                             <tr>
                                 <td class="business-comparison-breakdown__td column--features">Admin console dashboard</td>
                                 <td class="business-comparison-breakdown__td column--pro"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
                             </tr>
                             <tr>
                                 <td class="business-comparison-breakdown__td column--features">Team folder manager</td>
                                 <td class="business-comparison-breakdown__td column--pro"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
                              </tr>
                             <tr>
                                 <td class="business-comparison-breakdown__td column--features">Sync management</td>
                                 <td class="business-comparison-breakdown__td column--pro"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
                             </tr>
                             <tr>
                                 <td class="business-comparison-breakdown__td column--features">Detailed member and team activity logs</td>
                                 <td class="business-comparison-breakdown__td column--pro"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
                             </tr>
                             <tr>
                                 <td class="business-comparison-breakdown__td column--features">Audit logs with file event tracking</td>
                                 <td class="business-comparison-breakdown__td column--pro"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
                             </tr>
                             <tr>
                                 <td class="business-comparison-breakdown__td column--features">Centralized billing</td>
                                 <td class="business-comparison-breakdown__td column--pro"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
                             </tr>
                             <tr>
                             <td class="business-comparison-breakdown__td column--features">Active Directory and SSO integrations</td>
                                 <td class="business-comparison-breakdown__td column--pro"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
                             </tr>
                             <tr>
                                 <td class="business-comparison-breakdown__td column--features">Sharing restriction controls</td>
                                 <td class="business-comparison-breakdown__td column--pro"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
                             </tr>
                             <tr>
                                 <td class="business-comparison-breakdown__td column--features">Domain insights and account capture</td>
                                 <td class="business-comparison-breakdown__td column--pro"></td>
                                 <td class="business-comparison-breakdown__td column--dfb"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
                             </tr>
                             <tr>
                                 <td colspan="5" class="business-comparison-breakdown__header business-comparison-breakdown__td column--features">Support</td>
                             </tr>
                             <tr>
                                 <td class="business-comparison-breakdown__td column--features">Priority email support</td>
-                                <td class="pass-fail business-comparison-breakdown__td column--pro"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--pro"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
                             </tr>
                             <tr>
                                 <td class="business-comparison-breakdown__td column--features">Phone and chat support</td>
                                 <td class="business-comparison-breakdown__td column--pro"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--dfb"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
                             </tr>
                             <tr>
                                 <td class="business-comparison-breakdown__td column--features">Enterprise Mobility Management support</td>
                                 <td class="business-comparison-breakdown__td column--pro"></td>
                                 <td class="business-comparison-breakdown__td column--dfb"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
                             </tr>
                             <tr>
                                 <td class="business-comparison-breakdown__td column--features">Advanced training for end users and admins</td>
                                 <td class="business-comparison-breakdown__td column--pro"></td>
                                 <td class="business-comparison-breakdown__td column--dfb"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
                             </tr>
                             <tr>
                                 <td class="business-comparison-breakdown__td column--features">Dedicated account success manager</td>
                                 <td class="business-comparison-breakdown__td column--pro"></td>
                                 <td class="business-comparison-breakdown__td column--dfb"></td>
-                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="https://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
+                                <td class="pass-fail business-comparison-breakdown__td column--enterprise"><img src="<?php echo BASE_PATH; ?>/img/tick.png" alt="Included feature" class=" sprite sprite_business s_business_check-blue"></td>
                             </tr>
                         </tbody>
                         <tfoot class="business-comparison-breakdown__table-footer">

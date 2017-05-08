@@ -1,22 +1,21 @@
 <div id="gallery">
-<div class="bigImages">
-    <ul>
-        <?php foreach ($sliders as $key => $slider) { ?>
-            <?php $class = ''; if($key != 0){
-                $class = 'style="display:none"';
-            } ?>
-            <li <?php echo $class; ?>>
-                <?php if($slider['Slider']['image_link'] != '#'){ ?>
-                    <a href="<?php echo $slider['Slider']['image_link']; ?>" target="_blank"><div class="slider" style="background: transparent url('<?php echo ADMIN_PATH ?>/files/slides/<?php echo $slider['Slider']['image_name'] ?>') repeat scroll 0% 0% / cover ;"></div></a>
-                <?php }else{ ?>
-                    <div class="slider" style="background: transparent url('<?php echo ADMIN_PATH ?>/files/slides/<?php echo $slider['Slider']['image_name'] ?>') repeat scroll 0% 0% / cover ;"></div>
-                <?php } ?>
-
-
-            </li>
-        <?php } ?>
-    </ul>
+    <div class="bigImages">
+        <ul>
+            <?php foreach ($sliders as $key => $slider) { ?>
+                <?php $class = ''; if($key != 0){
+                    $class = 'style="display:none"';
+                } ?>
+                <li <?php echo $class; ?>>
+                    <?php if($slider['Slider']['image_link'] != '#'){ ?>
+                        <a href="<?php echo $slider['Slider']['image_link']; ?>" target="_blank"><div class="slider" style="background: transparent url('<?php echo ADMIN_PATH ?>/files/slides/<?php echo $slider['Slider']['image_name'] ?>') repeat scroll 0% 0% / cover ;"></div></a>
+                    <?php }else{ ?>
+                        <div class="slider" style="background: transparent url('<?php echo ADMIN_PATH ?>/files/slides/<?php echo $slider['Slider']['image_name'] ?>') repeat scroll 0% 0% / cover ;"></div>
+                    <?php } ?>
+                </li>
+            <?php } ?>
+        </ul>
     </div>
+    <div class="banner-text"><?php echo $content[0]['Blogpost']['post_content']; ?></div>
 </div>
 <?php if(isset($_SESSION['Member']) && !empty($_SESSION['Member'])){
     $total = '3GB';
@@ -26,12 +25,6 @@
     $totalupload = '2G';
 } ?>
 <div class="gurutransfer">
-    <div class="plus-panel">
-        <a href="<?php echo BASE_PATH; ?>/guru-transfer-pro"><div class="panel2 panelp">
-            Guru Transfer Pro
-        </div></a>
-    </div>
-    <div class="header"></div>
     <div class="transferbody">
         <form id="uploadform" method="post" enctype="multipart/form-data" action="<?php echo BASE_PATH; ?>">
             <input type="hidden" value="email-block" id="openedblock" name="openedblock">
@@ -42,16 +35,12 @@
             <?php } ?>
             <input type="hidden" value="<?php echo $totalupload; ?>" name="total_upload" id="total_upload">
             <div class="upload-panel">
-                <h2>Send Up To <?php echo $total ?></h2><div class="clearfix"></div>
                 <div class="add-files-block">
                     <div class="button">
                         <ul class="more">
                             <li>
+                                <div class="uploader__empty-state"><svg viewBox="24 0 72 72"><path d="M60.493 72C79.883 72 96 55.882 96 36.493 96 16.118 79.882 0 60.493 0 40.118 0 24 16.118 24 36.493 24 55.883 40.118 72 60.493 72z" fill="#F9AA3E" fill-rule="evenodd"></path><path d="M58 34h-9c-.553 0-1 .452-1 1.01v1.98c0 .567.448 1.01 1 1.01h9v9c0 .553.452 1 1.01 1h1.98c.567 0 1.01-.448 1.01-1v-9h9c.553 0 1-.452 1-1.01v-1.98c0-.567-.448-1.01-1-1.01h-9v-9c0-.553-.452-1-1.01-1h-1.98c-.567 0-1.01.448-1.01 1v9z" fill="#FFF" fill-rule="evenodd"></path></svg><h2>Add your files</h2><p>Add up to <?php echo $total ?></p></div>
                                 <div id="uploader_div"></div>
-                                <!--<div class="upload-wrap-btn-Change">
-                                    <span class="button_area_new">+ ADD FILES</span>
-                                    <input type="file" name="files[]" id="files" value="" class="files">
-                                </div>-->
                             </li>
                         </ul>
                     </div>
@@ -86,8 +75,26 @@
                 </div>
             </div>
 
+            <div class="transfer_slider">
+                <div class="transfer__options">
+                    <div class="transfer__option">
+                        <label>Send as</label>
+                        <div class="radioinput transfer__type-radio">
+                            <input type="radio" class="button" id="email" name="type"></input>
+                            <label for="email"><div class="radioinput__check"></div><div class="pull-left radioll">Email</div></label>
+                        </div>
+                        <div class="radioinput transfer__type-radio">
+                            <input type="radio" class="button" id="link" name="type"></input>
+                            <label for="link"><div class="radioinput__check"></div><div class="pull-left radioll">Link</div></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="share-and-transfer">
-                <div class="share"></div>
+                <div class="share">
+                    <svg class="transfer__toggle-options" viewBox="0 0 24 24"><path fill="#BABCBF" d="M12,24 C5.372583,24 0,18.627417 0,12 C0,5.372583 5.372583,0 12,0 C18.627417,0 24,5.372583 24,12 C24,18.627417 18.627417,24 12,24 Z M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M16.5,13.5 C17.3284271,13.5 18,12.8284271 18,12 C18,11.1715729 17.3284271,10.5 16.5,10.5 C15.6715729,10.5 15,11.1715729 15,12 C15,12.8284271 15.6715729,13.5 16.5,13.5 Z M12,13.5 C12.8284271,13.5 13.5,12.8284271 13.5,12 C13.5,11.1715729 12.8284271,10.5 12,10.5 C11.1715729,10.5 10.5,11.1715729 10.5,12 C10.5,12.8284271 11.1715729,13.5 12,13.5 Z M7.5,13.5 C8.32842712,13.5 9,12.8284271 9,12 C9,11.1715729 8.32842712,10.5 7.5,10.5 C6.67157288,10.5 6,11.1715729 6,12 C6,12.8284271 6.67157288,13.5 7.5,13.5 Z"></path></svg>
+                </div>
                 <div class="share-option">
                     <ul>
                         <li class="active" data-for="email-block">Email</li>
@@ -95,7 +102,6 @@
                     </ul>
                 </div>
                 <button class="transfer">transfer</button>
-                <div class="info"></div>
                 <div class="clearfix"></div>
             </div>
         </form>
