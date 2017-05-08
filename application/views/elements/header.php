@@ -31,7 +31,7 @@
     <meta property="og:image" content="https://www.gurutransfer.com/img/fb-image.png">
     <meta property="og:type" content="website" />
     <meta property="fb:app_id" content="1535182570125606" />
-
+    <meta name="google-site-verification" content="IUssZCf14MfoosGza8gh44LRPhPa2GA9inXG3QU0gSo" />
     <meta name="description" content="<?php echo $metadesc; ?>">
     <meta name="keywords" content="<?php echo $metakeywords; ?>" />
     <meta name="author" content="GuruTransfer">
