@@ -45,13 +45,43 @@ body{
 	background: url('../img/background.png');
 	height: 100%;
 	width: 100%;
+    background-size: cover;
 }
-.gurutransfer{
+.logo{
     position: absolute;
-    width: 157px;
-    left: 4%;
-    z-index: 999;
-    top:25px;
+    left: 0.5em;
+    top: 0.5em;
+    cursor: pointer;
+    width: 52px;
+}
+.uploader__empty-state {
+    padding-top: 0;
+    min-height: 7.938em;
+    position: relative;
+}
+
+.uploader__empty-state svg {
+    margin: 0 0.625em 0 1.25em;
+    height: 2.25em;
+    width: 2.25em;
+    top: 3.5em;
+    position: absolute;
+}
+.uploader__empty-state h2 {
+    position: absolute;
+    left: 3.4em;
+    top: 2em;
+}
+.uploader__empty-state  p {
+    left: 6.5em;
+    top: 6em;
+    position: absolute;
+    font-weight: 400;
+    font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+    line-height: 1;
+    font-size: 0.8125em;
+    color: #919599;
+    width: 120px;
 }
 .navbar-fixed-top, .navbar-fixed-bottom{
     z-index: 9;
@@ -73,9 +103,24 @@ body{
     width: 157px;
 }
 .gurutransfer .transferbody {
-    background: #f9ab30 none repeat scroll 0 0;
-    border-radius: 0 0 5px 5px;
-    padding: 0 5px;
+    background:#FFFFFF;
+    position:absolute;
+    z-index:40;
+    border-radius:10px;
+    box-shadow:0 0 12px 0 rgba(0,0,0,0.1),0 10px 30px 0 rgba(0,0,0,0.2);
+    -webkit-transition:-webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    transition:-webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    transition:transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    transition:transform 0.5s cubic-bezier(0.77, 0, 0.175, 1),-webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    margin:-12.8125em 0 0;
+    height:25.625em;
+    width:17.5em;
+    left:5em;
+    top:50%;
+    overflow: hidden;
+}
+#uploadform {
+    max-height: 308px;
 }
 .upload-panel {
     background: #fff none repeat scroll 0 0;
@@ -87,6 +132,7 @@ body{
     font: 15px gotham-bold;
     margin: 9px 0;
     text-align: center;
+    width: 120px;
 }
 .button ul {
     list-style: outside none none;
@@ -118,13 +164,17 @@ body{
 }
 .share-and-transfer {
     padding: 0 0 10px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    border-top: 1px solid #D4D7D9;
+    box-shadow: 0px -5px 9px -3px #d4d7d9;
+    background-color: #fff;
 }
 .share-and-transfer .share {
-    background: #fff url("../img/button-app-icon-share.png") repeat scroll 0 0;
-    border-radius: 50%;
-    height: 32px;
-    margin: 8px 0 0;
-    width: 32px;
+    height: 25px;
+    margin: 13px 15px 0px 15px;
+    width: 25px;
     float: left;
     cursor: pointer;
 }
@@ -150,33 +200,47 @@ body{
     width: 32px;
 }
 .share-and-transfer .transfer {
-    background: #fff none repeat scroll 0 0;
+    background: #F9AA3E none repeat scroll 0 0;
     border-radius: 20px;
-    color: #646769;
+    color: #fff;
     float: left;
-    font-size: 11px;
+    font-size: 13px;
     line-height: 31px;
     margin: 9px 5px 0;
     text-align: center;
     text-transform: uppercase;
-    width: 49%;
-    border:none;
+    width: 50%;
+    border: none;
     float: left;
     height: 32px;
+    font-weight: bold;
 }
 .status {
-    background: #fff none repeat scroll 0 0;
+    background:#FFFFFF;
+    position:absolute;
+    z-index:40;
+    border-radius:10px;
+    box-shadow:0 0 12px 0 rgba(0,0,0,0.1),0 10px 30px 0 rgba(0,0,0,0.2);
+    -webkit-transition:-webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    transition:-webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    transition:transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    transition:transform 0.5s cubic-bezier(0.77, 0, 0.175, 1),-webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    margin:-12.8125em 0 0;
+    min-height:25.625em;
+    width:17.5em;
+    left:5em;
+    top:50%;
+}
+.transfer-done {
     position: absolute;
+    top: 50%;
+    left: 0%;
     text-align: center;
-    top: 218px;
-    width: 157px;
-    z-index: 99;
-    border-radius: 0 0 5px 5px;
-    border: 3px solid #f9ab30;
-    min-height: 259px;
+    width: 100%;
+    padding: 0 20px;
 }
 .status .c100 {
-    left: 14px;
+    left: 60px;
     margin-top: 36px;
 }
 .transfer-done .transfer {
@@ -306,9 +370,41 @@ body{
     margin: 0 0 0 15px;
     opacity: 0.8;
 }
+
+.nav {
+    background: #FFFFFF;
+    position: absolute;
+    overflow: hidden;
+    z-index: 40;
+    background-clip: padding-box;
+    border: 1px solid rgba(23,24,26,0.11);
+    right: 10px;
+    top: 10px;
+    border-radius: 5px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: border-color .5s ease, opacity .4s ease;
+    transition: border-color .5s ease, opacity .4s ease;
+}
+.nav .nav__items {
+    white-space: nowrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: none !important;
+}
+.nav .nav__item {
+    -webkit-transition: background-color .2s ease-out;
+    transition: background-color .2s ease-out;
+    border-right: 1px solid #D4D7D9;
+    display: inline-block;
+}
+
 .content.row {
     background: #fff none repeat scroll 0 0;
-    margin-top: 50px;
+    margin-top: 80px;
 }
 .bigImages li{
     margin-top: -21px;
@@ -408,7 +504,7 @@ span.button_area_new{
 .share-option {
     background: #fff none repeat scroll 0 0;
     border-radius: 23px;
-    margin: 9px 0 0 37px;
+    margin: 9px 0 0 52px;
     position: absolute;
     width: 0px;
     overflow: hidden;
@@ -424,7 +520,7 @@ span.button_area_new{
     display: inline-block;
     padding: 6px 5px;
     text-align: center;
-    width: 53px;
+    width: 52px;
     cursor: pointer;
 }
 .share-option li.active {
@@ -462,13 +558,13 @@ span.button_area_new{
 }
 .lightbox-content {
     background: #fff none repeat scroll 0 0;
-    border-radius: 5px;
-    padding: 10px;
+    border-radius: 0;
+    padding: 20px 30px 0;
     left: 50%;
-    margin-left: -135px;
+    margin-left: -200px;
     position: fixed;
-    top: 40%;
-    width: 272px;
+    top: 15%;
+    width: 350px;
     z-index: 9999;
     overflow: hidden;
 }
@@ -523,7 +619,7 @@ span.button_area_new{
 .lightbox .light-box-close {
     text-align: right;
     cursor: pointer;
-    margin: -9px -5px 12px 0px;
+    margin: -15px -18px 12px 0px;
 }
 .lightbox .content img {
     margin: 10px 0 0 0;
@@ -630,25 +726,33 @@ span.button_area_new{
     color: #fff;
 }
 .transfer-again {
-    background: #f9ab30 none repeat scroll 0 0;
-    bottom: 0;
-    height: 46px;
+    background: #fff none repeat scroll 0 0;
+    bottom: 0px;
     position: absolute;
-    width: 151px;
+    width: 100%;
 }
 .btn.transfer-again {
-    background: #fff none repeat scroll 0 0;
+    background: #f9ab30 none repeat scroll 0 0;
     border-radius: 25px;
-    color: #646769;
+    color: #fff;
     cursor: pointer;
     height: 35px;
     margin: 7px 0 0;
     position: relative;
     width: 114px;
+    left: 26%;
+    bottom: 10px;
 }
 .btn.transfer-again:hover {
     background: #646769 none repeat scroll 0 0;
     color: #fff;
+}
+.banner-text {
+    position: absolute;
+    z-index: 99;
+    width: 50%;
+    right: 0;
+    top: 45%;
 }
 
 
@@ -1481,10 +1585,93 @@ PRICING STYLES
 
 
 
-
-
-
-
+.transfer__options {
+    background: #F7F9FA;
+    border-top: 1px solid #D4D7D9;
+    padding: 0 10px;
+}
+.transfer__options .transfer__option {
+    position: relative;
+    padding: 0.625em;
+}
+.transfer__options .transfer__option > label {
+    display: block;
+    font-weight: 400;
+    font-size: 0.75em;
+    color: #484A4D;
+    margin: 0 0.625em 0 0;
+}
+.transfer__options .transfer__option .transfer__type-radio {
+    margin-top: 0.28571em;
+    display: inline-block;
+    margin-right: 1.28571em;
+}
+.radioinput__field {
+    position: absolute;
+    visibility: hidden;
+}
+.radioinput__check {
+    cursor: pointer;
+    position: absolute;
+    background-color: #FFFFFF;
+    border: 1px solid #BABCBF;
+    border-radius: 100%;
+    height: 1.125em;
+    width: 1.125em;
+}
+.radioinput__field:checked ~ .radioinput__label {
+    color: #409FFF;
+}
+.radioinput__field:checked ~ .radioinput__label {
+    color:#409FFF
+}
+.radioinput__field:checked ~ .radioinput__check:before {
+    background-color:#409FFF
+}
+.radioinput__label {
+    cursor:pointer;
+    font-size:0.875em;
+    display:block;
+    height:1.42857em;
+    padding-left:1.66667em
+}
+.radioinput__check {
+    cursor:pointer;
+    position:absolute;
+    background-color:#FFFFFF;
+    border:1px solid #BABCBF;
+    border-radius:100%;
+    height:1.125em;
+    width:1.125em
+}
+.radioinput__check:before {
+    position: absolute;
+    content: '';
+    border-radius: 100%;
+    height: 0.5em;
+    width: 0.5em;
+    top: 3.2px;
+    left: 3px;
+    margin: auto;
+}
+.transfer_slider {
+    height: 0;
+    overflow: hidden;
+}
+.transfer__option input[type=radio], .transfer__option input[type=checkbox] {
+   display: none;
+}
+.transfer__option input[type="radio"]:checked + label .radioinput__check{
+    border: 1px solid #409FFF;
+}
+.transfer__option input[type="radio"]:checked + label .radioinput__check:before {
+   background: #409FFF;
+}
+.pull-left.radioll {
+    margin: -2px 0 0 22px;
+    font-weight: 400;
+    font-size: 13px;
+}
 /*=========================
   Icons
  ================= */
@@ -1554,9 +1741,8 @@ ul.social-network li {
     padding-top: 40px;
 }
 .list-inline.social-share {
-    background: #fff none repeat scroll 0 0;
     bottom: 0;
-    left: 0;
+    left: 31%;
     list-style: outside none none;
     padding: 0;
     position: absolute;
@@ -1600,10 +1786,210 @@ ul.social-network li {
     color: #000;
 }
 .firstnot .sharepage ul {
-    margin: 48px 0;
+    margin: 70px 0;
 }
 .passworddatablock label {
     font-size: 12px;
     font-weight: normal;
     margin: 0;
 }
+.checkout-form{
+
+}
+.checkout-form .section-block{
+    padding: 20px 20px 60px 20px;
+    background: #efeded;
+    margin: 10px;
+}
+.checkout-form  .section-heading {
+    font: bold 14px Gotham-Book;
+}
+.checkout-form .form-group{
+    margin-bottom: 8px;
+}
+.checkout-form .form-control {
+    padding: 4px 12px;
+    height: auto;
+    border-radius: 0;
+    box-shadow: 0 0 0 0;
+}
+
+.checkout-form input[type=radio]{
+   display: none;
+ }
+.checkout-form .list-inline {
+    padding: 0;
+}
+.checkout-form ul.list-inline li {
+    list-style: none;
+    display: inline-block;
+    width: 49.5%;
+}
+ .checkout-form input[type="radio"]:checked + label {
+   background: url('../img/tick-select1.png') no-repeat 10px 10px #f9aa3e;
+   color: #fff;
+ }
+.checkout-form .price {
+    font-size: 32px;
+    line-height: 32px;
+}
+.checkout-form .time {
+    font-size: 14px;
+    margin: 7px 0;
+}
+.checkout-form .labelsave {
+    font-size: 11px;
+}
+.checkout-form .pricing-block label {
+   display: block;
+   background: url('../img/tick-select2.png') no-repeat 10px 10px #fff;
+   appearance: button;
+   -webkit-appearance: button;
+   -moz-appearance: button;
+   -ms-appearance: button;
+   padding: 17px;
+   width: 100%;
+   margin: 0 auto;
+   text-align: center;
+   font-family: gotham-book;
+   color: #f9aa3e;
+}
+
+.checkout-form label a{
+    color: #f9aa3e;   
+}
+.checkout-form  .btn.btn-default{
+    background: #f9aa3e;
+    border: none;
+    color: #fff;
+    border-radius: 0;
+}
+
+
+
+
+.login-container .social-btn > button {
+    border: medium none;
+    border-radius: 0;
+    font-size: 0.9em;
+    line-height: 20px;
+    position: relative;
+    width: 100%;
+    margin-bottom:30px;
+}
+.login-container .social-btn > button span {
+    font-size: 1.7em;
+    left: 27px;
+    position: absolute;
+    top: 30%;
+}
+.forgot-block-link {
+    padding-top: 10px;
+}
+.btn-facebook button{
+    background: #4a7cd9 none repeat scroll 0 0;
+    color: #fff;
+    padding: 15px 50px;
+}
+.btn-google button{
+    background: #fff none repeat scroll 0 0;
+    color: #000;
+    padding: 13px 77px;
+    margin-top: 14px;
+}
+.login-container .social-btn.btn-google > button{
+    border: 1px solid #000;
+}
+.login-container .social-btn.btn-google{
+    padding-bottom: 54px;
+}
+.login-container .close-video{
+    display: none;
+}
+.sign-in-block, .sign-up-block {    
+    width: 100%;
+}
+.box-title {
+    padding-bottom: 9px;
+}
+.inputbox input {
+    margin-bottom: 14px;
+    padding: 8px;
+    width: 100%;
+}
+.btn.btn-danger.btn-login {
+    background: #f9aa3e none repeat scroll 0 0;
+    border: 0 none;
+    border-radius: 0;
+    color: #fff;
+    font-size: 0.9em;
+    margin-top: 5px;
+    padding: 14px 0 14px;
+    width: 100%;
+}
+.footer-label {
+    background: #f5f5f5 none repeat scroll 0 0;
+    margin: 20px -50px 0;
+    padding: 22px 50px;
+}
+.link{
+    color: #f9aa3e;
+}
+.forgot-block {
+    padding: 16px 0;
+    font-size: 0.9em;
+}
+.forgot-block input[type="checkbox"] + label {
+    padding: 0 5px;
+    font-weight: normal;
+}
+.move-block {
+    font-size: .9em;
+}
+.terms-line {
+    color: #c4c4c4;
+    font-size: 0.8em;
+    padding-top: 5px;
+}
+.inputbox .help-block {
+    font-size: 0.9em;
+    margin-top: -10px;
+}
+.alert.alert-danger.box-error {
+    background: #ffd3d3 none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 0;
+    color: #fa3756;
+    padding: 2px;
+    position: absolute;
+    text-align: center;
+    top: -47px;
+    width: 100%;
+}
+.forgot-block{
+    margin-bottom: 100px;
+}
+.forgot-text{
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+.forgot-back-arrow{
+    cursor: pointer;
+}
+
+.resetpassword-main{
+    padding: 3em;
+    margin-top: 50px;
+}
+
+.resetpassword-title {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.divLabel {
+    color: #f9aa3e;
+    margin: -3px 0px 24px 0px;
+}
+

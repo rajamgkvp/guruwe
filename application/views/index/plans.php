@@ -3,116 +3,69 @@
         <div class="content row">
             <div class="col-sm-12 col-md-12">
                 <div class="row content-page">
-                    
-
-                    <div class="row db-padding-btm db-attached">
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                            <div class="db-wrapper">
-                                <div class="db-pricing-eleven db-bk-color-one">
-                                    <div class="plan free-plan">
-                                        <div class="type">
-                                            Guest
-                                        </div>
-                                        <div class="price">
-                                            <ul class="list-inline">
-                                                <li>Free*</li>
-                                            </ul>
-                                        </div>
-                                        <button type="button" class="btn btn-pricing">Get Started</button>
-                                    </div>
-                                    <ul class="ullist">
-
-                                        <li><i class="fa fa-check"></i>30+ Accounts </li>
-                                        <li><i class="fa fa-check"></i>150+ Projects </li>
-                                        <li><i class="fa fa-check"></i>Lead Required</li>
-                                    </ul>
-                                    <div class="pricing-footer">
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                              <div class="db-wrapper">
-                            <div class="db-pricing-eleven db-bk-color-two popular">
-                                <div class="plan paid-plan big-plan">
-                                    <div class="type">
-                                        Most Popular
-                                    </div>
-                                    <div class="price">
-                                        <div class="sub-head">Professional</div>
-                                        <ul class="list-inline">
-                                            <li><sup>$</sup>199</li>
-                                            <li><small>/mo</small></li>
-                                        </ul>
-                                    </div>
-                                    <button type="button" class="btn btn-pricing">Get Started</button>
-                                </div>
-                                <ul class="ullist">
-
-                                    <li><i class="fa fa-check"></i>30+ Accounts </li>
-                                    <li><i class="fa fa-check"></i>150+ Projects </li>
-                                    <li><i class="fa fa-check"></i>Lead Required</li>
+                    <form method="POST" action="" name="checkout" class="checkout-form">
+                        <div class="col-sm-5 col-md-5 section-block">
+                            <div class="section-heading">Plans with Guru Transfer Plus</div>
+                            <div class="pricing-block">
+                                <ul class="list-inline">
+                                    <li>
+                                        <input type="radio" class="button" id="price120" name="price" value="120"></input>
+                                        <label for="price120">
+                                            <div class="pricing">
+                                                <div class="price">$120</div>
+                                                <div class="time">Annual</div>
+                                                <div class="labelsave">Best value save 17%</div>
+                                            </div>
+                                        </label>        
+                                    </li>
+                                    <li>
+                                        <input type="radio" class="button" id="price12" name="price" value="12"></input>
+                                        <label for="price12">
+                                            <div class="pricing">
+                                                <div class="price">$12</div>
+                                                <div class="time">Monthly</div>
+                                                <div class="labelsave">Recurring Billing</div>
+                                            </div>
+                                        </label>        
+                                    </li>
                                 </ul>
-                                <div class="pricing-footer">
-                                    
-                                </div>
                             </div>
-                                  </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                              <div class="db-wrapper">
-                            <div class="db-pricing-eleven db-bk-color-three">
-                                <div class="plan paid-plan2">
-                                    <div class="type">
-                                        Business
-                                    </div>
-                                    <div class="price">
-                                        <ul class="list-inline">
-                                            <li><sup>$</sup>199</li>
-                                            <li><small>/mo</small></li>
-                                        </ul>
-                                    </div>
-                                    <button type="button" class="btn btn-pricing">Get Started</button>
-                                </div>
-                                <ul class="ullist">
-                                    <li><i class="fa fa-check"></i>30+ Accounts </li>
-                                    <li><i class="fa fa-check"></i>150+ Projects </li>
-                                    <li><i class="fa fa-check"></i>Lead Required</li>
-                                </ul>
-                                <div class="pricing-footer">
-                                    
-                                </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email address">
                             </div>
-                                  </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                              <div class="db-wrapper">
-                            <div class="db-pricing-eleven db-bk-color-six">
-                                <div class="plan paid-plan2">
-                                    <div class="type">
-                                        EXTENDED PLAN
-                                    </div>
-                                    <div class="price">
-                                        <ul class="list-inline">
-                                            <li><sup>$</sup>199</li>
-                                            <li><small>/mo</small></li>
-                                        </ul>
-                                    </div>
-                                    <button type="button" class="btn btn-pricing">Get Started</button>
-                                </div>
-                                <ul class="ullist">
-                                    <li><i class="fa fa-check"></i>30+ Accounts </li>
-                                    <li><i class="fa fa-check"></i>150+ Projects </li>
-                                    <li><i class="fa fa-check"></i>Lead Required</li>
-                                </ul>
-                                <div class="pricing-footer">
-                                </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="pwd" name="password" placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="pwd" name="confirm_password" placeholder="Confirm Password">
                             </div>
                         </div>
-                    </div>
-
-
+                        <div class="col-sm-5 col-md-5 section-block">
+                            <div class="section-heading">Plans with Guru Transfer Plus</div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Full Name" name="name">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Company(optional)" name="company">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Address" name="address">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="City" name="city">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Zip Code" name="zip">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Country" name="country">
+                            </div>
+                            <div class="pull-left">
+                                <label>I accept <a href="<?php echo BASE_PATH;?>/terms">Terms &amp; Conditions</a></label>
+                            </div>
+                            <button type="submit" class="btn btn-default pull-right">Complete your order</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
